@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using static System.Net.WebRequestMethods;
 
 namespace DialysisInsight
 {
@@ -65,6 +66,8 @@ namespace DialysisInsight
                     if (result > 0)
                     {
                         MessageBox.Show("Account created successfully!");
+                        Otp otp = new Otp();
+                        otp.Show();
                         this.Close();
                     }
                     else
