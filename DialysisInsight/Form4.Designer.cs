@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Location = new Point(89, 189);
+            guna2HtmlLabel1.Location = new Point(89, 199);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(204, 27);
             guna2HtmlLabel1.TabIndex = 1;
@@ -66,11 +69,33 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.FromArgb(64, 64, 64);
-            guna2HtmlLabel2.Location = new Point(134, 222);
+            guna2HtmlLabel2.Location = new Point(134, 232);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(123, 22);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "We've sent a code";
+            // 
+            // TextBox1
+            // 
+            TextBox1.BorderColor = Color.Black;
+            TextBox1.BorderRadius = 5;
+            TextBox1.CustomizableEdges = customizableEdges1;
+            TextBox1.DefaultText = "";
+            TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox1.Font = new Font("Segoe UI", 9F);
+            TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            TextBox1.Location = new Point(12, 303);
+            TextBox1.Name = "TextBox1";
+            TextBox1.PasswordChar = '\0';
+            TextBox1.PlaceholderText = "";
+            TextBox1.SelectedText = "";
+            TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            TextBox1.Size = new Size(75, 63);
+            TextBox1.TabIndex = 3;
             // 
             // Otp
             // 
@@ -79,6 +104,7 @@
             BackColor = Color.White;
             ClientSize = new Size(362, 541);
             ControlBox = false;
+            Controls.Add(TextBox1);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(iconPictureBox1);
@@ -99,5 +125,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox1;
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DialysisInsight
 {
-    public partial class Otp: Form
+    public partial class Otp : Form
     {
         public Otp()
         {
             InitializeComponent();
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
