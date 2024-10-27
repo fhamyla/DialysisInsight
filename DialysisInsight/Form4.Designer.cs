@@ -64,7 +64,7 @@
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 129;
-            iconPictureBox1.Location = new Point(128, 31);
+            iconPictureBox1.Location = new Point(119, 29);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(129, 132);
             iconPictureBox1.TabIndex = 0;
@@ -113,6 +113,7 @@
             TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TextBox1.Size = new Size(77, 78);
             TextBox1.TabIndex = 3;
+            TextBox1.TextChanged += TextBox1_TextChanged;
             // 
             // TextBox4
             // 
@@ -135,6 +136,7 @@
             TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBox4.Size = new Size(77, 78);
             TextBox4.TabIndex = 4;
+            TextBox4.TextChanged += TextBox4_TextChanged;
             // 
             // TextBox2
             // 
@@ -157,6 +159,7 @@
             TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBox2.Size = new Size(77, 78);
             TextBox2.TabIndex = 5;
+            TextBox2.TextChanged += TextBox2_TextChanged_1;
             // 
             // TextBox3
             // 
@@ -179,6 +182,7 @@
             TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             TextBox3.Size = new Size(77, 78);
             TextBox3.TabIndex = 6;
+            TextBox3.TextChanged += TextBox3_TextChanged;
             // 
             // guna2HtmlLabel3
             // 
@@ -203,6 +207,7 @@
             linkresendotp.TabIndex = 8;
             linkresendotp.TabStop = true;
             linkresendotp.Text = "Click to resend.";
+            linkresendotp.LinkClicked += linkresendotp_LinkClicked;
             // 
             // verify
             // 
@@ -221,6 +226,7 @@
             verify.Size = new Size(163, 45);
             verify.TabIndex = 9;
             verify.Text = "Verify";
+            verify.Click += verify_Click;
             // 
             // cancel
             // 
