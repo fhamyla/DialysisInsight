@@ -21,5 +21,15 @@ namespace DialysisInsight
         {
 
         }
+
+        private void Otp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
