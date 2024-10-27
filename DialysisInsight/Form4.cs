@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace DialysisInsight
 {
@@ -29,7 +30,9 @@ namespace DialysisInsight
 
         private void cancel_Click(object sender, EventArgs e)
         {
-
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)

@@ -86,7 +86,7 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.FromArgb(64, 64, 64);
-            guna2HtmlLabel2.Location = new Point(134, 232);
+            guna2HtmlLabel2.Location = new Point(125, 232);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(123, 22);
             guna2HtmlLabel2.TabIndex = 2;
@@ -103,7 +103,7 @@
             TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TextBox1.Font = new Font("Segoe UI", 9F);
+            TextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             TextBox1.Location = new Point(21, 303);
             TextBox1.Name = "TextBox1";
@@ -113,6 +113,7 @@
             TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TextBox1.Size = new Size(77, 78);
             TextBox1.TabIndex = 3;
+            TextBox1.TextAlign = HorizontalAlignment.Center;
             TextBox1.TextChanged += TextBox1_TextChanged;
             // 
             // TextBox4
@@ -136,6 +137,7 @@
             TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges4;
             TextBox4.Size = new Size(77, 78);
             TextBox4.TabIndex = 4;
+            TextBox4.TextAlign = HorizontalAlignment.Center;
             TextBox4.TextChanged += TextBox4_TextChanged;
             // 
             // TextBox2
@@ -159,6 +161,7 @@
             TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             TextBox2.Size = new Size(77, 78);
             TextBox2.TabIndex = 5;
+            TextBox2.TextAlign = HorizontalAlignment.Center;
             TextBox2.TextChanged += TextBox2_TextChanged_1;
             // 
             // TextBox3
@@ -182,6 +185,7 @@
             TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             TextBox3.Size = new Size(77, 78);
             TextBox3.TabIndex = 6;
+            TextBox3.TextAlign = HorizontalAlignment.Center;
             TextBox3.TextChanged += TextBox3_TextChanged;
             // 
             // guna2HtmlLabel3

@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace DialysisInsight
 {
@@ -73,7 +74,9 @@ namespace DialysisInsight
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            Otp otp = new Otp();
+            otp.Show();
+            this.Hide();
         }
 
         private void createaccount_Click(object sender, EventArgs e)

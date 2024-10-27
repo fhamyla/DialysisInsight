@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using static System.Net.WebRequestMethods;
+using System.Net.Mail;
 
 namespace DialysisInsight
 {
