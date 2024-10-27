@@ -24,9 +24,9 @@ namespace DialysisInsight
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM Users WHERE Email = ? AND Password = ?", con);
-                cmd.Parameters.AddWithValue("@Email", email.Text);
-                cmd.Parameters.AddWithValue("@Password", password.Text);
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM user WHERE email = ? AND password = ?", con);
+                cmd.Parameters.AddWithValue("@email", email.Text);
+                cmd.Parameters.AddWithValue("@password", password.Text);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -74,9 +74,38 @@ namespace DialysisInsight
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Otp otp = new Otp();
-            otp.Show();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(email.Text))
+            {
+                MessageBox.Show("Please enter your email before proceeding.");
+                return;
+            }
+
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM user WHERE email = ?", con);
+                cmd.Parameters.AddWithValue("@email", email.Text);
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    Otp otp = new Otp();
+                    otp.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid email.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void createaccount_Click(object sender, EventArgs e)
