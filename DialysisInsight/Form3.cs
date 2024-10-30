@@ -87,54 +87,51 @@ namespace DialysisInsight
         {
             string trimmedEmail = email.Text.Trim().ToLower();
 
-            if (password.Text == confirmpassword.Text)
+            if (string.IsNullOrWhiteSpace(trimmedEmail) || string.IsNullOrWhiteSpace(password.Text))
             {
-                if (string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(password.Text))
-                {
-                    MessageBox.Show("Email and password cannot be empty.");
-                    return;
-                }
-
-                try
-                {
-                    con.Open();
-                    OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
-                    cmd.Parameters.AddWithValue("?", trimmedEmail);
-                    cmd.Parameters.AddWithValue("password", password.Text);
-
-                    int result = cmd.ExecuteNonQuery();
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Account created successfully!");
-                        if (IsEmailRegistered(trimmedEmail))
-                        {
-                            MessageBox.Show("Email verified. Proceeding to OTP...");
-                            Otp otp = new Otp();
-                            otp.Show();
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error: Email not found even after creation.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error creating account.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                MessageBox.Show("Email and password cannot be empty.");
+                return;
             }
-            else
+
+            if (password.Text != confirmpassword.Text)
             {
                 MessageBox.Show("Passwords do not match.");
+                return;
+            }
+
+            if (IsEmailRegistered(trimmedEmail))
+            {
+                MessageBox.Show("Email is already registered. Please use a different email.");
+                return;
+            }
+
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
+                cmd.Parameters.AddWithValue("?", trimmedEmail);
+                cmd.Parameters.AddWithValue("password", password.Text);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Account created successfully!");
+                    Otp otp = new Otp(trimmedEmail);
+                    otp.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error creating account.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Data.OleDb;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DialysisInsight
 {
@@ -19,9 +20,12 @@ namespace DialysisInsight
         private DateTime lastOtpSentTime;
         private TimeSpan resendCooldown = TimeSpan.FromMinutes(1);
 
-        public Otp()
+        public Otp(string email)
         {
             InitializeComponent();
+            userEmail = email; // Store the email
+            generatedOtp = GenerateOtp();
+            SendOtpToEmail(userEmail, generatedOtp);
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
@@ -31,7 +35,6 @@ namespace DialysisInsight
 
         private void Otp_Load(object sender, EventArgs e)
         {
-            userEmail = FetchUserEmail();
             if (!string.IsNullOrEmpty(userEmail))
             {
                 generatedOtp = GenerateOtp();

@@ -21,7 +21,10 @@ namespace DialysisInsight
 
         private void login_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(password.Text))
+            string trimmedEmail = email.Text.Trim().ToLower(); // Sanitize email input
+            string passwordInput = password.Text; // Keep password as is for validation
+
+            if (string.IsNullOrWhiteSpace(trimmedEmail) || string.IsNullOrWhiteSpace(passwordInput))
             {
                 MessageBox.Show("Email and password cannot be empty.");
                 return;
@@ -31,12 +34,9 @@ namespace DialysisInsight
             {
                 con.Open();
 
-                // Use square brackets to avoid issues with reserved keywords
                 OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE email = ? AND [password] = ?", con);
-
-                // Match parameter order with the query
-                cmd.Parameters.AddWithValue("?", email.Text);
-                cmd.Parameters.AddWithValue("?", password.Text);
+                cmd.Parameters.AddWithValue("?", trimmedEmail); // Use trimmed email
+                cmd.Parameters.AddWithValue("?", passwordInput);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
@@ -84,7 +84,9 @@ namespace DialysisInsight
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(email.Text))
+            string trimmedEmail = email.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(trimmedEmail))
             {
                 MessageBox.Show("Please enter your email before proceeding.");
                 return;
@@ -94,14 +96,13 @@ namespace DialysisInsight
             {
                 con.Open();
 
-                // Again, wrap 'user' in square brackets to avoid conflicts
                 OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE email = ?", con);
-                cmd.Parameters.AddWithValue("?", email.Text);
+                cmd.Parameters.AddWithValue("?", trimmedEmail);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Otp otp = new Otp();
+                    Otp otp = new Otp(trimmedEmail); // Pass trimmed email to OTP
                     otp.Show();
                     this.Hide();
                 }
