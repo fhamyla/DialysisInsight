@@ -15,7 +15,7 @@ namespace DialysisInsight
 {
     public partial class CreateAccount : Form
     {
-        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\DialysisInsight\\DialysisInsight\\bin\\Debug\\user.mdb");
+        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\DialysisInsight\\DialysisInsight\\db\\user.mdb");
         public CreateAccount()
         {
 
@@ -52,24 +52,71 @@ namespace DialysisInsight
             }
         }
 
+        private bool IsEmailRegistered(string email)
+        {
+            string trimmedEmail = email.Trim();
+
+            try
+            {
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand("SELECT COUNT(*) FROM [user] WHERE email = ?", con);
+                cmd.Parameters.AddWithValue("?", trimmedEmail);
+
+                using (OleDbDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int count = reader.GetInt32(0);
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return false;
+        }
+
         private void create_Click(object sender, EventArgs e)
         {
+            string trimmedEmail = email.Text.Trim().ToLower();
+
             if (password.Text == confirmpassword.Text)
             {
+                if (string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(password.Text))
+                {
+                    MessageBox.Show("Email and password cannot be empty.");
+                    return;
+                }
+
                 try
                 {
                     con.Open();
-                    OleDbCommand cmd = new OleDbCommand("INSERT INTO Users (Email, Password) VALUES (?, ?)", con);
-                    cmd.Parameters.AddWithValue("@Email", email.Text);
-                    cmd.Parameters.AddWithValue("@Password", password.Text);
+                    OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
+                    cmd.Parameters.AddWithValue("?", trimmedEmail);
+                    cmd.Parameters.AddWithValue("password", password.Text);
 
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                     {
                         MessageBox.Show("Account created successfully!");
-                        Otp otp = new Otp();
-                        otp.Show();
-                        this.Close();
+                        if (IsEmailRegistered(trimmedEmail))
+                        {
+                            MessageBox.Show("Email verified. Proceeding to OTP...");
+                            Otp otp = new Otp();
+                            otp.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: Email not found even after creation.");
+                        }
                     }
                     else
                     {
