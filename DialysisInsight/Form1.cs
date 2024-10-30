@@ -21,15 +21,21 @@ namespace DialysisInsight
 
         private void login_Click(object sender, EventArgs e)
         {
-            string trimmedEmail = email.Text.Trim().ToLower();  // Convert input to lowercase
+            if (string.IsNullOrWhiteSpace(email.Text) || string.IsNullOrWhiteSpace(password.Text))
+            {
+                MessageBox.Show("Email and password cannot be empty.");
+                return;
+            }
 
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand(
-                    "SELECT * FROM [user] WHERE LOWER(email) = ? AND password = ?", con);
 
-                cmd.Parameters.AddWithValue("?", trimmedEmail);  // Use lowercase input
+                // Use square brackets to avoid issues with reserved keywords
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE email = ? AND [password] = ?", con);
+
+                // Match parameter order with the query
+                cmd.Parameters.AddWithValue("?", email.Text);
                 cmd.Parameters.AddWithValue("?", password.Text);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
@@ -78,9 +84,7 @@ namespace DialysisInsight
 
         private void forgotpassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string trimmedEmail = email.Text.Trim().ToLower();
-
-            if (string.IsNullOrWhiteSpace(trimmedEmail))
+            if (string.IsNullOrWhiteSpace(email.Text))
             {
                 MessageBox.Show("Please enter your email before proceeding.");
                 return;
@@ -89,19 +93,21 @@ namespace DialysisInsight
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE LOWER(email) = ?", con);
-                cmd.Parameters.AddWithValue("?", trimmedEmail);  // Use trimmed email here
+
+                // Again, wrap 'user' in square brackets to avoid conflicts
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE email = ?", con);
+                cmd.Parameters.AddWithValue("?", email.Text);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
                     Otp otp = new Otp();
                     otp.Show();
-                    this.Close();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Email not found.");
+                    MessageBox.Show("Invalid email.");
                 }
             }
             catch (Exception ex)
