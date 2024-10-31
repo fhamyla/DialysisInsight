@@ -17,15 +17,23 @@ namespace DialysisInsight
     {
         private string generatedOtp = "";
         private string userEmail = "";
+        private string otpContext;
         private DateTime lastOtpSentTime;
         private TimeSpan resendCooldown = TimeSpan.FromMinutes(1);
+        private bool otpSent = false;
 
-        public Otp(string email)
+        public Otp(string email, string context)
         {
             InitializeComponent();
-            userEmail = email; // Store the email
-            generatedOtp = GenerateOtp();
-            SendOtpToEmail(userEmail, generatedOtp);
+            userEmail = email;
+            otpContext = context;
+
+            if (otpContext == "AccountCreation" || otpContext == "ForgotPassword")
+            {
+                generatedOtp = GenerateOtp();
+                SendOtpToEmail(userEmail, generatedOtp);
+                otpSent = true;
+            }
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
@@ -35,12 +43,13 @@ namespace DialysisInsight
 
         private void Otp_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(userEmail))
+            if (!otpSent && !string.IsNullOrEmpty(userEmail))
             {
                 generatedOtp = GenerateOtp();
                 SendOtpToEmail(userEmail, generatedOtp);
+                otpSent = true;
             }
-            else
+            else if (string.IsNullOrEmpty(userEmail))
             {
                 MessageBox.Show("Email not found.");
             }

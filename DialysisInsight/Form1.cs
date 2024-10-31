@@ -102,7 +102,7 @@ namespace DialysisInsight
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Otp otp = new Otp(trimmedEmail);
+                    Otp otp = new Otp(trimmedEmail, "ForgotPassword");
                     otp.Show();
                     this.Hide();
                 }

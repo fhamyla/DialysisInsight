@@ -110,13 +110,13 @@ namespace DialysisInsight
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
                 cmd.Parameters.AddWithValue("?", trimmedEmail);
-                cmd.Parameters.AddWithValue("password", password.Text);
+                cmd.Parameters.AddWithValue("?", password.Text);
 
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                 {
                     MessageBox.Show("Account created successfully!");
-                    Otp otp = new Otp(trimmedEmail);
+                    Otp otp = new Otp(trimmedEmail, "AccountCreation");
                     otp.Show();
                     this.Close();
                 }
