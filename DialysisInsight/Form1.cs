@@ -21,8 +21,8 @@ namespace DialysisInsight
 
         private void login_Click(object sender, EventArgs e)
         {
-            string trimmedEmail = email.Text.Trim().ToLower(); // Sanitize email input
-            string passwordInput = password.Text; // Keep password as is for validation
+            string trimmedEmail = email.Text.Trim().ToLower();
+            string passwordInput = password.Text;
 
             if (string.IsNullOrWhiteSpace(trimmedEmail) || string.IsNullOrWhiteSpace(passwordInput))
             {
@@ -35,7 +35,7 @@ namespace DialysisInsight
                 con.Open();
 
                 OleDbCommand cmd = new OleDbCommand("SELECT * FROM [user] WHERE email = ? AND [password] = ?", con);
-                cmd.Parameters.AddWithValue("?", trimmedEmail); // Use trimmed email
+                cmd.Parameters.AddWithValue("?", trimmedEmail);
                 cmd.Parameters.AddWithValue("?", passwordInput);
 
                 OleDbDataReader reader = cmd.ExecuteReader();
@@ -102,7 +102,7 @@ namespace DialysisInsight
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Otp otp = new Otp(trimmedEmail); // Pass trimmed email to OTP
+                    Otp otp = new Otp(trimmedEmail);
                     otp.Show();
                     this.Hide();
                 }
