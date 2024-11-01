@@ -21,6 +21,7 @@ namespace DialysisInsight
         private DateTime lastOtpSentTime;
         private TimeSpan resendCooldown = TimeSpan.FromMinutes(1);
         private bool otpSent = false;
+        private CreateAccount? createAccountForm;
 
         public Otp(string email, string context)
         {
@@ -31,10 +32,66 @@ namespace DialysisInsight
             TextBox3.TabIndex = 2;
             TextBox4.TabIndex = 3;
 
+            TextBox1.KeyPress += TextBox_KeyPress;
+            TextBox2.KeyPress += TextBox_KeyPress;
+            TextBox3.KeyPress += TextBox_KeyPress;
+            TextBox4.KeyPress += TextBox_KeyPress;
+
             userEmail = email;
             otpContext = context;
+            generateAndSendOtp();
+        }
 
-            if (otpContext == "AccountCreation" || otpContext == "ForgotPassword")
+        public Otp(string email, string context, CreateAccount createAccountRef)
+        {
+            InitializeComponent();
+
+            TextBox1.TabIndex = 0;
+            TextBox2.TabIndex = 1;
+            TextBox3.TabIndex = 2;
+            TextBox4.TabIndex = 3;
+
+            TextBox1.KeyPress += TextBox_KeyPress;
+            TextBox2.KeyPress += TextBox_KeyPress;
+            TextBox3.KeyPress += TextBox_KeyPress;
+            TextBox4.KeyPress += TextBox_KeyPress;
+
+            userEmail = email;
+            otpContext = context;
+            createAccountForm = createAccountRef;
+            generateAndSendOtp();
+        }
+
+        private void TextBox_KeyPress(object? sender, KeyPressEventArgs e)
+        {
+            if (sender is Guna.UI2.WinForms.Guna2TextBox textBox)
+            {
+                if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                    return;
+                }
+
+                if (!char.IsControl(e.KeyChar))
+                {
+                    e.Handled = true;
+                    textBox.Text = e.KeyChar.ToString();
+
+                    if (textBox.Name == "TextBox1")
+                        TextBox2.Focus();
+                    else if (textBox.Name == "TextBox2")
+                        TextBox3.Focus();
+                    else if (textBox.Name == "TextBox3")
+                        TextBox4.Focus();
+                    else if (textBox.Name == "TextBox4")
+                        verify.Focus();
+                }
+            }
+        }
+
+        private void generateAndSendOtp()
+        {
+            if (!otpSent)
             {
                 generatedOtp = GenerateOtp();
                 SendOtpToEmail(userEmail, generatedOtp);
@@ -51,13 +108,7 @@ namespace DialysisInsight
         {
             TextBox1.Focus();
 
-            if (!otpSent && !string.IsNullOrEmpty(userEmail))
-            {
-                generatedOtp = GenerateOtp();
-                SendOtpToEmail(userEmail, generatedOtp);
-                otpSent = true;
-            }
-            else if (string.IsNullOrEmpty(userEmail))
+            if (string.IsNullOrEmpty(userEmail))
             {
                 MessageBox.Show("Email not found.");
             }
@@ -183,12 +234,24 @@ namespace DialysisInsight
         private void verify_Click(object sender, EventArgs e)
         {
             string enteredOtp = TextBox1.Text + TextBox2.Text + TextBox3.Text + TextBox4.Text;
+
             if (enteredOtp == generatedOtp)
             {
                 MessageBox.Show("OTP verified successfully!");
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
                 this.Hide();
+
+                if (otpContext == "AccountCreation" && createAccountForm != null)
+                {
+                    createAccountForm.AccountCreationConfirmed(userEmail, "ligs qoqe zeox guar\r\n");
+                    this.Close();
+                    createAccountForm.Close();
+                }
+                else
+                {
+                    this.Close();
+                }
             }
             else
             {

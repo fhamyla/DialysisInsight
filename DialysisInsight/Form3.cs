@@ -40,16 +40,8 @@ namespace DialysisInsight
 
         private void showpassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (showpassword.Checked)
-            {
-                password.PasswordChar = '\0';
-                confirmpassword.PasswordChar = '\0';
-            }
-            else
-            {
-                password.PasswordChar = '*';
-                confirmpassword.PasswordChar = '*';
-            }
+            password.PasswordChar = showpassword.Checked ? '\0' : '*';
+            confirmpassword.PasswordChar = showpassword.Checked ? '\0' : '*';
         }
 
         private bool IsEmailRegistered(string email)
@@ -105,20 +97,24 @@ namespace DialysisInsight
                 return;
             }
 
+            Otp otp = new Otp(trimmedEmail, "AccountCreation", this);
+            otp.Show();
+            this.Hide();
+        }
+
+        public void AccountCreationConfirmed(string email, string password)
+        {
             try
             {
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
-                cmd.Parameters.AddWithValue("?", trimmedEmail);
-                cmd.Parameters.AddWithValue("?", password.Text);
+                cmd.Parameters.AddWithValue("?", email);
+                cmd.Parameters.AddWithValue("?", password);
 
                 int result = cmd.ExecuteNonQuery();
                 if (result > 0)
                 {
                     MessageBox.Show("Account created successfully!");
-                    Otp otp = new Otp(trimmedEmail, "AccountCreation");
-                    otp.Show();
-                    this.Close();
                 }
                 else
                 {
