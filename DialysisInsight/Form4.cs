@@ -32,6 +32,11 @@ namespace DialysisInsight
             TextBox3.TabIndex = 2;
             TextBox4.TabIndex = 3;
 
+            TextBox1.Font = new Font(TextBox1.Font.FontFamily, 14);
+            TextBox2.Font = new Font(TextBox2.Font.FontFamily, 14);
+            TextBox3.Font = new Font(TextBox3.Font.FontFamily, 14);
+            TextBox4.Font = new Font(TextBox4.Font.FontFamily, 14);
+
             TextBox1.KeyPress += TextBox_KeyPress;
             TextBox2.KeyPress += TextBox_KeyPress;
             TextBox3.KeyPress += TextBox_KeyPress;
@@ -50,6 +55,11 @@ namespace DialysisInsight
             TextBox2.TabIndex = 1;
             TextBox3.TabIndex = 2;
             TextBox4.TabIndex = 3;
+
+            TextBox1.Font = new Font(TextBox1.Font.FontFamily, 14);
+            TextBox2.Font = new Font(TextBox2.Font.FontFamily, 14);
+            TextBox3.Font = new Font(TextBox3.Font.FontFamily, 14);
+            TextBox4.Font = new Font(TextBox4.Font.FontFamily, 14);
 
             TextBox1.KeyPress += TextBox_KeyPress;
             TextBox2.KeyPress += TextBox_KeyPress;
