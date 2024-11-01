@@ -25,6 +25,12 @@ namespace DialysisInsight
         public Otp(string email, string context)
         {
             InitializeComponent();
+
+            TextBox1.TabIndex = 0;
+            TextBox2.TabIndex = 1;
+            TextBox3.TabIndex = 2;
+            TextBox4.TabIndex = 3;
+
             userEmail = email;
             otpContext = context;
 
@@ -43,6 +49,8 @@ namespace DialysisInsight
 
         private void Otp_Load(object sender, EventArgs e)
         {
+            TextBox1.Focus();
+
             if (!otpSent && !string.IsNullOrEmpty(userEmail))
             {
                 generatedOtp = GenerateOtp();
