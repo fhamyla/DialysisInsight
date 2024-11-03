@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DialysisInsight
 {
-    public partial class Calendar : Form
+    public partial class HealthData : Form
     {
-        public Calendar()
+        public HealthData()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace DialysisInsight
 {
-    partial class Calendar
+    partial class Settings
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Calendar
+            // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(910, 553);
             ControlBox = false;
-            Name = "Calendar";
+            Name = "Settings";
             ShowIcon = false;
             ShowInTaskbar = false;
             ResumeLayout(false);
