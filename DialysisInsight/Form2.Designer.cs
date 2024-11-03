@@ -53,6 +53,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -69,6 +71,7 @@
             HeartRate = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             BloodSugarLevel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2CustomGradientPanel2.SuspendLayout();
@@ -233,7 +236,7 @@
             guna2CustomGradientPanel2.Location = new Point(213, 0);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2CustomGradientPanel2.Size = new Size(685, 46);
+            guna2CustomGradientPanel2.Size = new Size(693, 46);
             guna2CustomGradientPanel2.TabIndex = 1;
             // 
             // search
@@ -323,10 +326,10 @@
             BloodSugarLevel.FillColor2 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor3 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor4 = Color.FromArgb(195, 214, 237);
-            BloodSugarLevel.Location = new Point(621, 67);
+            BloodSugarLevel.Location = new Point(615, 67);
             BloodSugarLevel.Name = "BloodSugarLevel";
             BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            BloodSugarLevel.Size = new Size(237, 224);
+            BloodSugarLevel.Size = new Size(291, 224);
             BloodSugarLevel.TabIndex = 4;
             // 
             // guna2CustomGradientPanel3
@@ -339,6 +342,16 @@
             guna2CustomGradientPanel3.Size = new Size(442, 232);
             guna2CustomGradientPanel3.TabIndex = 5;
             // 
+            // guna2CustomGradientPanel4
+            // 
+            guna2CustomGradientPanel4.BorderRadius = 15;
+            guna2CustomGradientPanel4.CustomizableEdges = customizableEdges26;
+            guna2CustomGradientPanel4.Location = new Point(464, 309);
+            guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2CustomGradientPanel4.Size = new Size(442, 232);
+            guna2CustomGradientPanel4.TabIndex = 6;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -346,6 +359,7 @@
             BackColor = Color.FromArgb(219, 237, 255);
             ClientSize = new Size(910, 553);
             ControlBox = false;
+            Controls.Add(guna2CustomGradientPanel4);
             Controls.Add(guna2CustomGradientPanel3);
             Controls.Add(BloodSugarLevel);
             Controls.Add(HeartRate);
@@ -379,5 +393,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
     }
 }
