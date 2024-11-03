@@ -39,14 +39,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -55,6 +53,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -72,9 +74,11 @@
             BloodSugarLevel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             BloodPressure = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             DialysisSessionsCompleted = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -229,13 +233,14 @@
             // guna2CustomGradientPanel2
             // 
             guna2CustomGradientPanel2.BorderRadius = 20;
+            guna2CustomGradientPanel2.Controls.Add(guna2PictureBox1);
             guna2CustomGradientPanel2.Controls.Add(search);
             guna2CustomGradientPanel2.Controls.Add(notification);
             guna2CustomGradientPanel2.Controls.Add(guna2DateTimePicker1);
-            guna2CustomGradientPanel2.CustomizableEdges = customizableEdges16;
+            guna2CustomGradientPanel2.CustomizableEdges = customizableEdges18;
             guna2CustomGradientPanel2.Location = new Point(213, 27);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2CustomGradientPanel2.Size = new Size(693, 45);
             guna2CustomGradientPanel2.TabIndex = 1;
             // 
@@ -243,7 +248,7 @@
             // 
             search.BackColor = Color.White;
             search.BorderRadius = 15;
-            search.CustomizableEdges = customizableEdges12;
+            search.CustomizableEdges = customizableEdges14;
             search.DefaultText = "";
             search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -260,7 +265,7 @@
             search.PlaceholderForeColor = Color.Silver;
             search.PlaceholderText = "Search";
             search.SelectedText = "";
-            search.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            search.ShadowDecoration.CustomizableEdges = customizableEdges15;
             search.Size = new Size(273, 30);
             search.TabIndex = 3;
             // 
@@ -284,7 +289,7 @@
             guna2DateTimePicker1.BorderColor = Color.Transparent;
             guna2DateTimePicker1.BorderRadius = 15;
             guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges14;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges16;
             guna2DateTimePicker1.FillColor = Color.FromArgb(197, 218, 243);
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker1.ForeColor = Color.White;
@@ -293,7 +298,7 @@
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2DateTimePicker1.Size = new Size(194, 30);
             guna2DateTimePicker1.TabIndex = 2;
             guna2DateTimePicker1.Value = new DateTime(2024, 10, 25, 17, 6, 23, 43);
@@ -301,56 +306,67 @@
             // Weight
             // 
             Weight.BorderRadius = 15;
-            Weight.CustomizableEdges = customizableEdges18;
+            Weight.CustomizableEdges = customizableEdges20;
             Weight.Location = new Point(224, 103);
             Weight.Name = "Weight";
-            Weight.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            Weight.ShadowDecoration.CustomizableEdges = customizableEdges21;
             Weight.Size = new Size(178, 204);
             Weight.TabIndex = 2;
             // 
             // HeartRate
             // 
             HeartRate.BorderRadius = 15;
-            HeartRate.CustomizableEdges = customizableEdges20;
+            HeartRate.CustomizableEdges = customizableEdges22;
             HeartRate.Location = new Point(418, 103);
             HeartRate.Name = "HeartRate";
-            HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges23;
             HeartRate.Size = new Size(178, 204);
             HeartRate.TabIndex = 3;
             // 
             // BloodSugarLevel
             // 
             BloodSugarLevel.BorderRadius = 15;
-            BloodSugarLevel.CustomizableEdges = customizableEdges22;
+            BloodSugarLevel.CustomizableEdges = customizableEdges24;
             BloodSugarLevel.FillColor = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor2 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor3 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor4 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.Location = new Point(615, 87);
             BloodSugarLevel.Name = "BloodSugarLevel";
-            BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges25;
             BloodSugarLevel.Size = new Size(291, 231);
             BloodSugarLevel.TabIndex = 4;
             // 
             // BloodPressure
             // 
             BloodPressure.BorderRadius = 15;
-            BloodPressure.CustomizableEdges = customizableEdges24;
+            BloodPressure.CustomizableEdges = customizableEdges26;
             BloodPressure.Location = new Point(2, 324);
             BloodPressure.Name = "BloodPressure";
-            BloodPressure.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            BloodPressure.ShadowDecoration.CustomizableEdges = customizableEdges27;
             BloodPressure.Size = new Size(442, 232);
             BloodPressure.TabIndex = 5;
             // 
             // DialysisSessionsCompleted
             // 
             DialysisSessionsCompleted.BorderRadius = 15;
-            DialysisSessionsCompleted.CustomizableEdges = customizableEdges26;
+            DialysisSessionsCompleted.CustomizableEdges = customizableEdges28;
             DialysisSessionsCompleted.Location = new Point(464, 324);
             DialysisSessionsCompleted.Name = "DialysisSessionsCompleted";
-            DialysisSessionsCompleted.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            DialysisSessionsCompleted.ShadowDecoration.CustomizableEdges = customizableEdges29;
             DialysisSessionsCompleted.Size = new Size(442, 232);
             DialysisSessionsCompleted.TabIndex = 6;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.CustomizableEdges = customizableEdges12;
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(317, 0);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2PictureBox1.Size = new Size(300, 200);
+            guna2PictureBox1.TabIndex = 7;
+            guna2PictureBox1.TabStop = false;
             // 
             // Dashboard
             // 
@@ -374,6 +390,7 @@
             guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             guna2CustomGradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -396,5 +413,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel BloodPressure;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel DialysisSessionsCompleted;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
