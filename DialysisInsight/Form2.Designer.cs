@@ -368,10 +368,10 @@
             maximize.CustomizableEdges = customizableEdges28;
             maximize.Image = Properties.Resources.maximize;
             maximize.ImageRotate = 0F;
-            maximize.Location = new Point(871, 4);
+            maximize.Location = new Point(871, 0);
             maximize.Name = "maximize";
             maximize.ShadowDecoration.CustomizableEdges = customizableEdges29;
-            maximize.Size = new Size(27, 23);
+            maximize.Size = new Size(27, 24);
             maximize.TabIndex = 7;
             maximize.TabStop = false;
             // 
@@ -382,10 +382,10 @@
             minimize.CustomizableEdges = customizableEdges30;
             minimize.Image = Properties.Resources.window_minimize;
             minimize.ImageRotate = 0F;
-            minimize.Location = new Point(830, -6);
+            minimize.Location = new Point(830, -10);
             minimize.Name = "minimize";
             minimize.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            minimize.Size = new Size(35, 30);
+            minimize.Size = new Size(35, 31);
             minimize.TabIndex = 8;
             minimize.TabStop = false;
             minimize.Click += guna2PictureBox1_Click;
