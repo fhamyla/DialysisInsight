@@ -24,5 +24,10 @@ namespace DialysisInsight
             form1.Show();
             this.Hide();
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
