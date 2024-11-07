@@ -374,6 +374,7 @@
             maximize.Size = new Size(27, 24);
             maximize.TabIndex = 7;
             maximize.TabStop = false;
+            maximize.Click += maximize_Click;
             // 
             // minimize
             // 
