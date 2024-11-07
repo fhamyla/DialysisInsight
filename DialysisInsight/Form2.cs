@@ -36,20 +36,102 @@ namespace DialysisInsight
             {
                 this.WindowState = FormWindowState.Maximized;
 
+                // Set all controls to dock to their parent container or the form itself
                 foreach (Control control in this.Controls)
                 {
-                    control.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                    control.Dock = DockStyle.Fill; // This will make each control resize fully to the parent size.
                 }
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
 
+                // Reset the Dock property if necessary
                 foreach (Control control in this.Controls)
                 {
-                    control.Anchor = AnchorStyles.None;
+                    control.Dock = DockStyle.None; // Reset the dock setting to default.
                 }
             }
+        }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calendar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addhealthdata_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BloodPressure_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DialysisSessionsCompleted_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Weight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HeartRate_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BloodSugarLevel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notification_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

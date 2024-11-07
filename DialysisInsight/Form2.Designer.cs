@@ -105,6 +105,7 @@
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2CustomGradientPanel1.Size = new Size(205, 291);
             guna2CustomGradientPanel1.TabIndex = 0;
+            guna2CustomGradientPanel1.Paint += guna2CustomGradientPanel1_Paint;
             // 
             // guna2HtmlLabel2
             // 
@@ -116,6 +117,7 @@
             guna2HtmlLabel2.Size = new Size(83, 35);
             guna2HtmlLabel2.TabIndex = 6;
             guna2HtmlLabel2.Text = "Insight";
+            guna2HtmlLabel2.Click += guna2HtmlLabel2_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -127,6 +129,7 @@
             guna2HtmlLabel1.Size = new Size(93, 35);
             guna2HtmlLabel1.TabIndex = 5;
             guna2HtmlLabel1.Text = "Dialysis";
+            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
             // 
             // logout
             // 
@@ -174,6 +177,7 @@
             settings.TabIndex = 4;
             settings.Text = "Settings";
             settings.TextAlign = HorizontalAlignment.Left;
+            settings.Click += settings_Click;
             // 
             // addhealthdata
             // 
@@ -197,6 +201,7 @@
             addhealthdata.TabIndex = 3;
             addhealthdata.Text = "Add Health Data";
             addhealthdata.TextAlign = HorizontalAlignment.Left;
+            addhealthdata.Click += addhealthdata_Click;
             // 
             // calendar
             // 
@@ -220,6 +225,7 @@
             calendar.TabIndex = 2;
             calendar.Text = "Calendar";
             calendar.TextAlign = HorizontalAlignment.Left;
+            calendar.Click += calendar_Click;
             // 
             // guna2CirclePictureBox1
             // 
@@ -233,6 +239,7 @@
             guna2CirclePictureBox1.Size = new Size(64, 64);
             guna2CirclePictureBox1.TabIndex = 2;
             guna2CirclePictureBox1.TabStop = false;
+            guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click;
             // 
             // guna2CustomGradientPanel2
             // 
@@ -246,6 +253,7 @@
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2CustomGradientPanel2.Size = new Size(693, 45);
             guna2CustomGradientPanel2.TabIndex = 1;
+            guna2CustomGradientPanel2.Paint += guna2CustomGradientPanel2_Paint;
             // 
             // search
             // 
@@ -271,6 +279,7 @@
             search.ShadowDecoration.CustomizableEdges = customizableEdges13;
             search.Size = new Size(273, 30);
             search.TabIndex = 3;
+            search.TextChanged += search_TextChanged;
             // 
             // notification
             // 
@@ -285,6 +294,7 @@
             notification.Size = new Size(34, 31);
             notification.TabIndex = 2;
             notification.UseVisualStyleBackColor = false;
+            notification.Click += notification_Click;
             // 
             // guna2DateTimePicker1
             // 
@@ -305,6 +315,7 @@
             guna2DateTimePicker1.Size = new Size(194, 30);
             guna2DateTimePicker1.TabIndex = 2;
             guna2DateTimePicker1.Value = new DateTime(2024, 10, 25, 17, 6, 23, 43);
+            guna2DateTimePicker1.ValueChanged += guna2DateTimePicker1_ValueChanged;
             // 
             // Weight
             // 
@@ -315,6 +326,7 @@
             Weight.ShadowDecoration.CustomizableEdges = customizableEdges19;
             Weight.Size = new Size(178, 204);
             Weight.TabIndex = 2;
+            Weight.Paint += Weight_Paint;
             // 
             // HeartRate
             // 
@@ -325,6 +337,7 @@
             HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges21;
             HeartRate.Size = new Size(178, 204);
             HeartRate.TabIndex = 3;
+            HeartRate.Paint += HeartRate_Paint;
             // 
             // BloodSugarLevel
             // 
@@ -340,6 +353,7 @@
             BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges23;
             BloodSugarLevel.Size = new Size(291, 231);
             BloodSugarLevel.TabIndex = 4;
+            BloodSugarLevel.Paint += BloodSugarLevel_Paint;
             // 
             // BloodPressure
             // 
@@ -350,6 +364,7 @@
             BloodPressure.ShadowDecoration.CustomizableEdges = customizableEdges25;
             BloodPressure.Size = new Size(442, 232);
             BloodPressure.TabIndex = 5;
+            BloodPressure.Paint += BloodPressure_Paint;
             // 
             // DialysisSessionsCompleted
             // 
@@ -360,6 +375,7 @@
             DialysisSessionsCompleted.ShadowDecoration.CustomizableEdges = customizableEdges27;
             DialysisSessionsCompleted.Size = new Size(442, 232);
             DialysisSessionsCompleted.TabIndex = 6;
+            DialysisSessionsCompleted.Paint += DialysisSessionsCompleted_Paint;
             // 
             // maximize
             // 
