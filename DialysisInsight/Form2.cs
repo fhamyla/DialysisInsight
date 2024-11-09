@@ -36,10 +36,9 @@ namespace DialysisInsight
             {
                 this.WindowState = FormWindowState.Maximized;
 
-                // Set all controls to dock to their parent container or the form itself
                 foreach (Control control in this.Controls)
                 {
-                    control.Dock = DockStyle.Fill; // This will make each control resize fully to the parent size.
+                    control.Dock = DockStyle.Fill;
                 }
             }
             else
@@ -49,7 +48,7 @@ namespace DialysisInsight
                 // Reset the Dock property if necessary
                 foreach (Control control in this.Controls)
                 {
-                    control.Dock = DockStyle.None; // Reset the dock setting to default.
+                    control.Dock = DockStyle.None;
                 }
             }
         }
@@ -130,6 +129,11 @@ namespace DialysisInsight
         }
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
         {
 
         }

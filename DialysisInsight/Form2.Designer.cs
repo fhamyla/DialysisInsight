@@ -59,6 +59,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -78,29 +80,31 @@
             DialysisSessionsCompleted = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             maximize = new Guna.UI2.WinForms.Guna2PictureBox();
             minimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)maximize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)minimize).BeginInit();
+            panel.SuspendLayout();
             SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BorderRadius = 15;
-            guna2CustomGradientPanel1.Controls.Add(guna2HtmlLabel2);
-            guna2CustomGradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2CustomGradientPanel1.Controls.Add(logout);
             guna2CustomGradientPanel1.Controls.Add(settings);
             guna2CustomGradientPanel1.Controls.Add(addhealthdata);
             guna2CustomGradientPanel1.Controls.Add(calendar);
             guna2CustomGradientPanel1.Controls.Add(guna2CirclePictureBox1);
+            guna2CustomGradientPanel1.Controls.Add(guna2HtmlLabel2);
+            guna2CustomGradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges10;
             guna2CustomGradientPanel1.FillColor = Color.FromArgb(201, 220, 243);
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(201, 220, 243);
             guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(201, 220, 243);
             guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(201, 220, 243);
-            guna2CustomGradientPanel1.Location = new Point(2, 27);
+            guna2CustomGradientPanel1.Location = new Point(8, 27);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2CustomGradientPanel1.Size = new Size(205, 291);
@@ -244,11 +248,11 @@
             // guna2CustomGradientPanel2
             // 
             guna2CustomGradientPanel2.BorderRadius = 20;
-            guna2CustomGradientPanel2.Controls.Add(search);
             guna2CustomGradientPanel2.Controls.Add(notification);
+            guna2CustomGradientPanel2.Controls.Add(search);
             guna2CustomGradientPanel2.Controls.Add(guna2DateTimePicker1);
             guna2CustomGradientPanel2.CustomizableEdges = customizableEdges16;
-            guna2CustomGradientPanel2.Location = new Point(213, 27);
+            guna2CustomGradientPanel2.Location = new Point(219, 27);
             guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2CustomGradientPanel2.Size = new Size(693, 45);
@@ -332,7 +336,7 @@
             // 
             HeartRate.BorderRadius = 15;
             HeartRate.CustomizableEdges = customizableEdges20;
-            HeartRate.Location = new Point(418, 103);
+            HeartRate.Location = new Point(423, 103);
             HeartRate.Name = "HeartRate";
             HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges21;
             HeartRate.Size = new Size(178, 204);
@@ -348,7 +352,7 @@
             BloodSugarLevel.FillColor2 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor3 = Color.FromArgb(195, 214, 237);
             BloodSugarLevel.FillColor4 = Color.FromArgb(195, 214, 237);
-            BloodSugarLevel.Location = new Point(615, 87);
+            BloodSugarLevel.Location = new Point(621, 87);
             BloodSugarLevel.Name = "BloodSugarLevel";
             BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges23;
             BloodSugarLevel.Size = new Size(291, 231);
@@ -359,7 +363,7 @@
             // 
             BloodPressure.BorderRadius = 15;
             BloodPressure.CustomizableEdges = customizableEdges24;
-            BloodPressure.Location = new Point(2, 324);
+            BloodPressure.Location = new Point(8, 324);
             BloodPressure.Name = "BloodPressure";
             BloodPressure.ShadowDecoration.CustomizableEdges = customizableEdges25;
             BloodPressure.Size = new Size(442, 232);
@@ -370,7 +374,7 @@
             // 
             DialysisSessionsCompleted.BorderRadius = 15;
             DialysisSessionsCompleted.CustomizableEdges = customizableEdges26;
-            DialysisSessionsCompleted.Location = new Point(464, 324);
+            DialysisSessionsCompleted.Location = new Point(470, 324);
             DialysisSessionsCompleted.Name = "DialysisSessionsCompleted";
             DialysisSessionsCompleted.ShadowDecoration.CustomizableEdges = customizableEdges27;
             DialysisSessionsCompleted.Size = new Size(442, 232);
@@ -384,10 +388,10 @@
             maximize.CustomizableEdges = customizableEdges28;
             maximize.Image = Properties.Resources.maximize;
             maximize.ImageRotate = 0F;
-            maximize.Location = new Point(871, 0);
+            maximize.Location = new Point(886, 3);
             maximize.Name = "maximize";
             maximize.ShadowDecoration.CustomizableEdges = customizableEdges29;
-            maximize.Size = new Size(27, 24);
+            maximize.Size = new Size(26, 24);
             maximize.TabIndex = 7;
             maximize.TabStop = false;
             maximize.Click += maximize_Click;
@@ -399,13 +403,37 @@
             minimize.CustomizableEdges = customizableEdges30;
             minimize.Image = Properties.Resources.window_minimize;
             minimize.ImageRotate = 0F;
-            minimize.Location = new Point(830, -10);
+            minimize.Location = new Point(847, -8);
             minimize.Name = "minimize";
             minimize.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            minimize.Size = new Size(35, 31);
+            minimize.Size = new Size(33, 38);
             minimize.TabIndex = 8;
             minimize.TabStop = false;
             minimize.Click += guna2PictureBox1_Click;
+            // 
+            // panel
+            // 
+            panel.Controls.Add(DialysisSessionsCompleted);
+            panel.Controls.Add(guna2CustomGradientPanel1);
+            panel.Controls.Add(BloodPressure);
+            panel.Controls.Add(BloodSugarLevel);
+            panel.Controls.Add(HeartRate);
+            panel.Controls.Add(minimize);
+            panel.Controls.Add(Weight);
+            panel.Controls.Add(guna2CustomGradientPanel2);
+            panel.Controls.Add(maximize);
+            panel.CustomizableEdges = customizableEdges32;
+            panel.FillColor = Color.FromArgb(219, 237, 255);
+            panel.FillColor2 = Color.FromArgb(219, 237, 255);
+            panel.FillColor3 = Color.FromArgb(219, 237, 255);
+            panel.FillColor4 = Color.FromArgb(219, 237, 255);
+            panel.ForeColor = Color.White;
+            panel.Location = new Point(-6, 0);
+            panel.Name = "panel";
+            panel.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            panel.Size = new Size(919, 564);
+            panel.TabIndex = 9;
+            panel.Paint += panel_Paint;
             // 
             // Dashboard
             // 
@@ -414,15 +442,7 @@
             BackColor = Color.FromArgb(219, 237, 255);
             ClientSize = new Size(910, 559);
             ControlBox = false;
-            Controls.Add(minimize);
-            Controls.Add(maximize);
-            Controls.Add(DialysisSessionsCompleted);
-            Controls.Add(BloodPressure);
-            Controls.Add(BloodSugarLevel);
-            Controls.Add(HeartRate);
-            Controls.Add(Weight);
-            Controls.Add(guna2CustomGradientPanel2);
-            Controls.Add(guna2CustomGradientPanel1);
+            Controls.Add(panel);
             ForeColor = Color.White;
             Name = "Dashboard";
             ShowIcon = false;
@@ -433,6 +453,7 @@
             guna2CustomGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)maximize).EndInit();
             ((System.ComponentModel.ISupportInitialize)minimize).EndInit();
+            panel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -457,5 +478,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel DialysisSessionsCompleted;
         private Guna.UI2.WinForms.Guna2PictureBox maximize;
         private Guna.UI2.WinForms.Guna2PictureBox minimize;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panel;
     }
 }
