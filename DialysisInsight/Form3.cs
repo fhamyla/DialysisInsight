@@ -15,12 +15,12 @@ namespace DialysisInsight
 {
     public partial class CreateAccount : Form
     {
-        private OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\DialysisInsight\\DialysisInsight\\db\\user.mdb");
+        private OleDbConnection con;
         public CreateAccount()
         {
 
             InitializeComponent();
-
+            con = new OleDbConnection(DialysisInsight.ConnectionString);
         }
 
         private void email_TextChanged(object sender, EventArgs e)

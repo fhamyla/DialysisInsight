@@ -127,7 +127,7 @@ namespace DialysisInsight
         private string FetchUserEmail()
         {
             string email = "";
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\DialysisInsight\DialysisInsight\db\user.mdb";
+            string connectionString = DialysisInsight.ConnectionString;
             string query = "SELECT email FROM [user] WHERE ID = 1"; 
 
             using (OleDbConnection connection = new OleDbConnection(connectionString))
