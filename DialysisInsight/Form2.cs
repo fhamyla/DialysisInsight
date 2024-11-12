@@ -45,7 +45,6 @@ namespace DialysisInsight
             {
                 this.WindowState = FormWindowState.Normal;
 
-                // Reset the Dock property if necessary
                 foreach (Control control in this.Controls)
                 {
                     control.Dock = DockStyle.None;
