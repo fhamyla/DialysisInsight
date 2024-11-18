@@ -16,11 +16,24 @@ namespace DialysisInsight
     public partial class CreateAccount : Form
     {
         private OleDbConnection con;
+
+        public string UserPassword { get; private set; } = string.Empty;
+
         public CreateAccount()
         {
 
             InitializeComponent();
             con = new OleDbConnection(DialysisInsight.ConnectionString);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
         }
 
         private void email_TextChanged(object sender, EventArgs e)
@@ -97,7 +110,9 @@ namespace DialysisInsight
                 return;
             }
 
-            Otp otp = new Otp(trimmedEmail, "AccountCreation", this);
+            UserPassword = password.Text;
+
+            Otp otp = new Otp(trimmedEmail, "AccountCreation", this, UserPassword);
             otp.Show();
             this.Hide();
         }
@@ -106,6 +121,7 @@ namespace DialysisInsight
         {
             try
             {
+                string hashedPassword = HashPassword(password);
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand("INSERT INTO [user] (email, [password]) VALUES (?, ?)", con);
                 cmd.Parameters.AddWithValue("?", email);

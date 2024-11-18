@@ -17,6 +17,7 @@ namespace DialysisInsight
     {
         private string generatedOtp = "";
         private string userEmail = "";
+        private string userPassword = string.Empty;
         private string otpContext;
         private DateTime lastOtpSentTime;
         private TimeSpan resendCooldown = TimeSpan.FromMinutes(1);
@@ -27,30 +28,28 @@ namespace DialysisInsight
         {
             InitializeComponent();
 
-            TextBox1.TabIndex = 0;
-            TextBox2.TabIndex = 1;
-            TextBox3.TabIndex = 2;
-            TextBox4.TabIndex = 3;
-
-            TextBox1.Font = new Font(TextBox1.Font.FontFamily, 14);
-            TextBox2.Font = new Font(TextBox2.Font.FontFamily, 14);
-            TextBox3.Font = new Font(TextBox3.Font.FontFamily, 14);
-            TextBox4.Font = new Font(TextBox4.Font.FontFamily, 14);
-
-            TextBox1.KeyPress += TextBox_KeyPress;
-            TextBox2.KeyPress += TextBox_KeyPress;
-            TextBox3.KeyPress += TextBox_KeyPress;
-            TextBox4.KeyPress += TextBox_KeyPress;
+            InitializeOtpFields();
 
             userEmail = email;
             otpContext = context;
             generateAndSendOtp();
         }
 
-        public Otp(string email, string context, CreateAccount createAccountRef)
+        public Otp(string email, string context, CreateAccount? createAccountRef = null, string password = "")
         {
             InitializeComponent();
 
+            InitializeOtpFields();
+
+            userEmail = email;
+            otpContext = context;
+            createAccountForm = createAccountRef;
+            userPassword = password ?? string.Empty;
+            generateAndSendOtp();
+        }
+
+        private void InitializeOtpFields()
+        {
             TextBox1.TabIndex = 0;
             TextBox2.TabIndex = 1;
             TextBox3.TabIndex = 2;
@@ -65,11 +64,6 @@ namespace DialysisInsight
             TextBox2.KeyPress += TextBox_KeyPress;
             TextBox3.KeyPress += TextBox_KeyPress;
             TextBox4.KeyPress += TextBox_KeyPress;
-
-            userEmail = email;
-            otpContext = context;
-            createAccountForm = createAccountRef;
-            generateAndSendOtp();
         }
 
         private void TextBox_KeyPress(object? sender, KeyPressEventArgs e)
@@ -254,7 +248,7 @@ namespace DialysisInsight
 
                 if (otpContext == "AccountCreation" && createAccountForm != null)
                 {
-                    createAccountForm.AccountCreationConfirmed(userEmail, "ligs qoqe zeox guar\r\n");
+                    createAccountForm.AccountCreationConfirmed(userEmail, userPassword);
                     this.Close();
                     createAccountForm.Close();
                 }
