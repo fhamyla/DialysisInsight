@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             SuspendLayout();
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.Location = new Point(-7, -5);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.Size = new Size(897, 562);
+            guna2Panel1.TabIndex = 0;
             // 
             // Dashboard
             // 
@@ -37,11 +49,14 @@
             BackColor = Color.White;
             ClientSize = new Size(884, 553);
             ControlBox = false;
+            Controls.Add(guna2Panel1);
             Name = "Dashboard";
             ShowIcon = false;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
