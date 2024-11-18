@@ -162,7 +162,7 @@ namespace DialysisInsight
 
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
                 smtpClient.Port = 587;
-                smtpClient.Credentials = new System.Net.NetworkCredential("fhamyla.devera@gmail.com", "ligs qoqe zeox guar\r\n");
+                smtpClient.Credentials = new System.Net.NetworkCredential("fhamyla.devera@gmail.com", "gshq gyxm pggj wscf\r\n");
                 smtpClient.EnableSsl = true;
                 smtpClient.Send(message);
 
