@@ -36,7 +36,7 @@
             // guna2Panel1
             // 
             guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(-7, -5);
+            guna2Panel1.Location = new Point(68, 27);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(897, 562);
