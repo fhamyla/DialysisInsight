@@ -84,7 +84,7 @@
             calender.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             calender.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             calender.FillColor = Color.FromArgb(64, 64, 64);
-            calender.Font = new Font("Segoe UI", 9F);
+            calender.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             calender.ForeColor = Color.White;
             calender.ImageAlign = HorizontalAlignment.Left;
             calender.Location = new Point(0, 0);
@@ -104,7 +104,7 @@
             addhealthdata.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             addhealthdata.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             addhealthdata.FillColor = Color.FromArgb(64, 64, 64);
-            addhealthdata.Font = new Font("Segoe UI", 9F);
+            addhealthdata.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             addhealthdata.ForeColor = Color.White;
             addhealthdata.ImageAlign = HorizontalAlignment.Left;
             addhealthdata.Location = new Point(0, 51);
@@ -124,7 +124,7 @@
             settings.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             settings.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             settings.FillColor = Color.FromArgb(64, 64, 64);
-            settings.Font = new Font("Segoe UI", 9F);
+            settings.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             settings.ForeColor = Color.White;
             settings.ImageAlign = HorizontalAlignment.Left;
             settings.Location = new Point(0, 102);
@@ -144,7 +144,7 @@
             logout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             logout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             logout.FillColor = Color.FromArgb(64, 64, 64);
-            logout.Font = new Font("Segoe UI", 9F);
+            logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             logout.ForeColor = Color.White;
             logout.ImageAlign = HorizontalAlignment.Left;
             logout.Location = new Point(0, 186);
