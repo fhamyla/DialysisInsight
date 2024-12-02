@@ -39,7 +39,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -89,6 +88,7 @@
             calender.ForeColor = Color.White;
             calender.HoverState.FillColor = Color.White;
             calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            calender.HoverState.Image = DialysisInsight.Properties.Resources.calendar1;
             calender.Image = DialysisInsight.Properties.Resources.calendar;
             calender.ImageAlign = HorizontalAlignment.Left;
             calender.Location = new Point(0, 0);
@@ -112,7 +112,8 @@
             addhealthdata.ForeColor = Color.White;
             addhealthdata.HoverState.FillColor = Color.White;
             addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            addhealthdata.Image = DialysisInsight.Properties.Resources.archive;
+            addhealthdata.HoverState.Image = DialysisInsight.Properties.Resources.add_folder__1_;
+            addhealthdata.Image = DialysisInsight.Properties.Resources.add_folder;
             addhealthdata.ImageAlign = HorizontalAlignment.Left;
             addhealthdata.Location = new Point(0, 51);
             addhealthdata.Name = "addhealthdata";
@@ -135,6 +136,7 @@
             settings.ForeColor = Color.White;
             settings.HoverState.FillColor = Color.White;
             settings.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            settings.HoverState.Image = DialysisInsight.Properties.Resources.settings1;
             settings.Image = DialysisInsight.Properties.Resources.settings;
             settings.ImageAlign = HorizontalAlignment.Left;
             settings.Location = new Point(0, 102);
@@ -158,8 +160,8 @@
             logout.ForeColor = Color.White;
             logout.HoverState.FillColor = Color.White;
             logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            logout.HoverState.Image = (Image)resources.GetObject("resource.Image");
-            logout.Image = (Image)resources.GetObject("logout.Image");
+            logout.HoverState.Image = DialysisInsight.Properties.Resources.logout__1_;
+            logout.Image = DialysisInsight.Properties.Resources.logout;
             logout.ImageAlign = HorizontalAlignment.Left;
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
@@ -168,6 +170,7 @@
             logout.TabIndex = 4;
             logout.Text = "Logout";
             logout.TextAlign = HorizontalAlignment.Left;
+            logout.Click += logout_Click;
             // 
             // Dashboard
             // 
