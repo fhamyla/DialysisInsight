@@ -88,8 +88,6 @@
             calender.ForeColor = Color.White;
             calender.HoverState.FillColor = Color.White;
             calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            calender.HoverState.Image = DialysisInsight.Properties.Resources.calendar1;
-            calender.Image = DialysisInsight.Properties.Resources.calendar;
             calender.ImageAlign = HorizontalAlignment.Left;
             calender.Location = new Point(0, 0);
             calender.Name = "calender";
@@ -112,8 +110,6 @@
             addhealthdata.ForeColor = Color.White;
             addhealthdata.HoverState.FillColor = Color.White;
             addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            addhealthdata.HoverState.Image = DialysisInsight.Properties.Resources.add_folder__1_;
-            addhealthdata.Image = DialysisInsight.Properties.Resources.add_folder;
             addhealthdata.ImageAlign = HorizontalAlignment.Left;
             addhealthdata.Location = new Point(0, 51);
             addhealthdata.Name = "addhealthdata";
@@ -136,8 +132,6 @@
             settings.ForeColor = Color.White;
             settings.HoverState.FillColor = Color.White;
             settings.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            settings.HoverState.Image = DialysisInsight.Properties.Resources.settings1;
-            settings.Image = DialysisInsight.Properties.Resources.settings;
             settings.ImageAlign = HorizontalAlignment.Left;
             settings.Location = new Point(0, 102);
             settings.Name = "settings";
@@ -160,8 +154,6 @@
             logout.ForeColor = Color.White;
             logout.HoverState.FillColor = Color.White;
             logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            logout.HoverState.Image = DialysisInsight.Properties.Resources.logout__1_;
-            logout.Image = DialysisInsight.Properties.Resources.logout;
             logout.ImageAlign = HorizontalAlignment.Left;
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
