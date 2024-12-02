@@ -32,20 +32,20 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            calender = new Guna.UI2.WinForms.Guna2Button();
-            addhealthdata = new Guna.UI2.WinForms.Guna2Button();
-            settings = new Guna.UI2.WinForms.Guna2Button();
             logout = new Guna.UI2.WinForms.Guna2Button();
+            settings = new Guna.UI2.WinForms.Guna2Button();
+            addhealthdata = new Guna.UI2.WinForms.Guna2Button();
+            calender = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             SuspendLayout();
@@ -75,49 +75,28 @@
             guna2Panel2.Size = new Size(155, 231);
             guna2Panel2.TabIndex = 0;
             // 
-            // calender
+            // logout
             // 
-            calender.BorderRadius = 10;
-            calender.CustomizableEdges = customizableEdges7;
-            calender.DisabledState.BorderColor = Color.DarkGray;
-            calender.DisabledState.CustomBorderColor = Color.DarkGray;
-            calender.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            calender.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            calender.FillColor = Color.FromArgb(64, 64, 64);
-            calender.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            calender.ForeColor = Color.White;
-            calender.HoverState.FillColor = Color.White;
-            calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            calender.ImageAlign = HorizontalAlignment.Left;
-            calender.Location = new Point(0, 0);
-            calender.Name = "calender";
-            calender.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            calender.Size = new Size(155, 45);
-            calender.TabIndex = 1;
-            calender.Text = "Calender";
-            calender.TextAlign = HorizontalAlignment.Left;
-            // 
-            // addhealthdata
-            // 
-            addhealthdata.BorderRadius = 10;
-            addhealthdata.CustomizableEdges = customizableEdges5;
-            addhealthdata.DisabledState.BorderColor = Color.DarkGray;
-            addhealthdata.DisabledState.CustomBorderColor = Color.DarkGray;
-            addhealthdata.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            addhealthdata.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            addhealthdata.FillColor = Color.FromArgb(64, 64, 64);
-            addhealthdata.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            addhealthdata.ForeColor = Color.White;
-            addhealthdata.HoverState.FillColor = Color.White;
-            addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            addhealthdata.ImageAlign = HorizontalAlignment.Left;
-            addhealthdata.Location = new Point(0, 51);
-            addhealthdata.Name = "addhealthdata";
-            addhealthdata.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            addhealthdata.Size = new Size(155, 45);
-            addhealthdata.TabIndex = 2;
-            addhealthdata.Text = "Health Data";
-            addhealthdata.TextAlign = HorizontalAlignment.Left;
+            logout.BorderRadius = 10;
+            logout.CustomizableEdges = customizableEdges1;
+            logout.DisabledState.BorderColor = Color.DarkGray;
+            logout.DisabledState.CustomBorderColor = Color.DarkGray;
+            logout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            logout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            logout.FillColor = Color.FromArgb(64, 64, 64);
+            logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            logout.ForeColor = Color.White;
+            logout.HoverState.FillColor = Color.White;
+            logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            logout.ImageAlign = HorizontalAlignment.Left;
+            logout.Location = new Point(0, 186);
+            logout.Name = "logout";
+            logout.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            logout.Size = new Size(155, 45);
+            logout.TabIndex = 4;
+            logout.Text = "Logout";
+            logout.TextAlign = HorizontalAlignment.Left;
+            logout.Click += logout_Click;
             // 
             // settings
             // 
@@ -141,28 +120,49 @@
             settings.Text = "Settings";
             settings.TextAlign = HorizontalAlignment.Left;
             // 
-            // logout
+            // addhealthdata
             // 
-            logout.BorderRadius = 10;
-            logout.CustomizableEdges = customizableEdges1;
-            logout.DisabledState.BorderColor = Color.DarkGray;
-            logout.DisabledState.CustomBorderColor = Color.DarkGray;
-            logout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            logout.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            logout.FillColor = Color.FromArgb(64, 64, 64);
-            logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            logout.ForeColor = Color.White;
-            logout.HoverState.FillColor = Color.White;
-            logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            logout.ImageAlign = HorizontalAlignment.Left;
-            logout.Location = new Point(0, 186);
-            logout.Name = "logout";
-            logout.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            logout.Size = new Size(155, 45);
-            logout.TabIndex = 4;
-            logout.Text = "Logout";
-            logout.TextAlign = HorizontalAlignment.Left;
-            logout.Click += logout_Click;
+            addhealthdata.BorderRadius = 10;
+            addhealthdata.CustomizableEdges = customizableEdges5;
+            addhealthdata.DisabledState.BorderColor = Color.DarkGray;
+            addhealthdata.DisabledState.CustomBorderColor = Color.DarkGray;
+            addhealthdata.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            addhealthdata.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            addhealthdata.FillColor = Color.FromArgb(64, 64, 64);
+            addhealthdata.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            addhealthdata.ForeColor = Color.White;
+            addhealthdata.HoverState.FillColor = Color.White;
+            addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            addhealthdata.ImageAlign = HorizontalAlignment.Left;
+            addhealthdata.Location = new Point(0, 51);
+            addhealthdata.Name = "addhealthdata";
+            addhealthdata.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            addhealthdata.Size = new Size(155, 45);
+            addhealthdata.TabIndex = 2;
+            addhealthdata.Text = "Health Data";
+            addhealthdata.TextAlign = HorizontalAlignment.Left;
+            // 
+            // calender
+            // 
+            calender.BorderRadius = 10;
+            calender.CustomizableEdges = customizableEdges7;
+            calender.DisabledState.BorderColor = Color.DarkGray;
+            calender.DisabledState.CustomBorderColor = Color.DarkGray;
+            calender.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            calender.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            calender.FillColor = Color.FromArgb(64, 64, 64);
+            calender.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            calender.ForeColor = Color.White;
+            calender.HoverState.FillColor = Color.White;
+            calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            calender.ImageAlign = HorizontalAlignment.Left;
+            calender.Location = new Point(0, 0);
+            calender.Name = "calender";
+            calender.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            calender.Size = new Size(155, 45);
+            calender.TabIndex = 1;
+            calender.Text = "Calender";
+            calender.TextAlign = HorizontalAlignment.Left;
             // 
             // Dashboard
             // 
