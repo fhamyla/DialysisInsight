@@ -39,6 +39,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -86,6 +87,9 @@
             calender.FillColor = Color.FromArgb(64, 64, 64);
             calender.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             calender.ForeColor = Color.White;
+            calender.HoverState.FillColor = Color.White;
+            calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            calender.Image = DialysisInsight.Properties.Resources.calendar;
             calender.ImageAlign = HorizontalAlignment.Left;
             calender.Location = new Point(0, 0);
             calender.Name = "calender";
@@ -106,6 +110,9 @@
             addhealthdata.FillColor = Color.FromArgb(64, 64, 64);
             addhealthdata.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             addhealthdata.ForeColor = Color.White;
+            addhealthdata.HoverState.FillColor = Color.White;
+            addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            addhealthdata.Image = DialysisInsight.Properties.Resources.archive;
             addhealthdata.ImageAlign = HorizontalAlignment.Left;
             addhealthdata.Location = new Point(0, 51);
             addhealthdata.Name = "addhealthdata";
@@ -126,6 +133,9 @@
             settings.FillColor = Color.FromArgb(64, 64, 64);
             settings.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             settings.ForeColor = Color.White;
+            settings.HoverState.FillColor = Color.White;
+            settings.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            settings.Image = DialysisInsight.Properties.Resources.settings;
             settings.ImageAlign = HorizontalAlignment.Left;
             settings.Location = new Point(0, 102);
             settings.Name = "settings";
@@ -146,6 +156,10 @@
             logout.FillColor = Color.FromArgb(64, 64, 64);
             logout.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             logout.ForeColor = Color.White;
+            logout.HoverState.FillColor = Color.White;
+            logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            logout.HoverState.Image = (Image)resources.GetObject("resource.Image");
+            logout.Image = (Image)resources.GetObject("logout.Image");
             logout.ImageAlign = HorizontalAlignment.Left;
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
