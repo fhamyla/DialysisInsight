@@ -47,22 +47,17 @@ namespace DialysisInsight
         {
             int iconSize = 58;
 
-            // Set Logout button icon and alignment
             logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, iconSize, FlipOrientation.Normal);
             logout.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleCenter;
             logout.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
 
-            // Set Calendar button icon and alignment
             calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             calender.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
             calender.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
 
-
-            // Set Add Health Data button icon and alignment
             addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             addhealthdata.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
 
-            // Set Settings button icon and alignment
             settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             settings.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
             settings.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
@@ -71,44 +66,40 @@ namespace DialysisInsight
         private void AddHoverEffects()
         {
             int iconSize = 58;
-            // Hover effect for logout button
             logout.MouseEnter += (sender, e) =>
             {
-                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.DimGray, 0, FlipOrientation.Normal);  // Change icon color on hover
+                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.Black, 0, FlipOrientation.Normal);
             };
             logout.MouseLeave += (sender, e) =>
             {
-                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Revert icon color
+                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             };
 
-            // Hover effect for calendar button
             calender.MouseEnter += (sender, e) =>
             {
-                calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.Green, 0, FlipOrientation.Normal);  // Change icon color on hover
+                calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.Green, 0, FlipOrientation.Normal);
             };
             calender.MouseLeave += (sender, e) =>
             {
-                calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Revert icon color
+                calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             };
 
-            // Hover effect for add health data button
             addhealthdata.MouseEnter += (sender, e) =>
             {
-                addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.Red, 0, FlipOrientation.Normal);  // Change icon color on hover
+                addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.Red, 0, FlipOrientation.Normal);
             };
             addhealthdata.MouseLeave += (sender, e) =>
             {
-                addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Revert icon color
+                addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             };
 
-            // Hover effect for settings button
             settings.MouseEnter += (sender, e) =>
             {
-                settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.Purple, 0, FlipOrientation.Normal);  // Change icon color on hover
+                settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.Purple, 0, FlipOrientation.Normal);
             };
             settings.MouseLeave += (sender, e) =>
             {
-                settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Revert icon color
+                settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             };
         }
     }
