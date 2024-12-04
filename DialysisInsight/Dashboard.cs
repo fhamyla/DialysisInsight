@@ -30,17 +30,23 @@ namespace DialysisInsight
 
         private void calender_Click(object sender, EventArgs e)
         {
-
+            Calendar calendar = new Calendar();
+            calendar.Show();
+            this.Hide();
         }
 
         private void addhealthdata_Click(object sender, EventArgs e)
         {
-
+            HealthData healthData = new HealthData();
+            healthData.Show();
+            this.Hide();
         }
 
         private void settings_Click(object sender, EventArgs e)
         {
-
+            Settings settings = new Settings();
+            settings.Show();
+            this.Hide();
         }
 
         private void AddIcons()
