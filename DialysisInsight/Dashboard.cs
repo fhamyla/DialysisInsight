@@ -46,18 +46,26 @@ namespace DialysisInsight
         private void AddIcons()
         {
             int iconSize = 58;
-            // Convert FontAwesome icon to Bitmap and assign it to the button
-            logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Logout icon
-            logout.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;  // Align icon to the left
 
-            calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Calendar icon
-            calender.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;  // Align icon to the left
+            // Set Logout button icon and alignment
+            logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, iconSize, FlipOrientation.Normal);
+            logout.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleCenter;
 
-            addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Add health data icon
-            addhealthdata.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;  // Align icon to the left
+            // Set Calendar button icon and alignment
+            calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
+            calender.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
+            calender.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
 
-            settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);  // Settings icon
-            settings.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;  // Align icon to the left
+
+            // Set Add Health Data button icon and alignment
+            addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
+            addhealthdata.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
+            addhealthdata.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
+
+            // Set Settings button icon and alignment
+            settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
+            settings.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
+            settings.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
         }
 
         private void AddHoverEffects()

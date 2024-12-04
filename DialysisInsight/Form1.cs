@@ -3,6 +3,9 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Net.Mail;
+using FontAwesome.Sharp;
+using Guna.UI2.WinForms;
+using System.Drawing;
 
 namespace DialysisInsight
 {
@@ -13,6 +16,28 @@ namespace DialysisInsight
         {
             InitializeComponent();
             con = new OleDbConnection(DialysisInsight.ConnectionString);
+            AddIcons();
+            login.MouseEnter += (s, e) => Hover(login, true);
+            login.MouseLeave += (s, e) => Hover(login, false);
+        }
+        
+        private void AddIcons()
+        {
+            exit.Image = IconChar.Times.ToBitmap(IconFont.Auto, 58, Color.Black, 0, FlipOrientation.Normal); // Exit icon
+        }
+
+        private void Hover(Button button, bool isHovered)
+        {
+            if (isHovered)
+            {
+                button.BackColor = Color.DimGray;
+                button.ForeColor = Color.White;
+            }
+            else
+            {
+                button.BackColor = Color.Black;
+                button.ForeColor = Color.White;
+            }
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -127,6 +152,11 @@ namespace DialysisInsight
             CreateAccount createaccount = new CreateAccount();
             createaccount.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

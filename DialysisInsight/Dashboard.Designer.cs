@@ -88,7 +88,6 @@
             logout.ForeColor = Color.White;
             logout.HoverState.FillColor = Color.White;
             logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
-            logout.ImageAlign = HorizontalAlignment.Left;
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
             logout.ShadowDecoration.CustomizableEdges = customizableEdges2;

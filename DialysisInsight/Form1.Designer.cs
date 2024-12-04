@@ -169,8 +169,6 @@
             // 
             exit.BackgroundImageLayout = ImageLayout.None;
             exit.CheckedState.ImageSize = new Size(64, 64);
-            exit.HoverState.ImageSize = new Size(64, 64);
-            exit.Image = Properties.Resources.cross;
             exit.ImageOffset = new Point(0, 0);
             exit.ImageRotate = 0F;
             exit.ImageSize = new Size(30, 30);
@@ -259,6 +257,7 @@
             Name = "Form1";
             ShowIcon = false;
             ShowInTaskbar = false;
+            Load += Form1_Load;
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
             ResumeLayout(false);
