@@ -23,7 +23,7 @@ namespace DialysisInsight
         
         private void AddIcons()
         {
-            exit.Image = IconChar.Times.ToBitmap(IconFont.Auto, 58, Color.Black, 0, FlipOrientation.Normal); // Exit icon
+            exit.Image = IconChar.Times.ToBitmap(IconFont.Auto, 58, Color.Black, 0, FlipOrientation.Normal);
         }
 
         private void Hover(Button button, bool isHovered)
