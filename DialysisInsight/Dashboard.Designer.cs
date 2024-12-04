@@ -119,6 +119,7 @@
             settings.TabIndex = 3;
             settings.Text = "Settings";
             settings.TextAlign = HorizontalAlignment.Left;
+            settings.Click += settings_Click;
             // 
             // addhealthdata
             // 
@@ -141,6 +142,7 @@
             addhealthdata.TabIndex = 2;
             addhealthdata.Text = "Health Data";
             addhealthdata.TextAlign = HorizontalAlignment.Left;
+            addhealthdata.Click += addhealthdata_Click;
             // 
             // calender
             // 
@@ -161,8 +163,9 @@
             calender.ShadowDecoration.CustomizableEdges = customizableEdges8;
             calender.Size = new Size(155, 45);
             calender.TabIndex = 1;
-            calender.Text = "Calender";
+            calender.Text = "Calendar";
             calender.TextAlign = HorizontalAlignment.Left;
+            calender.Click += calender_Click;
             // 
             // Dashboard
             // 
