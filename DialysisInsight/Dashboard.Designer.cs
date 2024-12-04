@@ -88,6 +88,7 @@
             logout.ForeColor = Color.White;
             logout.HoverState.FillColor = Color.White;
             logout.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
+            logout.ImageSize = new Size(40, 40);
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
             logout.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -111,6 +112,7 @@
             settings.HoverState.FillColor = Color.White;
             settings.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
             settings.ImageAlign = HorizontalAlignment.Left;
+            settings.ImageSize = new Size(40, 40);
             settings.Location = new Point(0, 102);
             settings.Name = "settings";
             settings.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -134,13 +136,14 @@
             addhealthdata.HoverState.FillColor = Color.White;
             addhealthdata.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
             addhealthdata.ImageAlign = HorizontalAlignment.Left;
+            addhealthdata.ImageSize = new Size(40, 40);
             addhealthdata.Location = new Point(0, 51);
             addhealthdata.Name = "addhealthdata";
             addhealthdata.ShadowDecoration.CustomizableEdges = customizableEdges6;
             addhealthdata.Size = new Size(155, 45);
             addhealthdata.TabIndex = 2;
             addhealthdata.Text = "Health Data";
-            addhealthdata.TextAlign = HorizontalAlignment.Left;
+            addhealthdata.TextAlign = HorizontalAlignment.Right;
             addhealthdata.Click += addhealthdata_Click;
             // 
             // calender
@@ -157,6 +160,7 @@
             calender.HoverState.FillColor = Color.White;
             calender.HoverState.ForeColor = Color.FromArgb(64, 64, 64);
             calender.ImageAlign = HorizontalAlignment.Left;
+            calender.ImageSize = new Size(40, 40);
             calender.Location = new Point(0, 0);
             calender.Name = "calender";
             calender.ShadowDecoration.CustomizableEdges = customizableEdges8;

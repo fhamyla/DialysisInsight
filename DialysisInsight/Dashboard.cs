@@ -17,7 +17,7 @@ namespace DialysisInsight
         public Dashboard()
         {
             InitializeComponent();
-            AddIcons(); // Call the method after the form is initialized
+            AddIcons();
             AddHoverEffects();
         }
 
@@ -50,6 +50,7 @@ namespace DialysisInsight
             // Set Logout button icon and alignment
             logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, iconSize, FlipOrientation.Normal);
             logout.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleCenter;
+            logout.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
 
             // Set Calendar button icon and alignment
             calender.Image = IconChar.CalendarAlt.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
@@ -60,7 +61,6 @@ namespace DialysisInsight
             // Set Add Health Data button icon and alignment
             addhealthdata.Image = IconChar.PlusCircle.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             addhealthdata.ImageAlign = (HorizontalAlignment)ContentAlignment.MiddleLeft;
-            addhealthdata.TextAlign = (HorizontalAlignment)TextImageRelation.ImageBeforeText;
 
             // Set Settings button icon and alignment
             settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
@@ -74,7 +74,7 @@ namespace DialysisInsight
             // Hover effect for logout button
             logout.MouseEnter += (sender, e) =>
             {
-                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.Black, 0, FlipOrientation.Normal);  // Change icon color on hover
+                logout.Image = IconChar.SignOutAlt.ToBitmap(IconFont.Auto, iconSize, Color.DimGray, 0, FlipOrientation.Normal);  // Change icon color on hover
             };
             logout.MouseLeave += (sender, e) =>
             {
