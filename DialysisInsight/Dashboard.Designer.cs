@@ -31,6 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,19 +44,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            notify = new FontAwesome.Sharp.IconPictureBox();
+            search = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             logout = new Guna.UI2.WinForms.Guna2Button();
             settings = new Guna.UI2.WinForms.Guna2Button();
             addhealthdata = new Guna.UI2.WinForms.Guna2Button();
             calender = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)notify).BeginInit();
             guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(guna2TextBox1);
+            guna2Panel1.Controls.Add(notify);
+            guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges13;
             guna2Panel1.Location = new Point(-7, -6);
@@ -64,26 +68,41 @@
             guna2Panel1.Size = new Size(897, 567);
             guna2Panel1.TabIndex = 0;
             // 
-            // guna2TextBox1
+            // notify
             // 
-            guna2TextBox1.BorderRadius = 15;
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(183, 18);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(696, 36);
-            guna2TextBox1.TabIndex = 1;
+            notify.BackColor = Color.White;
+            notify.BackgroundImageLayout = ImageLayout.Center;
+            notify.ForeColor = Color.Maroon;
+            notify.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            notify.IconColor = Color.Maroon;
+            notify.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            notify.Location = new Point(847, 18);
+            notify.Name = "notify";
+            notify.Size = new Size(32, 36);
+            notify.TabIndex = 2;
+            notify.TabStop = false;
+            // 
+            // search
+            // 
+            search.BorderRadius = 15;
+            search.CustomizableEdges = customizableEdges1;
+            search.DefaultText = "";
+            search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            search.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            search.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            search.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            search.Font = new Font("Segoe UI", 9F);
+            search.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            search.IconRight = (Image)resources.GetObject("search.IconRight");
+            search.Location = new Point(539, 18);
+            search.Name = "search";
+            search.PasswordChar = '\0';
+            search.PlaceholderText = "search";
+            search.SelectedText = "";
+            search.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            search.Size = new Size(302, 36);
+            search.TabIndex = 1;
             // 
             // guna2Panel2
             // 
@@ -207,6 +226,7 @@
             Name = "Dashboard";
             ShowIcon = false;
             guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -219,6 +239,7 @@
         private Guna.UI2.WinForms.Guna2Button settings;
         private Guna.UI2.WinForms.Guna2Button addhealthdata;
         private Guna.UI2.WinForms.Guna2Button calender;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox search;
+        private FontAwesome.Sharp.IconPictureBox notify;
     }
 }
