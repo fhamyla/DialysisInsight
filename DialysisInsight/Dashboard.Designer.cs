@@ -129,7 +129,7 @@
             // 
             // guna2Panel2
             // 
-            guna2Panel2.BackColor = Color.FromArgb(234, 234, 234);
+            guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderRadius = 10;
             guna2Panel2.Controls.Add(logout);
             guna2Panel2.Controls.Add(settings);
