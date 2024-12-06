@@ -28,39 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            dialysisinsight = new Guna.UI2.WinForms.Guna2Panel();
+            healthpressure = new Guna.UI2.WinForms.Guna2Panel();
+            sugarlevel = new Guna.UI2.WinForms.Guna2Panel();
+            heartrate = new Guna.UI2.WinForms.Guna2Panel();
+            weight = new Guna.UI2.WinForms.Guna2Panel();
             user = new Guna.UI2.WinForms.Guna2HtmlLabel();
             DateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             notify = new FontAwesome.Sharp.IconPictureBox();
@@ -78,90 +78,90 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
-            guna2Panel1.Controls.Add(guna2Panel7);
-            guna2Panel1.Controls.Add(guna2Panel6);
-            guna2Panel1.Controls.Add(guna2Panel5);
-            guna2Panel1.Controls.Add(guna2Panel4);
-            guna2Panel1.Controls.Add(guna2Panel3);
+            guna2Panel1.Controls.Add(dialysisinsight);
+            guna2Panel1.Controls.Add(healthpressure);
+            guna2Panel1.Controls.Add(sugarlevel);
+            guna2Panel1.Controls.Add(heartrate);
+            guna2Panel1.Controls.Add(weight);
             guna2Panel1.Controls.Add(user);
             guna2Panel1.Controls.Add(DateTime);
             guna2Panel1.Controls.Add(notify);
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
-            guna2Panel1.CustomizableEdges = customizableEdges25;
+            guna2Panel1.CustomizableEdges = customizableEdges51;
             guna2Panel1.Location = new Point(-3, -1);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges52;
             guna2Panel1.Size = new Size(891, 557);
             guna2Panel1.TabIndex = 0;
             // 
-            // guna2Panel7
+            // dialysisinsight
             // 
-            guna2Panel7.BackColor = Color.Transparent;
-            guna2Panel7.BorderColor = Color.Gray;
-            guna2Panel7.BorderRadius = 10;
-            guna2Panel7.BorderThickness = 1;
-            guna2Panel7.CustomizableEdges = customizableEdges1;
-            guna2Panel7.FillColor = Color.White;
-            guna2Panel7.Location = new Point(459, 269);
-            guna2Panel7.Name = "guna2Panel7";
-            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel7.Size = new Size(420, 273);
-            guna2Panel7.TabIndex = 14;
+            dialysisinsight.BackColor = Color.Transparent;
+            dialysisinsight.BorderColor = Color.Gray;
+            dialysisinsight.BorderRadius = 10;
+            dialysisinsight.BorderThickness = 1;
+            dialysisinsight.CustomizableEdges = customizableEdges27;
+            dialysisinsight.FillColor = Color.White;
+            dialysisinsight.Location = new Point(459, 269);
+            dialysisinsight.Name = "dialysisinsight";
+            dialysisinsight.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            dialysisinsight.Size = new Size(420, 273);
+            dialysisinsight.TabIndex = 14;
             // 
-            // guna2Panel6
+            // healthpressure
             // 
-            guna2Panel6.BackColor = Color.Transparent;
-            guna2Panel6.BorderColor = Color.Gray;
-            guna2Panel6.BorderRadius = 10;
-            guna2Panel6.BorderThickness = 1;
-            guna2Panel6.CustomizableEdges = customizableEdges3;
-            guna2Panel6.FillColor = Color.White;
-            guna2Panel6.Location = new Point(19, 269);
-            guna2Panel6.Name = "guna2Panel6";
-            guna2Panel6.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel6.Size = new Size(420, 273);
-            guna2Panel6.TabIndex = 13;
+            healthpressure.BackColor = Color.Transparent;
+            healthpressure.BorderColor = Color.Gray;
+            healthpressure.BorderRadius = 10;
+            healthpressure.BorderThickness = 1;
+            healthpressure.CustomizableEdges = customizableEdges29;
+            healthpressure.FillColor = Color.White;
+            healthpressure.Location = new Point(19, 269);
+            healthpressure.Name = "healthpressure";
+            healthpressure.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            healthpressure.Size = new Size(420, 273);
+            healthpressure.TabIndex = 13;
             // 
-            // guna2Panel5
+            // sugarlevel
             // 
-            guna2Panel5.BackColor = Color.Transparent;
-            guna2Panel5.BorderRadius = 10;
-            guna2Panel5.CustomizableEdges = customizableEdges5;
-            guna2Panel5.FillColor = Color.FromArgb(207, 226, 243);
-            guna2Panel5.Location = new Point(658, 69);
-            guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel5.Size = new Size(221, 180);
-            guna2Panel5.TabIndex = 12;
+            sugarlevel.BackColor = Color.Transparent;
+            sugarlevel.BorderRadius = 10;
+            sugarlevel.CustomizableEdges = customizableEdges31;
+            sugarlevel.FillColor = Color.FromArgb(207, 226, 243);
+            sugarlevel.Location = new Point(658, 69);
+            sugarlevel.Name = "sugarlevel";
+            sugarlevel.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            sugarlevel.Size = new Size(221, 180);
+            sugarlevel.TabIndex = 12;
             // 
-            // guna2Panel4
+            // heartrate
             // 
-            guna2Panel4.BackColor = Color.Transparent;
-            guna2Panel4.BorderColor = Color.Gray;
-            guna2Panel4.BorderRadius = 10;
-            guna2Panel4.BorderThickness = 1;
-            guna2Panel4.CustomizableEdges = customizableEdges7;
-            guna2Panel4.FillColor = Color.White;
-            guna2Panel4.Location = new Point(429, 78);
-            guna2Panel4.Name = "guna2Panel4";
-            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel4.Size = new Size(200, 151);
-            guna2Panel4.TabIndex = 11;
+            heartrate.BackColor = Color.Transparent;
+            heartrate.BorderColor = Color.Gray;
+            heartrate.BorderRadius = 10;
+            heartrate.BorderThickness = 1;
+            heartrate.CustomizableEdges = customizableEdges33;
+            heartrate.FillColor = Color.White;
+            heartrate.Location = new Point(429, 78);
+            heartrate.Name = "heartrate";
+            heartrate.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            heartrate.Size = new Size(200, 151);
+            heartrate.TabIndex = 11;
             // 
-            // guna2Panel3
+            // weight
             // 
-            guna2Panel3.BackColor = Color.Transparent;
-            guna2Panel3.BorderColor = Color.Gray;
-            guna2Panel3.BorderRadius = 10;
-            guna2Panel3.BorderThickness = 1;
-            guna2Panel3.CustomizableEdges = customizableEdges9;
-            guna2Panel3.FillColor = Color.White;
-            guna2Panel3.Location = new Point(199, 78);
-            guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel3.Size = new Size(200, 151);
-            guna2Panel3.TabIndex = 10;
+            weight.BackColor = Color.Transparent;
+            weight.BorderColor = Color.Gray;
+            weight.BorderRadius = 10;
+            weight.BorderThickness = 1;
+            weight.CustomizableEdges = customizableEdges35;
+            weight.FillColor = Color.White;
+            weight.Location = new Point(199, 78);
+            weight.Name = "weight";
+            weight.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            weight.Size = new Size(200, 151);
+            weight.TabIndex = 10;
             // 
             // user
             // 
@@ -179,7 +179,7 @@
             DateTime.BorderColor = Color.White;
             DateTime.BorderRadius = 15;
             DateTime.Checked = true;
-            DateTime.CustomizableEdges = customizableEdges11;
+            DateTime.CustomizableEdges = customizableEdges37;
             DateTime.FillColor = Color.FromArgb(64, 64, 64);
             DateTime.Font = new Font("Segoe UI", 9F);
             DateTime.ForeColor = Color.White;
@@ -188,7 +188,7 @@
             DateTime.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateTime.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateTime.Name = "DateTime";
-            DateTime.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            DateTime.ShadowDecoration.CustomizableEdges = customizableEdges38;
             DateTime.Size = new Size(205, 36);
             DateTime.TabIndex = 3;
             DateTime.Value = new DateTime(2024, 12, 5, 18, 29, 5, 59);
@@ -210,7 +210,7 @@
             // search
             // 
             search.BorderRadius = 15;
-            search.CustomizableEdges = customizableEdges13;
+            search.CustomizableEdges = customizableEdges39;
             search.DefaultText = "";
             search.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             search.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -225,7 +225,7 @@
             search.PasswordChar = '\0';
             search.PlaceholderText = "search";
             search.SelectedText = "";
-            search.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            search.ShadowDecoration.CustomizableEdges = customizableEdges40;
             search.Size = new Size(212, 36);
             search.TabIndex = 1;
             // 
@@ -237,17 +237,17 @@
             guna2Panel2.Controls.Add(settings);
             guna2Panel2.Controls.Add(addhealthdata);
             guna2Panel2.Controls.Add(calender);
-            guna2Panel2.CustomizableEdges = customizableEdges23;
+            guna2Panel2.CustomizableEdges = customizableEdges49;
             guna2Panel2.Location = new Point(19, 18);
             guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges50;
             guna2Panel2.Size = new Size(158, 231);
             guna2Panel2.TabIndex = 0;
             // 
             // logout
             // 
             logout.BorderRadius = 10;
-            logout.CustomizableEdges = customizableEdges15;
+            logout.CustomizableEdges = customizableEdges41;
             logout.DisabledState.BorderColor = Color.DarkGray;
             logout.DisabledState.CustomBorderColor = Color.DarkGray;
             logout.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,7 +260,7 @@
             logout.ImageSize = new Size(40, 40);
             logout.Location = new Point(0, 186);
             logout.Name = "logout";
-            logout.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            logout.ShadowDecoration.CustomizableEdges = customizableEdges42;
             logout.Size = new Size(155, 45);
             logout.TabIndex = 4;
             logout.Text = "Logout";
@@ -270,7 +270,7 @@
             // settings
             // 
             settings.BorderRadius = 10;
-            settings.CustomizableEdges = customizableEdges17;
+            settings.CustomizableEdges = customizableEdges43;
             settings.DisabledState.BorderColor = Color.DarkGray;
             settings.DisabledState.CustomBorderColor = Color.DarkGray;
             settings.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -284,7 +284,7 @@
             settings.ImageSize = new Size(40, 40);
             settings.Location = new Point(0, 102);
             settings.Name = "settings";
-            settings.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            settings.ShadowDecoration.CustomizableEdges = customizableEdges44;
             settings.Size = new Size(155, 45);
             settings.TabIndex = 3;
             settings.Text = "Settings";
@@ -294,7 +294,7 @@
             // addhealthdata
             // 
             addhealthdata.BorderRadius = 10;
-            addhealthdata.CustomizableEdges = customizableEdges19;
+            addhealthdata.CustomizableEdges = customizableEdges45;
             addhealthdata.DisabledState.BorderColor = Color.DarkGray;
             addhealthdata.DisabledState.CustomBorderColor = Color.DarkGray;
             addhealthdata.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -308,7 +308,7 @@
             addhealthdata.ImageSize = new Size(40, 40);
             addhealthdata.Location = new Point(0, 51);
             addhealthdata.Name = "addhealthdata";
-            addhealthdata.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            addhealthdata.ShadowDecoration.CustomizableEdges = customizableEdges46;
             addhealthdata.Size = new Size(155, 45);
             addhealthdata.TabIndex = 2;
             addhealthdata.Text = "Health Data";
@@ -318,7 +318,7 @@
             // calender
             // 
             calender.BorderRadius = 10;
-            calender.CustomizableEdges = customizableEdges21;
+            calender.CustomizableEdges = customizableEdges47;
             calender.DisabledState.BorderColor = Color.DarkGray;
             calender.DisabledState.CustomBorderColor = Color.DarkGray;
             calender.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -332,7 +332,7 @@
             calender.ImageSize = new Size(40, 40);
             calender.Location = new Point(0, 0);
             calender.Name = "calender";
-            calender.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            calender.ShadowDecoration.CustomizableEdges = customizableEdges48;
             calender.Size = new Size(155, 45);
             calender.TabIndex = 1;
             calender.Text = "Calendar";
@@ -369,10 +369,10 @@
         private FontAwesome.Sharp.IconPictureBox notify;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTime;
         private Guna.UI2.WinForms.Guna2HtmlLabel user;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel dialysisinsight;
+        private Guna.UI2.WinForms.Guna2Panel healthpressure;
+        private Guna.UI2.WinForms.Guna2Panel sugarlevel;
+        private Guna.UI2.WinForms.Guna2Panel heartrate;
+        private Guna.UI2.WinForms.Guna2Panel weight;
     }
 }
