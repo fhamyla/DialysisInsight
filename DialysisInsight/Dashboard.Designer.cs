@@ -56,6 +56,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            user = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,7 +70,6 @@
             settings = new Guna.UI2.WinForms.Guna2Button();
             addhealthdata = new Guna.UI2.WinForms.Guna2Button();
             calender = new Guna.UI2.WinForms.Guna2Button();
-            user = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)notify).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -88,11 +88,22 @@
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges25;
-            guna2Panel1.Location = new Point(-7, -6);
+            guna2Panel1.Location = new Point(-3, -1);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Panel1.Size = new Size(897, 567);
+            guna2Panel1.Size = new Size(891, 557);
             guna2Panel1.TabIndex = 0;
+            // 
+            // user
+            // 
+            user.BackColor = Color.Transparent;
+            user.Font = new Font("Lucida Sans Unicode", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            user.ForeColor = Color.FromArgb(64, 64, 64);
+            user.Location = new Point(199, 18);
+            user.Name = "user";
+            user.Size = new Size(60, 27);
+            user.TabIndex = 9;
+            user.Text = "Hello";
             // 
             // guna2TextBox5
             // 
@@ -363,17 +374,6 @@
             calender.Text = "Calendar";
             calender.TextAlign = HorizontalAlignment.Left;
             calender.Click += calender_Click;
-            // 
-            // user
-            // 
-            user.BackColor = Color.Transparent;
-            user.Font = new Font("Lucida Sans Unicode", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            user.ForeColor = Color.FromArgb(64, 64, 64);
-            user.Location = new Point(199, 18);
-            user.Name = "user";
-            user.Size = new Size(60, 27);
-            user.TabIndex = 9;
-            user.Text = "Hello";
             // 
             // Dashboard
             // 
