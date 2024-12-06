@@ -69,6 +69,7 @@
             settings = new Guna.UI2.WinForms.Guna2Button();
             addhealthdata = new Guna.UI2.WinForms.Guna2Button();
             calender = new Guna.UI2.WinForms.Guna2Button();
+            user = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)notify).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(user);
             guna2Panel1.Controls.Add(guna2TextBox5);
             guna2Panel1.Controls.Add(guna2TextBox4);
             guna2Panel1.Controls.Add(guna2TextBox3);
@@ -362,6 +364,17 @@
             calender.TextAlign = HorizontalAlignment.Left;
             calender.Click += calender_Click;
             // 
+            // user
+            // 
+            user.BackColor = Color.Transparent;
+            user.Font = new Font("Lucida Sans Unicode", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            user.ForeColor = Color.FromArgb(64, 64, 64);
+            user.Location = new Point(199, 18);
+            user.Name = "user";
+            user.Size = new Size(60, 27);
+            user.TabIndex = 9;
+            user.Text = "Hello";
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -374,6 +387,7 @@
             Name = "Dashboard";
             ShowIcon = false;
             guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -395,5 +409,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel user;
     }
 }
