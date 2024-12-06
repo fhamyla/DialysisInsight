@@ -108,5 +108,10 @@ namespace DialysisInsight
                 settings.Image = IconChar.Cogs.ToBitmap(IconFont.Auto, iconSize, Color.White, 0, FlipOrientation.Normal);
             };
         }
+
+        private void user_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
