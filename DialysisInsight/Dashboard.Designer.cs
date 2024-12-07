@@ -90,6 +90,8 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
             guna2Panel1.Controls.Add(dialysisinsight);
@@ -103,11 +105,12 @@
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges27;
-            guna2Panel1.Location = new Point(-3, -1);
+            guna2Panel1.Location = new Point(3, 3);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Panel1.Size = new Size(891, 557);
+            guna2Panel1.Size = new Size(886, 548);
             guna2Panel1.TabIndex = 0;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // minmax
             // 
@@ -127,8 +130,9 @@
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
             minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            minmax.Size = new Size(24, 19);
+            minmax.Size = new Size(15, 19);
             minmax.TabIndex = 2;
+            minmax.Click += minmax_Click;
             // 
             // dialysisinsight
             // 
@@ -144,6 +148,7 @@
             dialysisinsight.ShadowDecoration.CustomizableEdges = customizableEdges4;
             dialysisinsight.Size = new Size(420, 273);
             dialysisinsight.TabIndex = 14;
+            dialysisinsight.Paint += dialysisinsight_Paint;
             // 
             // guna2HtmlLabel5
             // 
@@ -170,6 +175,7 @@
             healthpressure.ShadowDecoration.CustomizableEdges = customizableEdges6;
             healthpressure.Size = new Size(420, 273);
             healthpressure.TabIndex = 13;
+            healthpressure.Paint += healthpressure_Paint;
             // 
             // guna2HtmlLabel4
             // 
@@ -194,6 +200,7 @@
             sugarlevel.ShadowDecoration.CustomizableEdges = customizableEdges8;
             sugarlevel.Size = new Size(221, 180);
             sugarlevel.TabIndex = 12;
+            sugarlevel.Paint += sugarlevel_Paint;
             // 
             // guna2HtmlLabel3
             // 
@@ -220,6 +227,7 @@
             heartrate.ShadowDecoration.CustomizableEdges = customizableEdges10;
             heartrate.Size = new Size(200, 151);
             heartrate.TabIndex = 11;
+            heartrate.Paint += heartrate_Paint;
             // 
             // guna2HtmlLabel2
             // 
@@ -246,6 +254,7 @@
             weight.ShadowDecoration.CustomizableEdges = customizableEdges12;
             weight.Size = new Size(200, 151);
             weight.TabIndex = 10;
+            weight.Paint += weight_Paint;
             // 
             // guna2HtmlLabel1
             // 
@@ -288,6 +297,7 @@
             DateTime.Size = new Size(205, 36);
             DateTime.TabIndex = 3;
             DateTime.Value = new DateTime(2024, 12, 5, 18, 29, 5, 59);
+            DateTime.ValueChanged += DateTime_ValueChanged;
             // 
             // notify
             // 
@@ -303,6 +313,7 @@
             notify.Size = new Size(45, 36);
             notify.TabIndex = 2;
             notify.TabStop = false;
+            notify.Click += notify_Click;
             // 
             // search
             // 
@@ -325,6 +336,7 @@
             search.ShadowDecoration.CustomizableEdges = customizableEdges16;
             search.Size = new Size(212, 36);
             search.TabIndex = 1;
+            search.TextChanged += search_TextChanged;
             // 
             // guna2Panel2
             // 
@@ -441,7 +453,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(884, 553);
+            ClientSize = new Size(891, 553);
             ControlBox = false;
             Controls.Add(guna2Panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -462,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
