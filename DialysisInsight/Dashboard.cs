@@ -20,6 +20,7 @@ namespace DialysisInsight
             AddIcons();
             AddHoverEffects();
         }
+
         private void Form_Load(object sender, EventArgs e)
         {
             Rectangle resolutionRect = System.Windows.Forms.Screen.FromControl(this).Bounds;
@@ -160,7 +161,6 @@ namespace DialysisInsight
                 control.Height = (int)(control.Height * scaleFactor);
             }
         }
-
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
