@@ -19,15 +19,34 @@ namespace DialysisInsight
             InitializeComponent();
             AddIcons();
             AddHoverEffects();
-        }
+            this.Resize += Dashboard_Resize;
+            this.AutoScaleMode = AutoScaleMode.Font; // Scale based on font size
+            this.AutoSize = true; // Automatically resize the form
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-        private void Form_Load(object sender, EventArgs e)
-        {
-            Rectangle resolutionRect = System.Windows.Forms.Screen.FromControl(this).Bounds;
-            if (this.Width >= resolutionRect.Width || this.Height >= resolutionRect.Height)
+            logout.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            calender.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addhealthdata.Dock = DockStyle.Bottom;
+
+            TableLayoutPanel panel = new TableLayoutPanel
             {
-                this.WindowState = FormWindowState.Maximized;
-            }
+                Dock = DockStyle.Fill,
+                ColumnCount = 2,
+                RowCount = 2,
+                AutoSize = true
+            };
+
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            panel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            panel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+
+            panel.Controls.Add(logout, 0, 0);
+            panel.Controls.Add(calender, 1, 0);
+            panel.Controls.Add(addhealthdata, 0, 1);
+            panel.Controls.Add(settings, 1, 1);
+
+            this.Controls.Add(panel);
         }
 
         private void logout_Click(object sender, EventArgs e)
@@ -125,41 +144,25 @@ namespace DialysisInsight
 
         }
 
-        private bool isMaximized = false; // Flag to track the state
-
         private void minmax_Click(object sender, EventArgs e)
         {
-            if (isMaximized)
-            {
-                // Restore to original size
-                this.WindowState = FormWindowState.Normal;
-                this.Bounds = new Rectangle(100, 100, 800, 600); // Replace with your original size
-                ScaleControls(guna2Panel1, 0.5f); // Adjust scale factor as needed
-                isMaximized = false;
-            }
-            else
-            {
-                // Maximize the form
-                this.WindowState = FormWindowState.Maximized;
-                ScaleControls(guna2Panel1, 2.0f); // Adjust scale factor as needed
-                isMaximized = true;
-            }
         }
 
-        /// <summary>
-        /// Scales all controls within a panel by a given factor.
-        /// </summary>
-        /// <param name="panel">The panel containing the controls.</param>
-        /// <param name="scaleFactor">The factor by which to scale the controls.</param>
-        private void ScaleControls(Control panel, float scaleFactor)
+        private void Dashboard_Resize(object? sender, EventArgs e)
         {
-            foreach (Control control in panel.Controls)
-            {
-                control.Left = (int)(control.Left * scaleFactor);
-                control.Top = (int)(control.Top * scaleFactor);
-                control.Width = (int)(control.Width * scaleFactor);
-                control.Height = (int)(control.Height * scaleFactor);
-            }
+            int padding = 10;
+            int buttonWidth = (this.ClientSize.Width - 3 * padding) / 2;
+            int buttonHeight = (this.ClientSize.Height - 3 * padding) / 2;
+
+            logout.Size = new Size(buttonWidth, buttonHeight);
+            calender.Size = new Size(buttonWidth, buttonHeight);
+            addhealthdata.Size = new Size(buttonWidth, buttonHeight);
+            settings.Size = new Size(buttonWidth, buttonHeight);
+
+            logout.Location = new Point(padding, padding);
+            calender.Location = new Point(buttonWidth + 2 * padding, padding);
+            addhealthdata.Location = new Point(padding, buttonHeight + 2 * padding);
+            settings.Location = new Point(buttonWidth + 2 * padding, buttonHeight + 2 * padding);
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
