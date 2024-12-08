@@ -109,15 +109,50 @@ namespace DialysisInsight
             };
         }
 
+
+
         private void user_Click(object sender, EventArgs e)
         {
 
         }
 
+        private bool isMaximized = false; // Flag to track the state
+
         private void minmax_Click(object sender, EventArgs e)
         {
-
+            if (isMaximized)
+            {
+                // Restore to original size
+                this.WindowState = FormWindowState.Normal;
+                this.Bounds = new Rectangle(100, 100, 800, 600); // Replace with your original size
+                ScaleControls(guna2Panel1, 0.5f); // Adjust scale factor as needed
+                isMaximized = false;
+            }
+            else
+            {
+                // Maximize the form
+                this.WindowState = FormWindowState.Maximized;
+                ScaleControls(guna2Panel1, 2.0f); // Adjust scale factor as needed
+                isMaximized = true;
+            }
         }
+
+        /// <summary>
+        /// Scales all controls within a panel by a given factor.
+        /// </summary>
+        /// <param name="panel">The panel containing the controls.</param>
+        /// <param name="scaleFactor">The factor by which to scale the controls.</param>
+        private void ScaleControls(Control panel, float scaleFactor)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                control.Left = (int)(control.Left * scaleFactor);
+                control.Top = (int)(control.Top * scaleFactor);
+                control.Width = (int)(control.Width * scaleFactor);
+                control.Height = (int)(control.Height * scaleFactor);
+            }
+        }
+
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
