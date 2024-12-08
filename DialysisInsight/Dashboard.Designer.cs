@@ -90,7 +90,6 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
@@ -105,10 +104,11 @@
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges27;
-            guna2Panel1.Location = new Point(3, 3);
+            guna2Panel1.Dock = DockStyle.Fill;
+            guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Panel1.Size = new Size(887, 549);
+            guna2Panel1.Size = new Size(891, 553);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
@@ -340,6 +340,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.AutoSize = true;
             guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderRadius = 10;
             guna2Panel2.Controls.Add(logout);
@@ -350,8 +351,9 @@
             guna2Panel2.Location = new Point(19, 18);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Panel2.Size = new Size(158, 231);
+            guna2Panel2.Size = new Size(158, 234);
             guna2Panel2.TabIndex = 0;
+            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // logout
             // 

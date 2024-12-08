@@ -19,34 +19,6 @@ namespace DialysisInsight
             InitializeComponent();
             AddIcons();
             AddHoverEffects();
-            this.Resize += Dashboard_Resize;
-            this.AutoScaleMode = AutoScaleMode.Font; // Scale based on font size
-            this.AutoSize = true; // Automatically resize the form
-            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
-            logout.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            calender.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            addhealthdata.Dock = DockStyle.Bottom;
-
-            TableLayoutPanel panel = new TableLayoutPanel
-            {
-                Dock = DockStyle.Fill,
-                ColumnCount = 2,
-                RowCount = 2,
-                AutoSize = true
-            };
-
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            panel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            panel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-
-            panel.Controls.Add(logout, 0, 0);
-            panel.Controls.Add(calender, 1, 0);
-            panel.Controls.Add(addhealthdata, 0, 1);
-            panel.Controls.Add(settings, 1, 1);
-
-            this.Controls.Add(panel);
         }
 
         private void logout_Click(object sender, EventArgs e)
@@ -137,8 +109,6 @@ namespace DialysisInsight
             };
         }
 
-
-
         private void user_Click(object sender, EventArgs e)
         {
 
@@ -146,28 +116,12 @@ namespace DialysisInsight
 
         private void minmax_Click(object sender, EventArgs e)
         {
+            
         }
 
-        private void Dashboard_Resize(object? sender, EventArgs e)
+        private void guna2Panel1_Paint(object sender, EventArgs e)
         {
-            int padding = 10;
-            int buttonWidth = (this.ClientSize.Width - 3 * padding) / 2;
-            int buttonHeight = (this.ClientSize.Height - 3 * padding) / 2;
-
-            logout.Size = new Size(buttonWidth, buttonHeight);
-            calender.Size = new Size(buttonWidth, buttonHeight);
-            addhealthdata.Size = new Size(buttonWidth, buttonHeight);
-            settings.Size = new Size(buttonWidth, buttonHeight);
-
-            logout.Location = new Point(padding, padding);
-            calender.Location = new Point(buttonWidth + 2 * padding, padding);
-            addhealthdata.Location = new Point(padding, buttonHeight + 2 * padding);
-            settings.Location = new Point(buttonWidth + 2 * padding, buttonHeight + 2 * padding);
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-            // You can add custom painting logic here if needed, for now it’s empty.
+            
         }
 
         private void DateTime_ValueChanged(object sender, EventArgs e)
@@ -206,6 +160,11 @@ namespace DialysisInsight
         }
 
         private void dialysisinsight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
