@@ -20,6 +20,14 @@ namespace DialysisInsight
             AddIcons();
             AddHoverEffects();
         }
+        private void Form_Load(object sender, EventArgs e)
+        {
+            Rectangle resolutionRect = System.Windows.Forms.Screen.FromControl(this).Bounds;
+            if (this.Width >= resolutionRect.Width || this.Height >= resolutionRect.Height)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
 
         private void logout_Click(object sender, EventArgs e)
         {

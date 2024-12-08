@@ -105,7 +105,7 @@
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges27;
-            guna2Panel1.Location = new Point(3, 2);
+            guna2Panel1.Location = new Point(3, 3);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
             guna2Panel1.Size = new Size(887, 549);
@@ -452,6 +452,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(891, 553);
             ControlBox = false;
@@ -459,6 +461,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard";
             ShowIcon = false;
+            WindowState = FormWindowState.Maximized;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             dialysisinsight.ResumeLayout(false);
