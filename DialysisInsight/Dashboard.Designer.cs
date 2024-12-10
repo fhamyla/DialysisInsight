@@ -90,6 +90,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
@@ -104,7 +105,6 @@
             guna2Panel1.Controls.Add(search);
             guna2Panel1.Controls.Add(guna2Panel2);
             guna2Panel1.CustomizableEdges = customizableEdges27;
-            guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
