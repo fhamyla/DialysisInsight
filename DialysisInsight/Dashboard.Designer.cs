@@ -90,8 +90,6 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
             guna2Panel1.Controls.Add(dialysisinsight);
@@ -479,7 +477,6 @@
             ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
