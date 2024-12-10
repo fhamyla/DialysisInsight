@@ -173,15 +173,12 @@ namespace DialysisInsight
 
         private void minmax_Click(object sender, EventArgs e)
         {
-            // Check if the form is already maximized
             if (this.WindowState == FormWindowState.Maximized)
             {
-                // If the form is maximized, minimize it
                 this.WindowState = FormWindowState.Minimized;
             }
             else
             {
-                // If the form is not maximized, maximize it
                 this.WindowState = FormWindowState.Maximized;
             }
         }
