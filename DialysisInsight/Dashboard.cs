@@ -19,42 +19,6 @@ namespace DialysisInsight
             InitializeComponent();
             AddIcons();
             AddHoverEffects();
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.AutoScaleDimensions = new SizeF(8F, 16F); // Base scale factors
-
-            // Configure control properties
-            SetControlProperties();
-            this.Resize += Dashboard_Resize;
-        }
-
-        private void Dashboard_Resize(object? sender, EventArgs e)
-        {
-            AutoResizeControls();
-        }
-
-        private void AutoResizeControls()
-        {
-            // Example: Dynamically resize buttons and reposition them
-            int formWidth = this.ClientSize.Width;
-            int formHeight = this.ClientSize.Height;
-
-            // Resize example for a button
-            logout.Width = formWidth / 10;
-            logout.Height = formHeight / 15;
-
-            // Adjust other control positions
-            calender.Width = logout.Width;
-            calender.Height = logout.Height;
-            calender.Top = logout.Bottom + 10;
-
-            // Continue for other controls as needed
-        }
-
-        private void SetControlProperties()
-        {
-            guna2Panel1.Dock = DockStyle.Fill; // Ensures it resizes with the form
-            logout.Anchor = AnchorStyles.Top | AnchorStyles.Left; // Stays fixed at the top-left
-            calender.Anchor = AnchorStyles.Top | AnchorStyles.Right; // Adjusts position as the form resizes
         }
 
         private void logout_Click(object sender, EventArgs e)
@@ -152,14 +116,7 @@ namespace DialysisInsight
 
         private void minmax_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
+
         }
 
         private void guna2Panel1_Paint(object sender, EventArgs e)
