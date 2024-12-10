@@ -171,76 +171,19 @@ namespace DialysisInsight
 
         }
 
-        private bool isAutoAdjustEnabled = true; // Track the auto-adjust state
-
         private void minmax_Click(object sender, EventArgs e)
         {
-            if (isAutoAdjustEnabled)
+            // Check if the form is already maximized
+            if (this.WindowState == FormWindowState.Maximized)
             {
-                // Disable auto-adjust
-                this.Resize -= Dashboard_Resiz; // Detach the Resize event handler
-
-                // If the window is minimized, restore it first
-                if (this.WindowState == FormWindowState.Minimized)
-                {
-                    this.WindowState = FormWindowState.Normal;
-                    // Ensure the form size is set after restoring from minimized state
-                    this.Size = new Size(891, 553);
-                }
-                else
-                {
-                    this.Size = new Size(891, 553); // Set to desired size
-                }
-
-                AdjustControlsToOriginalSize(); // Restore controls to original size
-                isAutoAdjustEnabled = false;
+                // If the form is maximized, minimize it
+                this.WindowState = FormWindowState.Minimized;
             }
             else
             {
-                // Enable auto-adjust
-                this.Resize += Dashboard_Resiz; // Reattach the Resize event handler
-                isAutoAdjustEnabled = true;
+                // If the form is not maximized, maximize it
+                this.WindowState = FormWindowState.Maximized;
             }
-        }
-
-        // Method to adjust controls to their original size
-        private void AdjustControlsToOriginalSize()
-        {
-            user.Location = recuser.Location;
-            user.Size = recuser.Size;
-
-            minmax.Location = recminmax.Location;
-            minmax.Size = recminmax.Size;
-
-            guna2Panel1.Location = recpanel1.Location;
-            guna2Panel1.Size = recpanel1.Size;
-
-            DateTime.Location = recdatetime.Location;
-            DateTime.Size = recdatetime.Size;
-
-            search.Location = recsearch.Location;
-            search.Size = recsearch.Size;
-
-            notify.Location = recnotify.Location;
-            notify.Size = recnotify.Size;
-
-            weight.Location = recweight.Location;
-            weight.Size = recweight.Size;
-
-            heartrate.Location = recheart.Location;
-            heartrate.Size = recheart.Size;
-
-            sugarlevel.Location = recsugar.Location;
-            sugarlevel.Size = recsugar.Size;
-
-            healthpressure.Location = rechealth.Location;
-            healthpressure.Size = rechealth.Size;
-
-            dialysisinsight.Location = recdialysis.Location;
-            dialysisinsight.Size = recdialysis.Size;
-
-            guna2Panel2.Location = recpanel2.Location;
-            guna2Panel2.Size = recpanel2.Size;
         }
 
         private void guna2Panel1_Paint(object sender, EventArgs e)
