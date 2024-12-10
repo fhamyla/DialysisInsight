@@ -146,7 +146,7 @@
             dialysisinsight.Location = new Point(459, 269);
             dialysisinsight.Name = "dialysisinsight";
             dialysisinsight.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            dialysisinsight.Size = new Size(420, 273);
+            dialysisinsight.Size = new Size(420, 272);
             dialysisinsight.TabIndex = 14;
             dialysisinsight.Paint += dialysisinsight_Paint;
             // 
@@ -173,7 +173,7 @@
             healthpressure.Location = new Point(19, 269);
             healthpressure.Name = "healthpressure";
             healthpressure.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            healthpressure.Size = new Size(420, 273);
+            healthpressure.Size = new Size(420, 272);
             healthpressure.TabIndex = 13;
             healthpressure.Paint += healthpressure_Paint;
             // 

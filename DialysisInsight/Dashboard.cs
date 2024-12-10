@@ -43,6 +43,8 @@ namespace DialysisInsight
             recweight = new Rectangle(weight.Location, weight.Size);
             recheart = new Rectangle(heartrate.Location, heartrate.Size);
             recsugar = new Rectangle(sugarlevel.Location, sugarlevel.Size);
+            rechealth = new Rectangle(healthpressure.Location, healthpressure.Size);
+            recdialysis = new Rectangle(dialysisinsight.Location, dialysisinsight.Size);
             recpanel2 = new Rectangle(guna2Panel2.Location, guna2Panel2.Size);
         }
 
@@ -57,6 +59,8 @@ namespace DialysisInsight
             resize_Control(weight, recweight);
             resize_Control(heartrate, recheart);
             resize_Control(sugarlevel, recsugar);
+            resize_Control(healthpressure, rechealth);
+            resize_Control(dialysisinsight, recdialysis);
             resize_Control(guna2Panel2, recpanel2);
         }
 
@@ -68,7 +72,7 @@ namespace DialysisInsight
             int newY = (int)(r.Y * yRatio);
 
             int newWidth = (int)(r.Width * xRatio);
-            int newHeight = (int)(r.Height * xRatio);
+            int newHeight = (int)(r.Height * yRatio);
 
             c.Location = new Point(newX, newY);
             c.Size = new Size(newWidth, newHeight);
