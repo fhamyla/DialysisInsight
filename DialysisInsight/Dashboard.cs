@@ -175,7 +175,7 @@ namespace DialysisInsight
         {
             if (this.WindowState == FormWindowState.Maximized)
             {
-                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Normal;
             }
             else
             {

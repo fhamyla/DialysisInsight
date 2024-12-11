@@ -90,6 +90,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
             guna2Panel1.Controls.Add(dialysisinsight);
@@ -461,7 +462,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard";
             ShowIcon = false;
-            WindowState = FormWindowState.Maximized;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             dialysisinsight.ResumeLayout(false);
@@ -477,6 +477,7 @@
             ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

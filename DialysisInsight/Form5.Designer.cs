@@ -61,6 +61,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.AutoSize = true;
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
@@ -72,6 +73,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(884, 553);
             ControlBox = false;
@@ -81,6 +84,7 @@
             ShowIcon = false;
             ShowInTaskbar = false;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
