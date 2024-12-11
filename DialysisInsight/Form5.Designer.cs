@@ -35,6 +35,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            pictureBox2 = new PictureBox();
             month = new Label();
             saturday = new Label();
             friday = new Label();
@@ -42,6 +43,7 @@
             wednesday = new Label();
             tuesday = new Label();
             monday = new Label();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
@@ -51,12 +53,10 @@
             panel5 = new Panel();
             panel6 = new Panel();
             panel7 = new Panel();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             guna2Panel1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // minmax
@@ -100,6 +100,16 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 566);
             guna2Panel1.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(223, 10);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(41, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // month
             // 
@@ -169,6 +179,16 @@
             monday.Size = new Size(73, 26);
             monday.TabIndex = 2;
             monday.Text = "Monday";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(176, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 41);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -253,27 +273,6 @@
             panel7.Size = new Size(121, 100);
             panel7.TabIndex = 8;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(176, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 41);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(223, 10);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(41, 41);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
-            // 
             // Calendar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -288,9 +287,9 @@
             ShowInTaskbar = false;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
