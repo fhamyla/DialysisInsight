@@ -90,7 +90,6 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.AutoSize = true;
             guna2Panel1.BackColor = Color.White;
             guna2Panel1.Controls.Add(minmax);
             guna2Panel1.Controls.Add(dialysisinsight);
@@ -453,8 +452,6 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(891, 553);
             ControlBox = false;
@@ -477,7 +474,6 @@
             ((System.ComponentModel.ISupportInitialize)notify).EndInit();
             guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
