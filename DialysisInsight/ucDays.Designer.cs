@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             checkBox1 = new CheckBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,6 +44,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(119, 98);
             panel1.TabIndex = 0;
+            panel1.Click += panel1_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 13);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(15, 14);
+            checkBox1.TabIndex = 1;
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -55,15 +65,6 @@
             label1.TabIndex = 0;
             label1.Text = "00";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(12, 13);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(15, 14);
-            checkBox1.TabIndex = 1;
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // ucDays
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -73,6 +74,7 @@
             Name = "ucDays";
             Padding = new Padding(1);
             Size = new Size(121, 100);
+            Load += ucDays_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

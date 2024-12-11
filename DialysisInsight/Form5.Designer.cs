@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             pictureBox2 = new PictureBox();
-            month = new Label();
+            lbMonth = new Label();
             saturday = new Label();
             friday = new Label();
             thursday = new Label();
@@ -55,7 +55,7 @@
             // 
             minmax.BackColor = Color.Transparent;
             minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges1;
+            minmax.CustomizableEdges = customizableEdges5;
             minmax.DisabledState.BorderColor = Color.DarkGray;
             minmax.DisabledState.CustomBorderColor = Color.DarkGray;
             minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -68,7 +68,7 @@
             minmax.Location = new Point(864, 3);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges6;
             minmax.Size = new Size(15, 19);
             minmax.TabIndex = 3;
             minmax.Click += minmax_Click;
@@ -76,7 +76,7 @@
             // guna2Panel1
             // 
             guna2Panel1.Controls.Add(pictureBox2);
-            guna2Panel1.Controls.Add(month);
+            guna2Panel1.Controls.Add(lbMonth);
             guna2Panel1.Controls.Add(saturday);
             guna2Panel1.Controls.Add(friday);
             guna2Panel1.Controls.Add(thursday);
@@ -86,10 +86,10 @@
             guna2Panel1.Controls.Add(pictureBox1);
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.Controls.Add(flowLayoutPanel1);
-            guna2Panel1.CustomizableEdges = customizableEdges3;
+            guna2Panel1.CustomizableEdges = customizableEdges7;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel1.Size = new Size(897, 566);
             guna2Panel1.TabIndex = 1;
             // 
@@ -103,14 +103,14 @@
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
-            // month
+            // lbMonth
             // 
-            month.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            month.Location = new Point(19, 16);
-            month.Name = "month";
-            month.Size = new Size(151, 26);
-            month.TabIndex = 8;
-            month.Text = "MONTH";
+            lbMonth.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbMonth.Location = new Point(19, 16);
+            lbMonth.Name = "lbMonth";
+            lbMonth.Size = new Size(151, 26);
+            lbMonth.TabIndex = 8;
+            lbMonth.Text = "MONTH";
             // 
             // saturday
             // 
@@ -233,7 +233,7 @@
         private Label wednesday;
         private Label tuesday;
         private Label monday;
-        private Label month;
+        private Label lbMonth;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
     }

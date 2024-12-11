@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace DialysisInsight
 {
     public partial class Calendar : Form
     {
+        public static int _year, _month;
         private Size formOriginalSize;
         private Rectangle recminmax;
         private Rectangle recpanel1;
@@ -67,6 +69,34 @@ namespace DialysisInsight
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+            showDays(DateTime.Now.Month, DateTime.Now.Year);
+        }
+
+        private void showDays(int month, int year)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            _year = year;
+            _month = month;
+
+            string monthName = new DateTimeFormatInfo().GetMonthName(month);
+            lbMonth.Text = monthName.ToUpper() + " " + year;
+            DateTime startodTheMonth = new DateTime(year, month, 1);
+            int day = DateTime.DaysInMonth(year, month);
+            int week = Convert.ToInt32(startodTheMonth.DayOfWeek.ToString("d"));
+            for(int i = 1; i< week; i++)
+            {
+                ucDays uc = new ucDays("");
+                flowLayoutPanel1.Controls.Add(uc);
+            }
+            for (int i = 1; i < day; i++)
+            {
+                ucDays uc = new ucDays(i + "");
+                flowLayoutPanel1.Controls.Add(uc);
+            }
         }
     }
 }

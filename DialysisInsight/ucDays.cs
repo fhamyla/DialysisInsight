@@ -12,9 +12,23 @@ namespace DialysisInsight
 {
     public partial class ucDays : UserControl
     {
-        public ucDays()
+        string? _day, date, weekday;
+        public ucDays(string day)
         {
             InitializeComponent();
+            _day = day;
+            label1.Text = day;
+            checkBox1.Hide();
+        }
+
+        private void ucDays_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
