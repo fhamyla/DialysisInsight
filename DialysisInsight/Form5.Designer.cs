@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             pictureBox2 = new PictureBox();
@@ -44,7 +44,7 @@
             tuesday = new Label();
             monday = new Label();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            sunday = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -55,7 +55,7 @@
             // 
             minmax.BackColor = Color.Transparent;
             minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges5;
+            minmax.CustomizableEdges = customizableEdges1;
             minmax.DisabledState.BorderColor = Color.DarkGray;
             minmax.DisabledState.CustomBorderColor = Color.DarkGray;
             minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -68,7 +68,7 @@
             minmax.Location = new Point(864, 3);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
             minmax.Size = new Size(15, 19);
             minmax.TabIndex = 3;
             minmax.Click += minmax_Click;
@@ -84,19 +84,19 @@
             guna2Panel1.Controls.Add(tuesday);
             guna2Panel1.Controls.Add(monday);
             guna2Panel1.Controls.Add(pictureBox1);
-            guna2Panel1.Controls.Add(label1);
+            guna2Panel1.Controls.Add(sunday);
             guna2Panel1.Controls.Add(flowLayoutPanel1);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 566);
             guna2Panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(223, 10);
+            pictureBox2.Location = new Point(225, 16);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(41, 41);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -175,24 +175,24 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(176, 10);
+            pictureBox1.Location = new Point(178, 16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(41, 41);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // sunday
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 11.25F);
-            label1.ForeColor = Color.Maroon;
-            label1.Location = new Point(50, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 26);
-            label1.TabIndex = 1;
-            label1.Text = "Sunday";
-            label1.Click += label1_Click;
+            sunday.AutoSize = true;
+            sunday.Font = new Font("Poppins", 11.25F);
+            sunday.ForeColor = Color.Maroon;
+            sunday.Location = new Point(50, 65);
+            sunday.Name = "sunday";
+            sunday.Size = new Size(69, 26);
+            sunday.TabIndex = 1;
+            sunday.Text = "Sunday";
+            sunday.Click += label1_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -225,7 +225,7 @@
 
         private Guna.UI2.WinForms.Guna2Button minmax;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Label label1;
+        private Label sunday;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label saturday;
         private Label friday;

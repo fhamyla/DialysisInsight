@@ -28,7 +28,15 @@ namespace DialysisInsight
 
         private void panel1_Click(object sender, EventArgs e)
         {
-
+            if (checkBox1.Checked == false)
+            {
+                checkBox1.Checked = true;
+                this.BackColor = Color.FromArgb(255, 150, 79);
+            } else
+            {
+                checkBox1.Checked = false;
+                this.BackColor = Color.White;
+            }
         }
     }
 }
