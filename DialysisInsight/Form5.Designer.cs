@@ -46,17 +46,9 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // minmax
@@ -204,74 +196,11 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Controls.Add(panel1);
-            flowLayoutPanel1.Controls.Add(panel2);
-            flowLayoutPanel1.Controls.Add(panel3);
-            flowLayoutPanel1.Controls.Add(panel4);
-            flowLayoutPanel1.Controls.Add(panel5);
-            flowLayoutPanel1.Controls.Add(panel6);
-            flowLayoutPanel1.Controls.Add(panel7);
             flowLayoutPanel1.Location = new Point(19, 103);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(867, 445);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(1, 1);
-            panel1.Margin = new Padding(1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(121, 100);
-            panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Location = new Point(124, 1);
-            panel2.Margin = new Padding(1);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(121, 100);
-            panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            panel3.Location = new Point(247, 1);
-            panel3.Margin = new Padding(1);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(121, 100);
-            panel3.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            panel4.Location = new Point(370, 1);
-            panel4.Margin = new Padding(1);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(121, 100);
-            panel4.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            panel5.Location = new Point(493, 1);
-            panel5.Margin = new Padding(1);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(121, 100);
-            panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(616, 1);
-            panel6.Margin = new Padding(1);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(121, 100);
-            panel6.TabIndex = 7;
-            // 
-            // panel7
-            // 
-            panel7.Location = new Point(739, 1);
-            panel7.Margin = new Padding(1);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(121, 100);
-            panel7.TabIndex = 8;
             // 
             // Calendar
             // 
@@ -289,7 +218,6 @@
             guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -305,13 +233,6 @@
         private Label wednesday;
         private Label tuesday;
         private Label monday;
-        private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
-        private Panel panel7;
         private Label month;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
