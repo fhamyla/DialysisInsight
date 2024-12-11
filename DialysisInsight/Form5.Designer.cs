@@ -35,6 +35,28 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            month = new Label();
+            saturday = new Label();
+            friday = new Label();
+            thursday = new Label();
+            wednesday = new Label();
+            tuesday = new Label();
+            monday = new Label();
+            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            guna2Panel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // minmax
@@ -61,12 +83,196 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(pictureBox2);
+            guna2Panel1.Controls.Add(month);
+            guna2Panel1.Controls.Add(saturday);
+            guna2Panel1.Controls.Add(friday);
+            guna2Panel1.Controls.Add(thursday);
+            guna2Panel1.Controls.Add(wednesday);
+            guna2Panel1.Controls.Add(tuesday);
+            guna2Panel1.Controls.Add(monday);
+            guna2Panel1.Controls.Add(pictureBox1);
+            guna2Panel1.Controls.Add(label1);
+            guna2Panel1.Controls.Add(flowLayoutPanel1);
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 566);
             guna2Panel1.TabIndex = 1;
+            // 
+            // month
+            // 
+            month.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            month.Location = new Point(19, 16);
+            month.Name = "month";
+            month.Size = new Size(151, 26);
+            month.TabIndex = 8;
+            month.Text = "MONTH";
+            // 
+            // saturday
+            // 
+            saturday.AutoSize = true;
+            saturday.Font = new Font("Poppins", 11.25F);
+            saturday.Location = new Point(781, 65);
+            saturday.Name = "saturday";
+            saturday.Size = new Size(80, 26);
+            saturday.TabIndex = 7;
+            saturday.Text = "Saturday";
+            // 
+            // friday
+            // 
+            friday.AutoSize = true;
+            friday.Font = new Font("Poppins", 11.25F);
+            friday.Location = new Point(672, 65);
+            friday.Name = "friday";
+            friday.Size = new Size(58, 26);
+            friday.TabIndex = 6;
+            friday.Text = "Friday";
+            // 
+            // thursday
+            // 
+            thursday.AutoSize = true;
+            thursday.Font = new Font("Poppins", 11.25F);
+            thursday.Location = new Point(534, 65);
+            thursday.Name = "thursday";
+            thursday.Size = new Size(82, 26);
+            thursday.TabIndex = 5;
+            thursday.Text = "Thursday";
+            // 
+            // wednesday
+            // 
+            wednesday.AutoSize = true;
+            wednesday.Font = new Font("Poppins", 11.25F);
+            wednesday.Location = new Point(398, 65);
+            wednesday.Name = "wednesday";
+            wednesday.Size = new Size(101, 26);
+            wednesday.TabIndex = 4;
+            wednesday.Text = "Wednesday";
+            // 
+            // tuesday
+            // 
+            tuesday.AutoSize = true;
+            tuesday.Font = new Font("Poppins", 11.25F);
+            tuesday.Location = new Point(293, 65);
+            tuesday.Name = "tuesday";
+            tuesday.Size = new Size(75, 26);
+            tuesday.TabIndex = 3;
+            tuesday.Text = "Tuesday";
+            // 
+            // monday
+            // 
+            monday.AutoSize = true;
+            monday.Font = new Font("Poppins", 11.25F);
+            monday.Location = new Point(170, 65);
+            monday.Name = "monday";
+            monday.Size = new Size(73, 26);
+            monday.TabIndex = 2;
+            monday.Text = "Monday";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Poppins", 11.25F);
+            label1.ForeColor = Color.Maroon;
+            label1.Location = new Point(50, 65);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 26);
+            label1.TabIndex = 1;
+            label1.Text = "Sunday";
+            label1.Click += label1_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(panel1);
+            flowLayoutPanel1.Controls.Add(panel2);
+            flowLayoutPanel1.Controls.Add(panel3);
+            flowLayoutPanel1.Controls.Add(panel4);
+            flowLayoutPanel1.Controls.Add(panel5);
+            flowLayoutPanel1.Controls.Add(panel6);
+            flowLayoutPanel1.Controls.Add(panel7);
+            flowLayoutPanel1.Location = new Point(19, 103);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(867, 445);
+            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(1, 1);
+            panel1.Margin = new Padding(1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(121, 100);
+            panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(124, 1);
+            panel2.Margin = new Padding(1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(121, 100);
+            panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            panel3.Location = new Point(247, 1);
+            panel3.Margin = new Padding(1);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(121, 100);
+            panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(370, 1);
+            panel4.Margin = new Padding(1);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(121, 100);
+            panel4.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            panel5.Location = new Point(493, 1);
+            panel5.Margin = new Padding(1);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(121, 100);
+            panel5.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(616, 1);
+            panel6.Margin = new Padding(1);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(121, 100);
+            panel6.TabIndex = 7;
+            // 
+            // panel7
+            // 
+            panel7.Location = new Point(739, 1);
+            panel7.Margin = new Padding(1);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(121, 100);
+            panel7.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(176, 10);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 41);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(223, 10);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(41, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // Calendar
             // 
@@ -80,6 +286,11 @@
             Name = "Calendar";
             ShowIcon = false;
             ShowInTaskbar = false;
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -87,5 +298,23 @@
 
         private Guna.UI2.WinForms.Guna2Button minmax;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Label label1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label saturday;
+        private Label friday;
+        private Label thursday;
+        private Label wednesday;
+        private Label tuesday;
+        private Label monday;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Label month;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
     }
 }

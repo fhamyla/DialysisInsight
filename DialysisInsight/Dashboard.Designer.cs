@@ -267,12 +267,13 @@
             // 
             // user
             // 
+            user.AutoSize = false;
             user.BackColor = Color.Transparent;
             user.Font = new Font("Lucida Sans Unicode", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             user.ForeColor = Color.FromArgb(64, 64, 64);
             user.Location = new Point(199, 18);
             user.Name = "user";
-            user.Size = new Size(60, 27);
+            user.Size = new Size(200, 27);
             user.TabIndex = 9;
             user.Text = "Hello";
             user.Click += user_Click;
