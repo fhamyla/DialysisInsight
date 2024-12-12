@@ -16,7 +16,7 @@ namespace DialysisInsight
 {
     public partial class Calendar : Form
     {
-        public static int _year, _month;
+        int month, year;
         private Size formOriginalSize;
         private Rectangle recminmax;
         private Rectangle recpanel1;
@@ -73,29 +73,32 @@ namespace DialysisInsight
 
         private void Calendar_Load(object sender, EventArgs e)
         {
-            showDays(DateTime.Now.Month, DateTime.Now.Year);
+            displaDays();
         }
 
-        private void showDays(int month, int year)
+        private void displaDays()
         {
-            flowLayoutPanel1.Controls.Clear();
-            _year = year;
-            _month = month;
+            DateTime now = DateTime.Now;
+            month = now.Month;
+            year = now.Year;
+            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            lbMonth.Text = monthname + " " + year;
+            DateTime startofthemonth = new DateTime(year, month, 1);
+            int days = DateTime.DaysInMonth(year, month);
+            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
 
-            string monthName = new DateTimeFormatInfo().GetMonthName(month);
-            lbMonth.Text = monthName.ToUpper() + " " + year;
-            DateTime startodTheMonth = new DateTime(year, month, 1);
-            int day = DateTime.DaysInMonth(year, month);
-            int week = Convert.ToInt32(startodTheMonth.DayOfWeek.ToString("d"));
-            for (int i = 1; i < week; i++)
+            for (int i = 1; i < daysoftheweek; i++)
             {
-                ucDays uc = new ucDays("");
-                flowLayoutPanel1.Controls.Add(uc);
+                ucDays ucBlank = new ucDays();
+                daycontainer.Controls.Add(ucBlank);
             }
-            for (int i = 1; i <= day; i++)
+            for (int i = 1; i <= days; i++)
             {
-                ucDays uc = new ucDays(i + "");
-                flowLayoutPanel1.Controls.Add(uc);
+                UserControlDays ucdays = new UserControlDays();
+                DateTime currentDate = new DateTime(year, month, i);
+                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
+                ucdays.days(i);
+                daycontainer.Controls.Add(ucdays);
             }
         }
 
@@ -104,6 +107,72 @@ namespace DialysisInsight
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
             this.Hide();
+        }
+
+        private void previous_Click(object sender, EventArgs e)
+        {
+            daycontainer.Controls.Clear();
+            month--;
+
+            if (month < 1)
+            {
+                month = 12;
+                year--;
+            }
+
+            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            lbMonth.Text = monthname + " " + year;
+
+            DateTime startofthemonth = new DateTime(year, month, 1);
+            int days = DateTime.DaysInMonth(year, month);
+            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
+
+            for (int i = 1; i < daysoftheweek; i++)
+            {
+                ucDays ucBlank = new ucDays();
+                daycontainer.Controls.Add(ucBlank);
+            }
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDays ucdays = new UserControlDays();
+                DateTime currentDate = new DateTime(year, month, i);
+                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
+                ucdays.days(i);
+                daycontainer.Controls.Add(ucdays);
+            }
+        }
+
+        private void next_Click(object sender, EventArgs e)
+        {
+            daycontainer.Controls.Clear();
+            month++;
+
+            if (month > 12)
+            {
+                month = 1;
+                year++;
+            }
+
+            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
+            lbMonth.Text = monthname + " " + year;
+
+            DateTime startofthemonth = new DateTime(year, month, 1);
+            int days = DateTime.DaysInMonth(year, month);
+            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
+
+            for (int i = 1; i < daysoftheweek; i++)
+            {
+                ucDays ucBlank = new ucDays();
+                daycontainer.Controls.Add(ucBlank);
+            }
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDays ucdays = new UserControlDays();
+                DateTime currentDate = new DateTime(year, month, i);
+                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
+                ucdays.days(i);
+                daycontainer.Controls.Add(ucdays);
+            }
         }
     }
 }
