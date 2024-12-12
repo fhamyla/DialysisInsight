@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             gotodashboard = new PictureBox();
@@ -57,7 +57,7 @@
             // 
             minmax.BackColor = Color.Transparent;
             minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges1;
+            minmax.CustomizableEdges = customizableEdges5;
             minmax.DisabledState.BorderColor = Color.DarkGray;
             minmax.DisabledState.CustomBorderColor = Color.DarkGray;
             minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -70,13 +70,14 @@
             minmax.Location = new Point(864, 3);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges6;
             minmax.Size = new Size(15, 19);
             minmax.TabIndex = 3;
             minmax.Click += minmax_Click;
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(daycontainer);
             guna2Panel1.Controls.Add(gotodashboard);
             guna2Panel1.Controls.Add(next);
             guna2Panel1.Controls.Add(lbMonth);
@@ -88,11 +89,10 @@
             guna2Panel1.Controls.Add(monday);
             guna2Panel1.Controls.Add(previous);
             guna2Panel1.Controls.Add(sunday);
-            guna2Panel1.Controls.Add(daycontainer);
-            guna2Panel1.CustomizableEdges = customizableEdges3;
+            guna2Panel1.CustomizableEdges = customizableEdges7;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Panel1.Size = new Size(897, 725);
             guna2Panel1.TabIndex = 1;
             guna2Panel1.Paint += guna2Panel1_Paint;
@@ -111,7 +111,7 @@
             // next
             // 
             next.Image = (Image)resources.GetObject("next.Image");
-            next.Location = new Point(225, 16);
+            next.Location = new Point(310, 16);
             next.Name = "next";
             next.Size = new Size(41, 41);
             next.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -124,7 +124,7 @@
             lbMonth.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbMonth.Location = new Point(19, 16);
             lbMonth.Name = "lbMonth";
-            lbMonth.Size = new Size(151, 26);
+            lbMonth.Size = new Size(238, 26);
             lbMonth.TabIndex = 8;
             lbMonth.Text = "MONTH";
             lbMonth.Click += lbMonth_Click;
@@ -133,7 +133,7 @@
             // 
             saturday.AutoSize = true;
             saturday.Font = new Font("Poppins", 11.25F);
-            saturday.Location = new Point(781, 65);
+            saturday.Location = new Point(777, 65);
             saturday.Name = "saturday";
             saturday.Size = new Size(80, 26);
             saturday.TabIndex = 7;
@@ -144,7 +144,7 @@
             // 
             friday.AutoSize = true;
             friday.Font = new Font("Poppins", 11.25F);
-            friday.Location = new Point(672, 65);
+            friday.Location = new Point(665, 65);
             friday.Name = "friday";
             friday.Size = new Size(58, 26);
             friday.TabIndex = 6;
@@ -155,7 +155,7 @@
             // 
             thursday.AutoSize = true;
             thursday.Font = new Font("Poppins", 11.25F);
-            thursday.Location = new Point(534, 65);
+            thursday.Location = new Point(530, 65);
             thursday.Name = "thursday";
             thursday.Size = new Size(82, 26);
             thursday.TabIndex = 5;
@@ -177,7 +177,7 @@
             // 
             tuesday.AutoSize = true;
             tuesday.Font = new Font("Poppins", 11.25F);
-            tuesday.Location = new Point(293, 65);
+            tuesday.Location = new Point(290, 65);
             tuesday.Name = "tuesday";
             tuesday.Size = new Size(75, 26);
             tuesday.TabIndex = 3;
@@ -198,7 +198,7 @@
             // previous
             // 
             previous.Image = (Image)resources.GetObject("previous.Image");
-            previous.Location = new Point(178, 16);
+            previous.Location = new Point(263, 16);
             previous.Name = "previous";
             previous.Size = new Size(41, 41);
             previous.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -223,8 +223,7 @@
             daycontainer.Location = new Point(19, 103);
             daycontainer.Name = "daycontainer";
             daycontainer.Size = new Size(867, 616);
-            daycontainer.TabIndex = 0;
-            daycontainer.Paint += flowLayoutPanel1_Paint;
+            daycontainer.TabIndex = 12;
             // 
             // Calendar
             // 
@@ -251,7 +250,6 @@
         private Guna.UI2.WinForms.Guna2Button minmax;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Label sunday;
-        private FlowLayoutPanel daycontainer;
         private Label saturday;
         private Label friday;
         private Label thursday;
@@ -262,5 +260,6 @@
         private PictureBox next;
         private PictureBox previous;
         private PictureBox gotodashboard;
+        private FlowLayoutPanel daycontainer;
     }
 }

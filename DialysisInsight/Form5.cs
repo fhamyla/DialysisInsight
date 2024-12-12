@@ -32,9 +32,13 @@ namespace DialysisInsight
         private Rectangle recfriday;
         private Rectangle recsaturday;
         private Rectangle recdashboard;
+        private DateTime currentMonth;
         public Calendar()
         {
             InitializeComponent();
+            this.Load += Calendar_Load;
+            previous.Click += previous_Click;
+            next.Click += next_Click;
             this.Resize += Dashboard_Resiz;
             formOriginalSize = this.Size;
             recminmax = new Rectangle(minmax.Location, minmax.Size);
@@ -51,6 +55,7 @@ namespace DialysisInsight
             recfriday = new Rectangle(friday.Location, friday.Size);
             recsaturday = new Rectangle(saturday.Location, saturday.Size);
             recdashboard = new Rectangle(gotodashboard.Location, gotodashboard.Size);
+            reccontainer = new Rectangle(daycontainer.Location, daycontainer.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -70,6 +75,15 @@ namespace DialysisInsight
             resize_Control(friday, recfriday);
             resize_Control(saturday, recsaturday);
             resize_Control(gotodashboard, recdashboard);
+            resize_Control(daycontainer, reccontainer);
+            foreach (Control control in daycontainer.Controls)
+            {
+                if (control is Guna2Button dayButton)
+                {
+                    dayButton.Width = daycontainer.Width / 7 - 5; // 7 days per row
+                    dayButton.Height = daycontainer.Height / 6 - 5; // Maximum 6 weeks in a month
+                }
+            }
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -108,10 +122,70 @@ namespace DialysisInsight
 
         }
 
-        private void Calendar_Load(object sender, EventArgs e)
+        private void Calendar_Load(object? sender, EventArgs e)
         {
-
+            currentMonth = DateTime.Now; // Set current month
+            DisplayCurrentMonth();
         }
+
+        private void DisplayCurrentMonth()
+        {
+            daycontainer.Controls.Clear(); // Clear existing controls
+            lbMonth.Text = currentMonth.ToString("MMMM yyyy"); // Display current month
+
+            // Get the first day of the month
+            DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+            int startDay = (int)firstDay.DayOfWeek; // Sunday = 0
+
+            // Add blank labels for days before the start of the month
+            for (int i = 0; i < startDay; i++)
+            {
+                var blankLabel = new Label
+                {
+                    Width = daycontainer.Width / 7 - 5, // Adjust width dynamically
+                    Height = daycontainer.Height / 6 - 5,
+                    BackColor = Color.Transparent
+                };
+                daycontainer.Controls.Add(blankLabel);
+            }
+
+            // Add buttons for each day of the month
+            for (int day = 1; day <= daysInMonth; day++)
+            {
+                var dayButton = new Guna2Button
+                {
+                    Text = day.ToString(),
+                    Width = daycontainer.Width / 7 - 5, // Adjust width dynamically
+                    Height = daycontainer.Height / 6 - 5,
+                    BorderRadius = 10,
+                    BorderThickness = 1,
+                    Margin = new Padding(2),
+                    Font = new Font("Arial", 10, FontStyle.Regular),
+                    FillColor = Color.White,
+                    ForeColor = Color.Black
+                };
+
+                // Highlight the current date
+                if (day == DateTime.Now.Day &&
+                    currentMonth.Month == DateTime.Now.Month &&
+                    currentMonth.Year == DateTime.Now.Year)
+                {
+                    dayButton.FillColor = Color.LightBlue;
+                }
+
+                // Attach an event to each button
+                dayButton.Click += (s, e) => DayButton_Click(day);
+
+                daycontainer.Controls.Add(dayButton);
+            }
+        }
+
+        private void DayButton_Click(int day)
+        {
+            MessageBox.Show($"You selected {currentMonth:MMMM} {day}, {currentMonth.Year}", "Day Selected");
+        }
+
 
         private void gotodashboard_Click(object sender, EventArgs e)
         {
@@ -120,19 +194,21 @@ namespace DialysisInsight
             this.Hide();
         }
 
-        private void previous_Click(object sender, EventArgs e)
+        private void previous_Click(object? sender, EventArgs e)
         {
-
+            currentMonth = currentMonth.AddMonths(-1);
+            DisplayCurrentMonth();
         }
 
-        private void next_Click(object sender, EventArgs e)
+        private void next_Click(object? sender, EventArgs e)
         {
-
+            currentMonth = currentMonth.AddMonths(1);
+            DisplayCurrentMonth();
         }
 
         private void lbMonth_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void monday_Click(object sender, EventArgs e)
