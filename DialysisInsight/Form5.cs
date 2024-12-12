@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
+using System.Xml.Linq;
 
 namespace DialysisInsight
 {
@@ -19,6 +20,18 @@ namespace DialysisInsight
         private Size formOriginalSize;
         private Rectangle recminmax;
         private Rectangle recpanel1;
+        private Rectangle reclabel1;
+        private Rectangle reccontainer;
+        private Rectangle recprevious;
+        private Rectangle recnext;
+        private Rectangle reclbMonth;
+        private Rectangle recmonday;
+        private Rectangle rectuesday;
+        private Rectangle recwednesday;
+        private Rectangle recthursday;
+        private Rectangle recfriday;
+        private Rectangle recsaturday;
+        private Rectangle recdashboard;
         public Calendar()
         {
             InitializeComponent();
@@ -26,12 +39,37 @@ namespace DialysisInsight
             formOriginalSize = this.Size;
             recminmax = new Rectangle(minmax.Location, minmax.Size);
             recpanel1 = new Rectangle(guna2Panel1.Location, guna2Panel1.Size);
+            reclabel1 = new Rectangle(sunday.Location, sunday.Size);
+            reccontainer = new Rectangle(daycontainer.Location, daycontainer.Size);
+            recprevious = new Rectangle(previous.Location, previous.Size);
+            recnext = new Rectangle(next.Location, next.Size);
+            reclbMonth = new Rectangle(lbMonth.Location, lbMonth.Size);
+            recmonday = new Rectangle(monday.Location, monday.Size);
+            rectuesday = new Rectangle(tuesday.Location, tuesday.Size);
+            recwednesday = new Rectangle(wednesday.Location, wednesday.Size);
+            recthursday = new Rectangle(thursday.Location, thursday.Size);
+            recfriday = new Rectangle(friday.Location, friday.Size);
+            recsaturday = new Rectangle(saturday.Location, saturday.Size);
+            recdashboard = new Rectangle(gotodashboard.Location, gotodashboard.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
         {
             resize_Control(minmax, recminmax);
             resize_Control(guna2Panel1, recpanel1);
+            resize_Control(guna2Panel1, recpanel1);
+            resize_Control(monday, reclabel1);
+            resize_Control(daycontainer, reccontainer);
+            resize_Control(previous, recprevious);
+            resize_Control(next, recnext);
+            resize_Control(lbMonth, reclbMonth);
+            resize_Control(monday, recmonday);
+            resize_Control(tuesday, rectuesday);
+            resize_Control(wednesday, recwednesday);
+            resize_Control(thursday, recthursday);
+            resize_Control(friday, recfriday);
+            resize_Control(saturday, recsaturday);
+            resize_Control(gotodashboard, recdashboard);
         }
 
         private void resize_Control(Control c, Rectangle r)
