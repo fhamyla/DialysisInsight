@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             next = new PictureBox();
@@ -88,17 +88,19 @@
             panel40 = new Panel();
             panel41 = new Panel();
             panel42 = new Panel();
+            pictureBox1 = new PictureBox();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)next).BeginInit();
             ((System.ComponentModel.ISupportInitialize)previous).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // minmax
             // 
             minmax.BackColor = Color.Transparent;
             minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges5;
+            minmax.CustomizableEdges = customizableEdges1;
             minmax.DisabledState.BorderColor = Color.DarkGray;
             minmax.DisabledState.CustomBorderColor = Color.DarkGray;
             minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -111,13 +113,14 @@
             minmax.Location = new Point(864, 3);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
             minmax.Size = new Size(15, 19);
             minmax.TabIndex = 3;
             minmax.Click += minmax_Click;
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(pictureBox1);
             guna2Panel1.Controls.Add(next);
             guna2Panel1.Controls.Add(lbMonth);
             guna2Panel1.Controls.Add(saturday);
@@ -129,10 +132,10 @@
             guna2Panel1.Controls.Add(previous);
             guna2Panel1.Controls.Add(sunday);
             guna2Panel1.Controls.Add(flowLayoutPanel1);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 725);
             guna2Panel1.TabIndex = 1;
             // 
@@ -623,6 +626,16 @@
             panel42.Size = new Size(121, 100);
             panel42.TabIndex = 41;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(801, 16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 41);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
             // Calendar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -640,6 +653,7 @@
             ((System.ComponentModel.ISupportInitialize)next).EndInit();
             ((System.ComponentModel.ISupportInitialize)previous).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -700,5 +714,6 @@
         private Panel panel40;
         private Panel panel41;
         private Panel panel42;
+        private PictureBox pictureBox1;
     }
 }
