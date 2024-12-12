@@ -35,6 +35,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            gotodashboard = new PictureBox();
             next = new PictureBox();
             lbMonth = new Label();
             saturday = new Label();
@@ -88,12 +89,11 @@
             panel40 = new Panel();
             panel41 = new Panel();
             panel42 = new Panel();
-            pictureBox1 = new PictureBox();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gotodashboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)next).BeginInit();
             ((System.ComponentModel.ISupportInitialize)previous).BeginInit();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // minmax
@@ -120,7 +120,7 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(pictureBox1);
+            guna2Panel1.Controls.Add(gotodashboard);
             guna2Panel1.Controls.Add(next);
             guna2Panel1.Controls.Add(lbMonth);
             guna2Panel1.Controls.Add(saturday);
@@ -138,6 +138,17 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 725);
             guna2Panel1.TabIndex = 1;
+            // 
+            // gotodashboard
+            // 
+            gotodashboard.Image = (Image)resources.GetObject("gotodashboard.Image");
+            gotodashboard.Location = new Point(801, 16);
+            gotodashboard.Name = "gotodashboard";
+            gotodashboard.Size = new Size(41, 41);
+            gotodashboard.SizeMode = PictureBoxSizeMode.StretchImage;
+            gotodashboard.TabIndex = 11;
+            gotodashboard.TabStop = false;
+            gotodashboard.Click += gotodashboard_Click;
             // 
             // next
             // 
@@ -626,16 +637,6 @@
             panel42.Size = new Size(121, 100);
             panel42.TabIndex = 41;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(801, 16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 41);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
-            // 
             // Calendar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -650,10 +651,10 @@
             ShowInTaskbar = false;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gotodashboard).EndInit();
             ((System.ComponentModel.ISupportInitialize)next).EndInit();
             ((System.ComponentModel.ISupportInitialize)previous).EndInit();
             flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -714,6 +715,6 @@
         private Panel panel40;
         private Panel panel41;
         private Panel panel42;
-        private PictureBox pictureBox1;
+        private PictureBox gotodashboard;
     }
 }

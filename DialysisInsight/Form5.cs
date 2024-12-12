@@ -87,7 +87,7 @@ namespace DialysisInsight
             DateTime startodTheMonth = new DateTime(year, month, 1);
             int day = DateTime.DaysInMonth(year, month);
             int week = Convert.ToInt32(startodTheMonth.DayOfWeek.ToString("d"));
-            for(int i = 1; i < week; i++)
+            for (int i = 1; i < week; i++)
             {
                 ucDays uc = new ucDays("");
                 flowLayoutPanel1.Controls.Add(uc);
@@ -97,6 +97,13 @@ namespace DialysisInsight
                 ucDays uc = new ucDays(i + "");
                 flowLayoutPanel1.Controls.Add(uc);
             }
+        }
+
+        private void gotodashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
         }
     }
 }
