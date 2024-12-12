@@ -95,6 +95,7 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 725);
             guna2Panel1.TabIndex = 1;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // gotodashboard
             // 
@@ -126,6 +127,7 @@
             lbMonth.Size = new Size(151, 26);
             lbMonth.TabIndex = 8;
             lbMonth.Text = "MONTH";
+            lbMonth.Click += lbMonth_Click;
             // 
             // saturday
             // 
@@ -136,6 +138,7 @@
             saturday.Size = new Size(80, 26);
             saturday.TabIndex = 7;
             saturday.Text = "Saturday";
+            saturday.Click += saturday_Click;
             // 
             // friday
             // 
@@ -146,6 +149,7 @@
             friday.Size = new Size(58, 26);
             friday.TabIndex = 6;
             friday.Text = "Friday";
+            friday.Click += friday_Click;
             // 
             // thursday
             // 
@@ -156,6 +160,7 @@
             thursday.Size = new Size(82, 26);
             thursday.TabIndex = 5;
             thursday.Text = "Thursday";
+            thursday.Click += thursday_Click;
             // 
             // wednesday
             // 
@@ -166,6 +171,7 @@
             wednesday.Size = new Size(101, 26);
             wednesday.TabIndex = 4;
             wednesday.Text = "Wednesday";
+            wednesday.Click += wednesday_Click;
             // 
             // tuesday
             // 
@@ -176,6 +182,7 @@
             tuesday.Size = new Size(75, 26);
             tuesday.TabIndex = 3;
             tuesday.Text = "Tuesday";
+            tuesday.Click += tuesday_Click;
             // 
             // monday
             // 
@@ -186,6 +193,7 @@
             monday.Size = new Size(73, 26);
             monday.TabIndex = 2;
             monday.Text = "Monday";
+            monday.Click += monday_Click;
             // 
             // previous
             // 

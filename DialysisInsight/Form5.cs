@@ -16,7 +16,6 @@ namespace DialysisInsight
 {
     public partial class Calendar : Form
     {
-        int month, year;
         private Size formOriginalSize;
         private Rectangle recminmax;
         private Rectangle recpanel1;
@@ -73,33 +72,7 @@ namespace DialysisInsight
 
         private void Calendar_Load(object sender, EventArgs e)
         {
-            displaDays();
-        }
 
-        private void displaDays()
-        {
-            DateTime now = DateTime.Now;
-            month = now.Month;
-            year = now.Year;
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            lbMonth.Text = monthname + " " + year;
-            DateTime startofthemonth = new DateTime(year, month, 1);
-            int days = DateTime.DaysInMonth(year, month);
-            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
-
-            for (int i = 1; i < daysoftheweek; i++)
-            {
-                ucDays ucBlank = new ucDays();
-                daycontainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucdays = new UserControlDays();
-                DateTime currentDate = new DateTime(year, month, i);
-                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
-                ucdays.days(i);
-                daycontainer.Controls.Add(ucdays);
-            }
         }
 
         private void gotodashboard_Click(object sender, EventArgs e)
@@ -111,68 +84,52 @@ namespace DialysisInsight
 
         private void previous_Click(object sender, EventArgs e)
         {
-            daycontainer.Controls.Clear();
-            month--;
 
-            if (month < 1)
-            {
-                month = 12;
-                year--;
-            }
-
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            lbMonth.Text = monthname + " " + year;
-
-            DateTime startofthemonth = new DateTime(year, month, 1);
-            int days = DateTime.DaysInMonth(year, month);
-            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
-
-            for (int i = 1; i < daysoftheweek; i++)
-            {
-                ucDays ucBlank = new ucDays();
-                daycontainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucdays = new UserControlDays();
-                DateTime currentDate = new DateTime(year, month, i);
-                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
-                ucdays.days(i);
-                daycontainer.Controls.Add(ucdays);
-            }
         }
 
         private void next_Click(object sender, EventArgs e)
         {
-            daycontainer.Controls.Clear();
-            month++;
 
-            if (month > 12)
-            {
-                month = 1;
-                year++;
-            }
+        }
 
-            String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
-            lbMonth.Text = monthname + " " + year;
+        private void lbMonth_Click(object sender, EventArgs e)
+        {
 
-            DateTime startofthemonth = new DateTime(year, month, 1);
-            int days = DateTime.DaysInMonth(year, month);
-            int daysoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
+        }
 
-            for (int i = 1; i < daysoftheweek; i++)
-            {
-                ucDays ucBlank = new ucDays();
-                daycontainer.Controls.Add(ucBlank);
-            }
-            for (int i = 1; i <= days; i++)
-            {
-                UserControlDays ucdays = new UserControlDays();
-                DateTime currentDate = new DateTime(year, month, i);
-                ucdays.setDate(currentDate.ToString("MM/dd/yyyy"));
-                ucdays.days(i);
-                daycontainer.Controls.Add(ucdays);
-            }
+        private void monday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tuesday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void wednesday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thursday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void friday_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saturday_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
