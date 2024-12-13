@@ -78,6 +78,14 @@ namespace DialysisInsight
             resize_Control(saturday, recsaturday);
             resize_Control(gotodashboard, recdashboard);
             resize_Control(daycontainer, reccontainer);
+            foreach (Control control in daycontainer.Controls)
+            {
+                if (control is Guna2Button dayButton)
+                {
+                    dayButton.Width = daycontainer.Width / 7 - 5; // 7 days per row
+                    dayButton.Height = daycontainer.Height / 6 - 5; // Maximum 6 weeks in a month
+                }
+            }
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -118,110 +126,67 @@ namespace DialysisInsight
 
         private void Calendar_Load(object? sender, EventArgs e)
         {
-            daycontainer = new TableLayoutPanel
-            {
-                Location = new Point(19, 103),
-                Size = new Size(867, 616),
-                Dock = DockStyle.None,
-                ColumnCount = 7,          // 7 days per week
-                RowCount = 6,
-                AutoSize = false,
-                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single
-            };
-
-            for (int i = 0; i < daycontainer.ColumnCount; i++)
-                daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / daycontainer.ColumnCount));
-
-            for (int i = 0; i < daycontainer.RowCount; i++)
-                daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / daycontainer.RowCount));
-
-            // Add the TableLayoutPanel to the panel
-            guna2Panel1.Controls.Add(daycontainer);
-
-            // Set the month label
-            lbMonth.Text = currentMonth.ToString("MMMM yyyy");
-
-            // Fill the TableLayoutPanel with the correct days of the month
-            FillCalendar(currentMonth);
+            currentMonth = DateTime.Now; // Set current month
+            DisplayCurrentMonth();
         }
 
-        private void FillCalendar(DateTime month)
+        private void DisplayCurrentMonth()
         {
-            // Clear existing controls in daycontainer
-            daycontainer.Controls.Clear();
+            daycontainer.Controls.Clear(); // Clear existing controls
+            lbMonth.Text = currentMonth.ToString("MMMM yyyy"); // Display current month
 
-            // Get the first day of the month and the number of days in the month
-            DateTime firstDayOfMonth = new DateTime(month.Year, month.Month, 1);
-            int daysInMonth = DateTime.DaysInMonth(month.Year, month.Month);
+            // Get the first day of the month
+            DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
+            int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
+            int startDay = (int)firstDay.DayOfWeek; // Sunday = 0
 
-            // Get the starting day of the week for the 1st of the month
-            int startDay = (int)firstDayOfMonth.DayOfWeek; // Sunday = 0, Monday = 1, etc.
-
-            // Add empty labels for days before the 1st day of the month
+            // Add blank labels for days before the start of the month
             for (int i = 0; i < startDay; i++)
             {
-                daycontainer.Controls.Add(new Label()); // Empty label for padding
+                var blankLabel = new Label
+                {
+                    Width = 50,
+                    Height = 50,
+                    BackColor = Color.Transparent
+                };
+                daycontainer.Controls.Add(blankLabel);
             }
 
             // Add buttons for each day of the month
             for (int day = 1; day <= daysInMonth; day++)
             {
-                Button dayButton = new Button
+                int currentDay = day;
+                var dayButton = new Guna2Button
                 {
                     Text = day.ToString(),
-                    Dock = DockStyle.None,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Arial", 12),
-                    FlatStyle = FlatStyle.Flat,
-                    BackColor = Color.LightGray // Optional: Add color to make it visually distinct
+                    Width = daycontainer.Width / 7 - 5, // Adjust width dynamically
+                    Height = daycontainer.Height / 6 - 5, // Adjust height dynamically
+                    BorderRadius = 10,
+                    BorderThickness = 1,
+                    Margin = new Padding(2),
+                    Font = new Font("Arial", 10, FontStyle.Regular),
+                    FillColor = Color.White,
+                    ForeColor = Color.Black
                 };
 
-                dayButton.Click += DayButton_Click;
+                // Highlight the current date
+                if (day == DateTime.Now.Day &&
+                    currentMonth.Month == DateTime.Now.Month &&
+                    currentMonth.Year == DateTime.Now.Year)
+                {
+                    dayButton.FillColor = Color.FromArgb(207, 226, 243);
+                }
 
-                // Add the button to the appropriate cell in the TableLayoutPanel
+                // Attach an event to each button
+                dayButton.Click += (s, e) => DayButton_Click(day);
+
                 daycontainer.Controls.Add(dayButton);
             }
         }
 
-        private void DayButton_Click(object? sender, EventArgs e)
+        private void DayButton_Click(int day)
         {
-            Button? clickedButton = sender as Button;
-            if (clickedButton != null)
-            {
-                MessageBox.Show($"You clicked on day: {clickedButton.Text}");
-            }
-        }
-
-        private void DisplayCurrentMonth()
-        {
-            daycontainer.Controls.Clear(); // Clear previous buttons
-            var firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
-            var daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
-
-            int dayOfWeekOffset = (int)firstDay.DayOfWeek;
-
-            for (int i = 0; i < dayOfWeekOffset; i++)
-            {
-                // Add empty placeholders for days of the previous month
-                daycontainer.Controls.Add(new Label());
-            }
-
-            for (int day = 1; day <= daysInMonth; day++)
-            {
-                var dayButton = new Guna2Button
-                {
-                    Text = day.ToString(),
-                    Dock = DockStyle.None,
-                    BorderRadius = 10,
-                    BorderThickness = 1,
-                    Font = new Font("Arial", 10, FontStyle.Regular),
-                    FillColor = Color.White,
-                    ForeColor = Color.Black,
-                    Margin = new Padding(2)
-                };
-
-                daycontainer.Controls.Add(dayButton); // Add the button to the container
-            }
+            MessageBox.Show($"You selected {currentMonth:MMMM} {day}, {currentMonth.Year}", "Day Selected");
         }
 
         private void gotodashboard_Click(object sender, EventArgs e)
