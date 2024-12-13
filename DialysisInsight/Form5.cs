@@ -174,11 +174,11 @@ namespace DialysisInsight
                     currentMonth.Month == DateTime.Now.Month &&
                     currentMonth.Year == DateTime.Now.Year)
                 {
-                    dayButton.FillColor = Color.FromArgb(207, 226, 243);
+                    dayButton.FillColor = Color.FromArgb(217, 210, 233);
                 }
 
                 // Attach an event to each button
-                dayButton.Click += (s, e) => DayButton_Click(day);
+                dayButton.Click += (s, e) => DayButton_Click(currentDay);
 
                 daycontainer.Controls.Add(dayButton);
             }
