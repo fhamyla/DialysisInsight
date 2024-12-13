@@ -82,8 +82,8 @@ namespace DialysisInsight
             {
                 if (control is Guna2Button dayButton)
                 {
-                    dayButton.Width = daycontainer.Width / 7 - 5; // 7 days per row
-                    dayButton.Height = daycontainer.Height / 6 - 5; // Maximum 6 weeks in a month
+                    dayButton.Width = daycontainer.Width / 7 - 5;
+                    dayButton.Height = daycontainer.Height / 6 - 5;
                 }
             }
         }
@@ -126,21 +126,20 @@ namespace DialysisInsight
 
         private void Calendar_Load(object? sender, EventArgs e)
         {
-            currentMonth = DateTime.Now; // Set current month
+            currentMonth = DateTime.Now;
             DisplayCurrentMonth();
         }
 
         private void DisplayCurrentMonth()
         {
-            daycontainer.Controls.Clear(); // Clear existing controls
-            lbMonth.Text = currentMonth.ToString("MMMM yyyy"); // Display current month
+            daycontainer.Controls.Clear();
+            lbMonth.Text = currentMonth.ToString("MMMM yyyy");
 
             // Get the first day of the month
             DateTime firstDay = new DateTime(currentMonth.Year, currentMonth.Month, 1);
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
-            int startDay = (int)firstDay.DayOfWeek; // Sunday = 0
+            int startDay = (int)firstDay.DayOfWeek;
 
-            // Add blank labels for days before the start of the month
             for (int i = 0; i < startDay; i++)
             {
                 var blankLabel = new Label
@@ -152,15 +151,14 @@ namespace DialysisInsight
                 daycontainer.Controls.Add(blankLabel);
             }
 
-            // Add buttons for each day of the month
             for (int day = 1; day <= daysInMonth; day++)
             {
                 int currentDay = day;
                 var dayButton = new Guna2Button
                 {
                     Text = day.ToString(),
-                    Width = daycontainer.Width / 7 - 5, // Adjust width dynamically
-                    Height = daycontainer.Height / 6 - 5, // Adjust height dynamically
+                    Width = daycontainer.Width / 7 - 5,
+                    Height = daycontainer.Height / 6 - 5,
                     BorderRadius = 10,
                     BorderThickness = 1,
                     Margin = new Padding(2),
@@ -172,38 +170,33 @@ namespace DialysisInsight
                 // Highlight the current date
                 if (day == DateTime.Now.Day && currentMonth.Month == DateTime.Now.Month && currentMonth.Year == DateTime.Now.Year)
                 {
-                    dayButton.FillColor = Color.FromArgb(217, 210, 233); // Color for current day
-                    dayButton.Tag = "current"; // Tag this button as the current day
+                    dayButton.FillColor = Color.FromArgb(217, 210, 233);
+                    dayButton.Tag = "current";
                 }
                 else
                 {
-                    dayButton.Tag = "normal"; // Tag this button as a normal day
+                    dayButton.Tag = "normal";
                 }
 
-                // MouseEnter: Change the color when hovering
                 dayButton.MouseEnter += (s, e) =>
                 {
-                    // Only change the hover color for non-current days
                     if (dayButton.Tag.ToString() != "current")
                     {
-                        dayButton.FillColor = Color.FromArgb(255, 242, 204); // Hover color for non-current days
+                        dayButton.FillColor = Color.FromArgb(255, 242, 204);
                     }
                 };
 
-                // MouseLeave: Restore the color when mouse leaves
                 dayButton.MouseLeave += (s, e) =>
                 {
-                    // If it's the current day, ensure it retains its special color
                     if (dayButton.Tag.ToString() == "current")
                     {
-                        dayButton.FillColor = Color.FromArgb(217, 210, 233); // Keep color for current day
+                        dayButton.FillColor = Color.FromArgb(217, 210, 233);
                     }
                     else
                     {
-                        dayButton.FillColor = Color.White; // Restore default color for non-current days
+                        dayButton.FillColor = Color.White;
                     }
                 };
-                // Attach an event to each button
                 dayButton.Click += (s, e) => DayButton_Click(currentDay);
                 daycontainer.Controls.Add(dayButton);
             }
