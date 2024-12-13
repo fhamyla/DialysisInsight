@@ -179,7 +179,6 @@ namespace DialysisInsight
 
                 // Attach an event to each button
                 dayButton.Click += (s, e) => DayButton_Click(currentDay);
-
                 daycontainer.Controls.Add(dayButton);
             }
         }
