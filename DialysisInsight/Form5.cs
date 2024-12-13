@@ -58,46 +58,6 @@ namespace DialysisInsight
             reccontainer = new Rectangle(daycontainer.Location, daycontainer.Size);
 
             currentMonth = DateTime.Now;
-
-            // Initialize the TableLayoutPanel
-            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel
-            {
-                Location = new Point(19, 103),
-                Size = new Size(867, 616),
-                ColumnCount = 7, // Assuming 7 days in a week
-                RowCount = 6,    // 6 rows to cover all weeks in a month
-                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single, // Optional border for visibility
-                Dock = DockStyle.None // Prevent it from stretching unnecessarily
-            };
-
-            // Adjust row and column styles to fit evenly
-            for (int i = 0; i < tableLayoutPanel.ColumnCount; i++)
-            {
-                tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / tableLayoutPanel.ColumnCount));
-            }
-
-            for (int i = 0; i < tableLayoutPanel.RowCount; i++)
-            {
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / tableLayoutPanel.RowCount));
-            }
-
-            // Add to form
-            this.Controls.Add(tableLayoutPanel);
-
-            // Fill with buttons
-            for (int i = 0; i < 42; i++) // 42 slots (6 rows * 7 columns)
-            {
-                Button dayButton = new Button
-                {
-                    Text = (i + 1).ToString(),
-                    Dock = DockStyle.Fill,
-                    Margin = new Padding(2),
-                    FlatStyle = FlatStyle.Flat
-                };
-
-                tableLayoutPanel.Controls.Add(dayButton);
-            }
-
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
