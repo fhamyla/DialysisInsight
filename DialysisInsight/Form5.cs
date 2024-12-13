@@ -170,13 +170,39 @@ namespace DialysisInsight
                 };
 
                 // Highlight the current date
-                if (day == DateTime.Now.Day &&
-                    currentMonth.Month == DateTime.Now.Month &&
-                    currentMonth.Year == DateTime.Now.Year)
+                if (day == DateTime.Now.Day && currentMonth.Month == DateTime.Now.Month && currentMonth.Year == DateTime.Now.Year)
                 {
-                    dayButton.FillColor = Color.FromArgb(217, 210, 233);
+                    dayButton.FillColor = Color.FromArgb(217, 210, 233); // Color for current day
+                    dayButton.Tag = "current"; // Tag this button as the current day
+                }
+                else
+                {
+                    dayButton.Tag = "normal"; // Tag this button as a normal day
                 }
 
+                // MouseEnter: Change the color when hovering
+                dayButton.MouseEnter += (s, e) =>
+                {
+                    // Only change the hover color for non-current days
+                    if (dayButton.Tag.ToString() != "current")
+                    {
+                        dayButton.FillColor = Color.FromArgb(255, 242, 204); // Hover color for non-current days
+                    }
+                };
+
+                // MouseLeave: Restore the color when mouse leaves
+                dayButton.MouseLeave += (s, e) =>
+                {
+                    // If it's the current day, ensure it retains its special color
+                    if (dayButton.Tag.ToString() == "current")
+                    {
+                        dayButton.FillColor = Color.FromArgb(217, 210, 233); // Keep color for current day
+                    }
+                    else
+                    {
+                        dayButton.FillColor = Color.White; // Restore default color for non-current days
+                    }
+                };
                 // Attach an event to each button
                 dayButton.Click += (s, e) => DayButton_Click(currentDay);
                 daycontainer.Controls.Add(dayButton);
