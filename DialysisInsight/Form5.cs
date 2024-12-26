@@ -132,16 +132,13 @@ namespace DialysisInsight
 
         private void DisplayCurrentMonth()
         {
-            // Clear all existing controls in the TableLayoutPanel
             daycontainer.Controls.Clear();
             daycontainer.ColumnStyles.Clear();
             daycontainer.RowStyles.Clear();
 
-            // Reset the number of rows and columns
-            daycontainer.ColumnCount = 7; // Days of the week
-            daycontainer.RowCount = 6;    // Maximum weeks in a month
+            daycontainer.ColumnCount = 7;
+            daycontainer.RowCount = 6;
 
-            // Define equal-sized rows and columns
             for (int col = 0; col < daycontainer.ColumnCount; col++)
             {
                 daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / daycontainer.ColumnCount));
@@ -152,17 +149,13 @@ namespace DialysisInsight
                 daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / daycontainer.RowCount));
             }
 
-            // Update the month label
             lbMonth.Text = currentMonth.ToString("MMMM yyyy");
 
-            // Get the first day of the month and calculate days in the current month
             DateTime firstDayOfMonth = new DateTime(currentMonth.Year, currentMonth.Month, 1);
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
 
-            // Determine the starting day of the week
             int startDay = (int)firstDayOfMonth.DayOfWeek;
 
-            // Add blank controls for the days before the first of the month
             for (int i = 0; i < startDay; i++)
             {
                 var blankLabel = new Label
@@ -173,7 +166,6 @@ namespace DialysisInsight
                 daycontainer.Controls.Add(blankLabel);
             }
 
-            // Add buttons for each day in the month
             for (int day = 1; day <= daysInMonth; day++)
             {
                 int currentDay = day;
@@ -190,7 +182,6 @@ namespace DialysisInsight
                     ForeColor = Color.Black
                 };
 
-                // Highlight the current date
                 if (day == DateTime.Now.Day && currentMonth.Month == DateTime.Now.Month && currentMonth.Year == DateTime.Now.Year)
                 {
                     dayButton.FillColor = Color.FromArgb(217, 210, 233);
@@ -222,7 +213,6 @@ namespace DialysisInsight
                 daycontainer.Controls.Add(dayButton);
             }
 
-            // Ensure any remaining empty cells are filled with blank controls
             int totalCells = daycontainer.RowCount * daycontainer.ColumnCount;
             int filledCells = daycontainer.Controls.Count;
 
