@@ -30,20 +30,20 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sched));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sched));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             Body = new Guna.UI2.WinForms.Guna2TextBox();
             Title = new Guna.UI2.WinForms.Guna2TextBox();
-            minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,10 +61,33 @@
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
+            // minmax
+            // 
+            minmax.BackColor = Color.Transparent;
+            minmax.BorderRadius = 10;
+            minmax.CustomizableEdges = customizableEdges1;
+            minmax.DisabledState.BorderColor = Color.DarkGray;
+            minmax.DisabledState.CustomBorderColor = Color.DarkGray;
+            minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            minmax.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            minmax.FillColor = Color.Transparent;
+            minmax.Font = new Font("Segoe UI", 9F);
+            minmax.ForeColor = Color.White;
+            minmax.Image = (Image)resources.GetObject("minmax.Image");
+            minmax.ImageSize = new Size(15, 15);
+            minmax.Location = new Point(406, 3);
+            minmax.Name = "minmax";
+            minmax.PressedColor = Color.Transparent;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            minmax.Size = new Size(15, 19);
+            minmax.TabIndex = 4;
+            minmax.Click += minmax_Click;
+            // 
             // guna2Button1
             // 
-            guna2Button1.BorderColor = Color.Transparent;
+            guna2Button1.BorderColor = Color.FromArgb(64, 64, 64);
             guna2Button1.BorderRadius = 5;
+            guna2Button1.BorderThickness = 1;
             guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -73,6 +96,7 @@
             guna2Button1.FillColor = Color.Transparent;
             guna2Button1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.FromArgb(64, 64, 64);
+            guna2Button1.HoverState.BorderColor = Color.Black;
             guna2Button1.HoverState.FillColor = Color.FromArgb(64, 64, 64);
             guna2Button1.HoverState.ForeColor = Color.White;
             guna2Button1.Location = new Point(121, 299);
@@ -137,28 +161,6 @@
             Title.TabIndex = 0;
             Title.TextAlign = HorizontalAlignment.Center;
             Title.TextChanged += Title_TextChanged;
-            // 
-            // minmax
-            // 
-            minmax.BackColor = Color.Transparent;
-            minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges1;
-            minmax.DisabledState.BorderColor = Color.DarkGray;
-            minmax.DisabledState.CustomBorderColor = Color.DarkGray;
-            minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            minmax.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            minmax.FillColor = Color.Transparent;
-            minmax.Font = new Font("Segoe UI", 9F);
-            minmax.ForeColor = Color.White;
-            minmax.Image = (Image)resources.GetObject("minmax.Image");
-            minmax.ImageSize = new Size(15, 15);
-            minmax.Location = new Point(406, 3);
-            minmax.Name = "minmax";
-            minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            minmax.Size = new Size(15, 19);
-            minmax.TabIndex = 4;
-            minmax.Click += minmax_Click;
             // 
             // Sched
             // 
