@@ -135,7 +135,6 @@ namespace DialysisInsight
             daycontainer.Controls.Clear();
             daycontainer.ColumnStyles.Clear();
             daycontainer.RowStyles.Clear();
-            daycontainer.Refresh();
 
             daycontainer.ColumnCount = 7;
             daycontainer.RowCount = 6;
