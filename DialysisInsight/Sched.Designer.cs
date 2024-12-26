@@ -57,7 +57,7 @@
             guna2Panel1.Location = new Point(-6, -7);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(424, 362);
+            guna2Panel1.Size = new Size(429, 362);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
@@ -75,7 +75,7 @@
             minmax.ForeColor = Color.White;
             minmax.Image = (Image)resources.GetObject("minmax.Image");
             minmax.ImageSize = new Size(15, 15);
-            minmax.Location = new Point(406, 3);
+            minmax.Location = new Point(406, 7);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
             minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -167,7 +167,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(413, 351);
+            ClientSize = new Size(417, 351);
             ControlBox = false;
             Controls.Add(guna2Panel1);
             Name = "Sched";

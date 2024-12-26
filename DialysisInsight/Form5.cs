@@ -229,7 +229,9 @@ namespace DialysisInsight
 
         private void DayButton_Click(int day)
         {
-            MessageBox.Show($"You selected {currentMonth:MMMM} {day}, {currentMonth.Year}", "Day Selected");
+            Sched sched = new Sched();
+            sched.Show();
+            this.Hide();
         }
 
         private void gotodashboard_Click(object sender, EventArgs e)

@@ -66,7 +66,9 @@ namespace DialysisInsight
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            Calendar calendar = new Calendar();
+            calendar.Show();
+            this.Hide();
         }
 
         private void minmax_Click(object sender, EventArgs e)
