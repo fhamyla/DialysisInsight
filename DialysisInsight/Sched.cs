@@ -19,6 +19,7 @@ namespace DialysisInsight
         private Rectangle reclabel1;
         private Rectangle reccontainer;
         private Rectangle recprevious;
+        private Rectangle recprev;
         public Sched()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace DialysisInsight
             reclabel1 = new Rectangle(Title.Location, Title.Size);
             reccontainer = new Rectangle(Body.Location, Body.Size);
             recprevious = new Rectangle(guna2Button1.Location, guna2Button1.Size);
+            recprevious = new Rectangle(guna2Button1.Location, guna2Button1.Size);
+            recprev = new Rectangle(guna2Button2.Location, guna2Button2.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace DialysisInsight
             resize_Control(Title, reclabel1);
             resize_Control(Body, reccontainer);
             resize_Control(guna2Button1, recprevious);
+            resize_Control(guna2Button2, recprev);
         }
 
         private void resize_Control(Control c, Rectangle r)
