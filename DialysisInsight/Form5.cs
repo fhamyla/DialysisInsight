@@ -133,6 +133,19 @@ namespace DialysisInsight
         private void DisplayCurrentMonth()
         {
             daycontainer.Controls.Clear();
+            daycontainer.RowCount = 6;
+            daycontainer.ColumnCount = 7;
+
+            for (int col = 0; col < daycontainer.ColumnCount; col++)
+            {
+                daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / daycontainer.ColumnCount));
+            }
+
+            for (int row = 0; row < daycontainer.RowCount; row++)
+            {
+                daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / daycontainer.RowCount));
+            }
+
             lbMonth.Text = currentMonth.ToString("MMMM yyyy");
 
             // Get the first day of the month
@@ -140,25 +153,29 @@ namespace DialysisInsight
             int daysInMonth = DateTime.DaysInMonth(currentMonth.Year, currentMonth.Month);
             int startDay = (int)firstDay.DayOfWeek;
 
+            int currentRow = 0;
+
+            // Fill blank cells before the first day
             for (int i = 0; i < startDay; i++)
             {
-                var blankLabel = new Label
+                daycontainer.Controls.Add(new Label
                 {
-                    Width = 50,
-                    Height = 50,
-                    BackColor = Color.Transparent
-                };
-                daycontainer.Controls.Add(blankLabel);
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Fill
+                }, i, currentRow);
             }
 
+            // Add buttons for each day
             for (int day = 1; day <= daysInMonth; day++)
             {
                 int currentDay = day;
+                int column = (startDay + day - 1) % 7;
+                if (column == 0 && day != 1) currentRow++;
+
                 var dayButton = new Guna2Button
                 {
                     Text = day.ToString(),
-                    Width = daycontainer.Width / 7 - 5,
-                    Height = daycontainer.Height / 6 - 5,
+                    Dock = DockStyle.Fill,
                     BorderRadius = 10,
                     BorderThickness = 1,
                     Margin = new Padding(2),
@@ -167,20 +184,15 @@ namespace DialysisInsight
                     ForeColor = Color.Black
                 };
 
-                // Highlight the current date
                 if (day == DateTime.Now.Day && currentMonth.Month == DateTime.Now.Month && currentMonth.Year == DateTime.Now.Year)
                 {
                     dayButton.FillColor = Color.FromArgb(217, 210, 233);
                     dayButton.Tag = "current";
                 }
-                else
-                {
-                    dayButton.Tag = "normal";
-                }
 
                 dayButton.MouseEnter += (s, e) =>
                 {
-                    if (dayButton.Tag.ToString() != "current")
+                    if (dayButton.Tag?.ToString() != "current")
                     {
                         dayButton.FillColor = Color.FromArgb(255, 242, 204);
                     }
@@ -188,7 +200,7 @@ namespace DialysisInsight
 
                 dayButton.MouseLeave += (s, e) =>
                 {
-                    if (dayButton.Tag.ToString() == "current")
+                    if (dayButton.Tag?.ToString() == "current")
                     {
                         dayButton.FillColor = Color.FromArgb(217, 210, 233);
                     }
@@ -197,8 +209,9 @@ namespace DialysisInsight
                         dayButton.FillColor = Color.White;
                     }
                 };
+
                 dayButton.Click += (s, e) => DayButton_Click(currentDay);
-                daycontainer.Controls.Add(dayButton);
+                daycontainer.Controls.Add(dayButton, column, currentRow);
             }
         }
 

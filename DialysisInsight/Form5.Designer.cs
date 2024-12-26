@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             gotodashboard = new PictureBox();
@@ -46,7 +46,7 @@
             monday = new Label();
             previous = new PictureBox();
             sunday = new Label();
-            daycontainer = new FlowLayoutPanel();
+            daycontainer = new TableLayoutPanel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gotodashboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)next).BeginInit();
@@ -57,7 +57,7 @@
             // 
             minmax.BackColor = Color.Transparent;
             minmax.BorderRadius = 10;
-            minmax.CustomizableEdges = customizableEdges5;
+            minmax.CustomizableEdges = customizableEdges1;
             minmax.DisabledState.BorderColor = Color.DarkGray;
             minmax.DisabledState.CustomBorderColor = Color.DarkGray;
             minmax.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -70,7 +70,7 @@
             minmax.Location = new Point(864, 3);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
-            minmax.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
             minmax.Size = new Size(15, 19);
             minmax.TabIndex = 3;
             minmax.Click += minmax_Click;
@@ -89,10 +89,10 @@
             guna2Panel1.Controls.Add(monday);
             guna2Panel1.Controls.Add(previous);
             guna2Panel1.Controls.Add(sunday);
-            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-7, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(897, 725);
             guna2Panel1.TabIndex = 1;
             guna2Panel1.Paint += guna2Panel1_Paint;
@@ -220,10 +220,25 @@
             // 
             // daycontainer
             // 
+            daycontainer.ColumnCount = 7;
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
             daycontainer.Location = new Point(19, 103);
             daycontainer.Name = "daycontainer";
+            daycontainer.RowCount = 6;
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             daycontainer.Size = new Size(867, 616);
-            daycontainer.TabIndex = 12;
+            daycontainer.TabIndex = 13;
             // 
             // Calendar
             // 
@@ -260,6 +275,6 @@
         private PictureBox next;
         private PictureBox previous;
         private PictureBox gotodashboard;
-        private FlowLayoutPanel daycontainer;
+        private TableLayoutPanel daycontainer;
     }
 }
