@@ -128,24 +128,6 @@ namespace DialysisInsight
         {
             currentMonth = DateTime.Now;
             DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 1, 1);
-            DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 3, 1);
-            DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 5, 1);
-            DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 7, 1);
-            DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 9, 1);
-            DisplayCurrentMonth();
-
-            currentMonth = new DateTime(2024, 11, 1);
-            DisplayCurrentMonth();
         }
 
         private void DisplayCurrentMonth()
