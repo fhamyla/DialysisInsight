@@ -57,7 +57,7 @@
             guna2Panel1.Location = new Point(-6, -7);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel1.Size = new Size(429, 362);
+            guna2Panel1.Size = new Size(494, 416);
             guna2Panel1.TabIndex = 0;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
@@ -75,11 +75,11 @@
             minmax.ForeColor = Color.White;
             minmax.Image = (Image)resources.GetObject("minmax.Image");
             minmax.ImageSize = new Size(15, 15);
-            minmax.Location = new Point(406, 7);
+            minmax.Location = new Point(466, 7);
             minmax.Name = "minmax";
             minmax.PressedColor = Color.Transparent;
             minmax.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            minmax.Size = new Size(15, 19);
+            minmax.Size = new Size(25, 19);
             minmax.TabIndex = 4;
             minmax.Click += minmax_Click;
             // 
@@ -99,11 +99,11 @@
             guna2Button1.HoverState.BorderColor = Color.Black;
             guna2Button1.HoverState.FillColor = Color.FromArgb(64, 64, 64);
             guna2Button1.HoverState.ForeColor = Color.White;
-            guna2Button1.Location = new Point(121, 299);
+            guna2Button1.Location = new Point(121, 345);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(64, 0, 0);
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(180, 47);
+            guna2Button1.Size = new Size(244, 56);
             guna2Button1.TabIndex = 2;
             guna2Button1.Text = "Save";
             guna2Button1.Click += guna2Button1_Click;
@@ -130,7 +130,7 @@
             Body.PlaceholderText = "Body";
             Body.SelectedText = "";
             Body.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Body.Size = new Size(369, 184);
+            Body.Size = new Size(429, 230);
             Body.TabIndex = 1;
             Body.TextAlign = HorizontalAlignment.Center;
             Body.TextChanged += Body_TextChanged;
@@ -157,7 +157,7 @@
             Title.PlaceholderText = "Title";
             Title.SelectedText = "";
             Title.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Title.Size = new Size(369, 72);
+            Title.Size = new Size(429, 72);
             Title.TabIndex = 0;
             Title.TextAlign = HorizontalAlignment.Center;
             Title.TextChanged += Title_TextChanged;
@@ -167,7 +167,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(417, 351);
+            ClientSize = new Size(483, 406);
             ControlBox = false;
             Controls.Add(guna2Panel1);
             Name = "Sched";
