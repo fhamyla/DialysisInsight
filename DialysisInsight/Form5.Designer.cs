@@ -35,6 +35,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            daycontainer = new TableLayoutPanel();
             gotodashboard = new PictureBox();
             next = new PictureBox();
             lbMonth = new Label();
@@ -46,7 +47,6 @@
             monday = new Label();
             previous = new PictureBox();
             sunday = new Label();
-            daycontainer = new TableLayoutPanel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gotodashboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)next).BeginInit();
@@ -97,6 +97,28 @@
             guna2Panel1.TabIndex = 1;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
+            // daycontainer
+            // 
+            daycontainer.ColumnCount = 7;
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
+            daycontainer.Location = new Point(19, 103);
+            daycontainer.Name = "daycontainer";
+            daycontainer.RowCount = 6;
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
+            daycontainer.Size = new Size(867, 616);
+            daycontainer.TabIndex = 13;
+            // 
             // gotodashboard
             // 
             gotodashboard.Image = (Image)resources.GetObject("gotodashboard.Image");
@@ -124,7 +146,7 @@
             lbMonth.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbMonth.Location = new Point(19, 16);
             lbMonth.Name = "lbMonth";
-            lbMonth.Size = new Size(238, 26);
+            lbMonth.Size = new Size(238, 41);
             lbMonth.TabIndex = 8;
             lbMonth.Text = "MONTH";
             lbMonth.Click += lbMonth_Click;
@@ -217,28 +239,6 @@
             sunday.TabIndex = 1;
             sunday.Text = "Sunday";
             sunday.Click += label1_Click;
-            // 
-            // daycontainer
-            // 
-            daycontainer.ColumnCount = 7;
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.2857141F));
-            daycontainer.Location = new Point(19, 103);
-            daycontainer.Name = "daycontainer";
-            daycontainer.RowCount = 6;
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            daycontainer.Size = new Size(867, 616);
-            daycontainer.TabIndex = 13;
             // 
             // Calendar
             // 
