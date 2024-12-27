@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DialysisInsight.Calendar;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DialysisInsight
@@ -20,9 +21,17 @@ namespace DialysisInsight
         private Rectangle reccontainer;
         private Rectangle recprevious;
         private Rectangle recprev;
-        public Sched()
+
+        private Calendar calendarInstance;
+        private DateTime selectedDate;
+
+        public Sched(Calendar calendar, DateTime date)
         {
+            calendarInstance = calendar ?? throw new ArgumentNullException(nameof(calendar));
+            selectedDate = date;
+
             InitializeComponent();
+
             this.Resize += Dashboard_Resiz;
             formOriginalSize = this.Size;
             recminmax = new Rectangle(minmax.Location, minmax.Size);
@@ -70,8 +79,12 @@ namespace DialysisInsight
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Calendar calendar = new Calendar();
-            calendar.Show();
+            string note = Body.Text.Trim();
+            if (!string.IsNullOrEmpty(note))
+            {
+                calendarInstance.AddNoteForDate(selectedDate, note);
+            }
+            calendarInstance.Show();
             this.Hide();
         }
 
@@ -94,7 +107,9 @@ namespace DialysisInsight
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            calendarInstance.AddNoteForDate(selectedDate, string.Empty);
+            calendarInstance.Show();
+            this.Hide();
         }
     }
 }

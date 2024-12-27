@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DialysisInsight
 {
@@ -33,9 +34,15 @@ namespace DialysisInsight
         private Rectangle recsaturday;
         private Rectangle recdashboard;
         private DateTime currentMonth;
+
+        private Dictionary<DateTime, string> notedDays;
+
         public Calendar()
         {
             InitializeComponent();
+
+            notedDays = new Dictionary<DateTime, string>();
+
             this.Load += Calendar_Load;
             previous.Click += previous_Click;
             next.Click += next_Click;
@@ -58,6 +65,11 @@ namespace DialysisInsight
             reccontainer = new Rectangle(daycontainer.Location, daycontainer.Size);
 
             currentMonth = DateTime.Now;
+        }
+
+        public static class SharedData
+        {
+            public static HashSet<DateTime> NotedDays { get; } = new HashSet<DateTime>();
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -170,6 +182,8 @@ namespace DialysisInsight
             {
                 int currentDay = day;
 
+                var currentDate = new DateTime(currentMonth.Year, currentMonth.Month, day);
+
                 var dayButton = new Guna2Button
                 {
                     Text = day.ToString(),
@@ -178,8 +192,11 @@ namespace DialysisInsight
                     BorderThickness = 1,
                     Margin = new Padding(2),
                     Font = new Font("Arial", 10, FontStyle.Regular),
-                    FillColor = Color.White,
-                    ForeColor = Color.Black
+                    FillColor = notedDays.ContainsKey(currentDate)
+                    ? Color.FromArgb(197, 211, 191)
+                    : Color.White,
+                    ForeColor = Color.Black,
+                    Tag = currentDate
                 };
 
                 if (day == DateTime.Now.Day && currentMonth.Month == DateTime.Now.Month && currentMonth.Year == DateTime.Now.Year)
@@ -202,13 +219,17 @@ namespace DialysisInsight
                     {
                         dayButton.FillColor = Color.FromArgb(217, 210, 233);
                     }
-                    else
+                    else if (!notedDays.ContainsKey(currentDate))
                     {
                         dayButton.FillColor = Color.White;
                     }
+                    else
+                    {
+                        dayButton.FillColor = Color.FromArgb(197, 211, 191);
+                    }
                 };
 
-                dayButton.Click += (s, e) => DayButton_Click(currentDay);
+                dayButton.Click += (s, e) => DayButton_Click(currentDate);
 
                 daycontainer.Controls.Add(dayButton);
             }
@@ -227,11 +248,32 @@ namespace DialysisInsight
             }
         }
 
-        private void DayButton_Click(int day)
+        private void DayButton_Click(DateTime selectedDate)
         {
-            Sched sched = new Sched();
-            sched.Show();
-            this.Hide();
+            if (notedDays.ContainsKey(selectedDate))
+            {
+                string note = notedDays[selectedDate];
+                MessageBox.Show($"Note for {selectedDate.ToShortDateString()}:\n{note}", "View Note");
+
+                var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    notedDays.Remove(selectedDate);
+                    DisplayCurrentMonth();
+                }
+            }
+            else
+            {
+                Sched sched = new Sched(this, selectedDate);
+                sched.Show();
+                this.Hide();
+            }
+        }
+
+        public void AddNoteForDate(DateTime date, string note)
+        {
+            notedDays[date] = note;
+            DisplayCurrentMonth(); // Refresh the calendar
         }
 
         private void gotodashboard_Click(object sender, EventArgs e)
