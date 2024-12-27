@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DialysisInsight.Calendar;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.DataFormats;
 
 namespace DialysisInsight
 {
@@ -21,9 +22,11 @@ namespace DialysisInsight
         private Rectangle reccontainer;
         private Rectangle recprevious;
         private Rectangle recprev;
+        private Rectangle recback;
 
         private Calendar calendarInstance;
         private DateTime selectedDate;
+        private TextBox? noteTextBox;
 
         public Sched(Calendar calendar, DateTime date)
         {
@@ -31,6 +34,7 @@ namespace DialysisInsight
             selectedDate = date;
 
             InitializeComponent();
+            InitializeNoteTextBox();
 
             this.Resize += Dashboard_Resiz;
             formOriginalSize = this.Size;
@@ -41,6 +45,26 @@ namespace DialysisInsight
             recprevious = new Rectangle(guna2Button1.Location, guna2Button1.Size);
             recprevious = new Rectangle(guna2Button1.Location, guna2Button1.Size);
             recprev = new Rectangle(guna2Button2.Location, guna2Button2.Size);
+            recback= new Rectangle(Back.Location, Back.Size);
+        }
+
+        private void InitializeNoteTextBox()
+        {
+            noteTextBox = new TextBox
+            {
+                Multiline = true,
+                Dock = DockStyle.Fill,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+            Body.Controls.Add(noteTextBox); // Assuming "Body" is a container panel
+        }
+
+        public void SetNoteForDate(string note)
+        {
+            if (noteTextBox != null)
+            {
+                noteTextBox.Text = note;
+            }
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -51,6 +75,7 @@ namespace DialysisInsight
             resize_Control(Body, reccontainer);
             resize_Control(guna2Button1, recprevious);
             resize_Control(guna2Button2, recprev);
+            resize_Control(Back, recback);
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -79,11 +104,18 @@ namespace DialysisInsight
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string note = Body.Text.Trim();
-            if (!string.IsNullOrEmpty(note))
+            string title = Title.Text.Trim(); // Assuming there's a Title textbox
+            string note = Body.Text.Trim();  // Body textbox for note
+
+            // Validate input for saving
+            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(note))
             {
-                calendarInstance.AddNoteForDate(selectedDate, note);
+                MessageBox.Show("Title and Body cannot be empty. Please provide valid input.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            // Save action
+            calendarInstance.AddNoteForDate(selectedDate, $"{title}: {note}");
             calendarInstance.Show();
             this.Hide();
         }
@@ -107,9 +139,32 @@ namespace DialysisInsight
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            calendarInstance.AddNoteForDate(selectedDate, string.Empty);
+            string title = Title.Text.Trim();
+            string note = Body.Text.Trim();
+
+            // If both Title and Body are empty, show an error message and do nothing
+            if (string.IsNullOrEmpty(title) && string.IsNullOrEmpty(note))
+            {
+                MessageBox.Show("Nothing to delete. Title and Body are already empty.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Confirmation for deletion
+            var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                calendarInstance.RemoveNoteForDate(selectedDate);
+                Title.Clear();
+                Body.Clear(); // Assuming you clear the textboxes after deletion
+                calendarInstance.Show();
+                this.Close();
+            }
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
             calendarInstance.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

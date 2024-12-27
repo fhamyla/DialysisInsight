@@ -250,23 +250,24 @@ namespace DialysisInsight
 
         private void DayButton_Click(DateTime selectedDate)
         {
+            Sched sched = new Sched(this, selectedDate);
+
+            // If the date has a note, pass it to the Sched form
             if (notedDays.ContainsKey(selectedDate))
             {
-                string note = notedDays[selectedDate];
-                MessageBox.Show($"Note for {selectedDate.ToShortDateString()}:\n{note}", "View Note");
-
-                var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    notedDays.Remove(selectedDate);
-                    DisplayCurrentMonth();
-                }
+                sched.SetNoteForDate(notedDays[selectedDate]);
             }
-            else
+
+            sched.Show();
+            this.Hide();
+        }
+
+        public void RemoveNoteForDate(DateTime date)
+        {
+            if (notedDays.ContainsKey(date))
             {
-                Sched sched = new Sched(this, selectedDate);
-                sched.Show();
-                this.Hide();
+                notedDays.Remove(date);
+                DisplayCurrentMonth(); // Refresh the calendar
             }
         }
 
