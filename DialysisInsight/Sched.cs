@@ -48,15 +48,25 @@ namespace DialysisInsight
             recback= new Rectangle(Back.Location, Back.Size);
         }
 
+        private Guna.UI2.WinForms.Guna2TextBox? titleTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox? bodyTextBox;
+
         private void InitializeNoteTextBox()
         {
-            noteTextBox = new TextBox
-            {
-                Multiline = true,
-                Dock = DockStyle.Fill,
-                BorderStyle = BorderStyle.FixedSingle
-            };
-            Body.Controls.Add(noteTextBox); // Assuming "Body" is a container panel
+            titleTextBox = Title;  // Assuming 'Title' is a TextBox in your designer
+            bodyTextBox = Body;    // Assuming 'Body' is a TextBox in your designer
+
+            // Clear any existing text when initialized
+            titleTextBox?.Clear();
+            bodyTextBox?.Clear();
+        }
+
+        // Ensure both fields are non-empty before proceeding
+        private bool ValidateNoteFields()
+        {
+            guna2Button1.Enabled = !string.IsNullOrWhiteSpace(titleTextBox?.Text) &&
+                           !string.IsNullOrWhiteSpace(bodyTextBox?.Text);
+            return guna2Button1.Enabled;
         }
 
         public void SetNoteForDate(string note)
@@ -94,30 +104,41 @@ namespace DialysisInsight
 
         private void Title_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateNoteFields();
         }
 
         private void Body_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateNoteFields();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string title = Title.Text.Trim(); // Assuming there's a Title textbox
-            string note = Body.Text.Trim();  // Body textbox for note
-
-            // Validate input for saving
-            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(note))
+            if (titleTextBox == null || bodyTextBox == null)
             {
-                MessageBox.Show("Title and Body cannot be empty. Please provide valid input.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Title or Body text box is not initialized. Please check the configuration.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            // Save action
+            string title = titleTextBox?.Text.Trim() ?? string.Empty;
+            string note = bodyTextBox?.Text.Trim() ?? string.Empty;
+
+            // Validate input
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(note))
+            {
+                MessageBox.Show("Title and Body cannot be empty. Please provide valid input.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Save note
             calendarInstance.AddNoteForDate(selectedDate, $"{title}: {note}");
+            MessageBox.Show("Note saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Navigate back to the calendar
             calendarInstance.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void minmax_Click(object sender, EventArgs e)
@@ -139,23 +160,23 @@ namespace DialysisInsight
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            string title = Title.Text.Trim();
-            string note = Body.Text.Trim();
-
-            // If both Title and Body are empty, show an error message and do nothing
-            if (string.IsNullOrEmpty(title) && string.IsNullOrEmpty(note))
+            if (string.IsNullOrWhiteSpace(titleTextBox?.Text) && string.IsNullOrWhiteSpace(bodyTextBox?.Text))
             {
-                MessageBox.Show("Nothing to delete. Title and Body are already empty.", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nothing to delete. Title and Body are already empty.",
+                    "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Confirmation for deletion
-            var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo);
+            // Confirm deletion
+            var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 calendarInstance.RemoveNoteForDate(selectedDate);
-                Title.Clear();
-                Body.Clear(); // Assuming you clear the textboxes after deletion
+                titleTextBox?.Clear();
+                bodyTextBox?.Clear();
+                MessageBox.Show("Note deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Navigate back to the calendar
                 calendarInstance.Show();
                 this.Close();
             }
