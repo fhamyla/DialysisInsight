@@ -74,19 +74,17 @@ namespace DialysisInsight
 
         public bool DeleteNoteForDate(DateTime date, string title)
         {
-            // Check if there is a note for the given date
             if (notedDays.TryGetValue(date, out var note))
             {
-                // Check if the note starts with the given title
                 if (note.StartsWith($"{title}:"))
                 {
-                    notedDays.Remove(date); // Remove the note
-                    DisplayCurrentMonth(); // Refresh the calendar
-                    return true; // Note successfully deleted
+                    notedDays.Remove(date);
+                    DisplayCurrentMonth();
+                    return true;
                 }
             }
 
-            return false; // Note not found
+            return false;
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -269,7 +267,6 @@ namespace DialysisInsight
         {
             Sched sched = new Sched(this, selectedDate);
 
-            // If the date has a note, pass it to the Sched form
             if (notedDays.ContainsKey(selectedDate))
             {
                 sched.SetNoteForDate(notedDays[selectedDate]);
@@ -282,7 +279,7 @@ namespace DialysisInsight
         public void AddNoteForDate(DateTime date, string note)
         {
             notedDays[date] = note;
-            DisplayCurrentMonth(); // Refresh the calendar
+            DisplayCurrentMonth();
         }
 
         private void gotodashboard_Click(object sender, EventArgs e)

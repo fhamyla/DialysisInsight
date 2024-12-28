@@ -51,10 +51,8 @@ namespace DialysisInsight
         private Guna.UI2.WinForms.Guna2TextBox? titleTextBox;
         private Guna.UI2.WinForms.Guna2TextBox? bodyTextBox;
 
-        // Ensure both fields are non-empty before proceeding
         private void ValidateNoteFields()
         {
-            // Enable buttons only if both textboxes have non-empty, non-whitespace content
             bool isInputValid = !string.IsNullOrWhiteSpace(titleTextBox?.Text) &&
                                 !string.IsNullOrWhiteSpace(bodyTextBox?.Text);
 
@@ -109,21 +107,18 @@ namespace DialysisInsight
 
         private void InitializeNoteTextBox()
         {
-            titleTextBox = Title;  // Assuming 'Title' is the Guna2TextBox for the title
-            bodyTextBox = Body;    // Assuming 'Body' is the Guna2TextBox for the body
+            titleTextBox = Title;
+            bodyTextBox = Body;
 
-            // Clear any existing text when initialized
             titleTextBox?.Clear();
             bodyTextBox?.Clear();
 
-            // Attach event handlers
             if (titleTextBox != null)
                 titleTextBox.TextChanged += Title_TextChanged;
 
             if (bodyTextBox != null)
                 bodyTextBox.TextChanged += Body_TextChanged;
 
-            // Perform initial validation to disable buttons if fields are empty
             ValidateNoteFields();
         }
 
@@ -139,7 +134,6 @@ namespace DialysisInsight
             string title = titleTextBox?.Text.Trim() ?? string.Empty;
             string note = bodyTextBox?.Text.Trim() ?? string.Empty;
 
-            // Validate input
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(note))
             {
                 MessageBox.Show("Title and Body cannot be empty. Please provide valid input.",
@@ -147,11 +141,9 @@ namespace DialysisInsight
                 return;
             }
 
-            // Save note
             calendarInstance.AddNoteForDate(selectedDate, $"{title}: {note}");
             MessageBox.Show("Note saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Navigate back to the calendar
             calendarInstance.Show();
             this.Close();
         }
@@ -185,7 +177,6 @@ namespace DialysisInsight
             string title = titleTextBox?.Text.Trim() ?? string.Empty;
             string note = bodyTextBox?.Text.Trim() ?? string.Empty;
 
-            // Validate input
             if (string.IsNullOrWhiteSpace(title))
             {
                 MessageBox.Show("Title cannot be empty. Please provide a valid title to delete.",
@@ -193,7 +184,6 @@ namespace DialysisInsight
                 return;
             }
 
-            // Confirm deletion
             DialogResult result = MessageBox.Show($"Are you sure you want to delete the note with title: \"{title}\"?",
                 "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -202,7 +192,6 @@ namespace DialysisInsight
                 return;
             }
 
-            // Perform deletion
             bool deleted = calendarInstance.DeleteNoteForDate(selectedDate, title);
 
             if (deleted)
@@ -215,7 +204,6 @@ namespace DialysisInsight
                     "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            // Navigate back to the calendar
             calendarInstance.Show();
             this.Close();
         }
