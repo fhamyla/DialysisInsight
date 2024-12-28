@@ -64,9 +64,11 @@ namespace DialysisInsight
 
         public void SetNoteForDate(string note)
         {
-            if (noteTextBox != null)
+            if (titleTextBox != null && bodyTextBox != null)
             {
-                noteTextBox.Text = note;
+                string[] parts = note.Split(new[] { ':' }, 2);
+                titleTextBox.Text = parts.Length > 0 ? parts[0].Trim() : string.Empty;
+                bodyTextBox.Text = parts.Length > 1 ? parts[1].Trim() : string.Empty;
             }
         }
 
