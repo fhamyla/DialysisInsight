@@ -72,6 +72,23 @@ namespace DialysisInsight
             public static HashSet<DateTime> NotedDays { get; } = new HashSet<DateTime>();
         }
 
+        public bool DeleteNoteForDate(DateTime date, string title)
+        {
+            // Check if there is a note for the given date
+            if (notedDays.TryGetValue(date, out var note))
+            {
+                // Check if the note starts with the given title
+                if (note.StartsWith($"{title}:"))
+                {
+                    notedDays.Remove(date); // Remove the note
+                    DisplayCurrentMonth(); // Refresh the calendar
+                    return true; // Note successfully deleted
+                }
+            }
+
+            return false; // Note not found
+        }
+
         private void Dashboard_Resiz(object? sender, EventArgs e)
         {
             resize_Control(minmax, recminmax);
@@ -260,15 +277,6 @@ namespace DialysisInsight
 
             sched.Show();
             this.Hide();
-        }
-
-        public void RemoveNoteForDate(DateTime date)
-        {
-            if (notedDays.ContainsKey(date))
-            {
-                notedDays.Remove(date);
-                DisplayCurrentMonth(); // Refresh the calendar
-            }
         }
 
         public void AddNoteForDate(DateTime date, string note)

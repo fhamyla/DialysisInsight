@@ -51,22 +51,15 @@ namespace DialysisInsight
         private Guna.UI2.WinForms.Guna2TextBox? titleTextBox;
         private Guna.UI2.WinForms.Guna2TextBox? bodyTextBox;
 
-        private void InitializeNoteTextBox()
-        {
-            titleTextBox = Title;  // Assuming 'Title' is a TextBox in your designer
-            bodyTextBox = Body;    // Assuming 'Body' is a TextBox in your designer
-
-            // Clear any existing text when initialized
-            titleTextBox?.Clear();
-            bodyTextBox?.Clear();
-        }
-
         // Ensure both fields are non-empty before proceeding
-        private bool ValidateNoteFields()
+        private void ValidateNoteFields()
         {
-            guna2Button1.Enabled = !string.IsNullOrWhiteSpace(titleTextBox?.Text) &&
-                           !string.IsNullOrWhiteSpace(bodyTextBox?.Text);
-            return guna2Button1.Enabled;
+            // Enable buttons only if both textboxes have non-empty, non-whitespace content
+            bool isInputValid = !string.IsNullOrWhiteSpace(titleTextBox?.Text) &&
+                                !string.IsNullOrWhiteSpace(bodyTextBox?.Text);
+
+            guna2Button1.Enabled = isInputValid;
+            guna2Button2.Enabled = isInputValid;
         }
 
         public void SetNoteForDate(string note)
@@ -102,13 +95,33 @@ namespace DialysisInsight
             c.Size = new Size(newWidth, newHeight);
         }
 
-        private void Title_TextChanged(object sender, EventArgs e)
+        private void Title_TextChanged(object? sender, EventArgs e)
         {
             ValidateNoteFields();
         }
 
-        private void Body_TextChanged(object sender, EventArgs e)
+        private void Body_TextChanged(object? sender, EventArgs e)
         {
+            ValidateNoteFields();
+        }
+
+        private void InitializeNoteTextBox()
+        {
+            titleTextBox = Title;  // Assuming 'Title' is the Guna2TextBox for the title
+            bodyTextBox = Body;    // Assuming 'Body' is the Guna2TextBox for the body
+
+            // Clear any existing text when initialized
+            titleTextBox?.Clear();
+            bodyTextBox?.Clear();
+
+            // Attach event handlers
+            if (titleTextBox != null)
+                titleTextBox.TextChanged += Title_TextChanged;
+
+            if (bodyTextBox != null)
+                bodyTextBox.TextChanged += Body_TextChanged;
+
+            // Perform initial validation to disable buttons if fields are empty
             ValidateNoteFields();
         }
 
@@ -160,26 +173,49 @@ namespace DialysisInsight
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(titleTextBox?.Text) && string.IsNullOrWhiteSpace(bodyTextBox?.Text))
+            if (titleTextBox == null || bodyTextBox == null)
             {
-                MessageBox.Show("Nothing to delete. Title and Body are already empty.",
-                    "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Title or Body text box is not initialized. Please check the configuration.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string title = titleTextBox?.Text.Trim() ?? string.Empty;
+            string note = bodyTextBox?.Text.Trim() ?? string.Empty;
+
+            // Validate input
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                MessageBox.Show("Title cannot be empty. Please provide a valid title to delete.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Confirm deletion
-            var result = MessageBox.Show("Do you want to delete this note?", "Delete Note", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                calendarInstance.RemoveNoteForDate(selectedDate);
-                titleTextBox?.Clear();
-                bodyTextBox?.Clear();
-                MessageBox.Show("Note deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete the note with title: \"{title}\"?",
+                "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                // Navigate back to the calendar
-                calendarInstance.Show();
-                this.Close();
+            if (result != DialogResult.Yes)
+            {
+                return;
             }
+
+            // Perform deletion
+            bool deleted = calendarInstance.DeleteNoteForDate(selectedDate, title);
+
+            if (deleted)
+            {
+                MessageBox.Show("Note deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Note not found. Please check the title and try again.",
+                    "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Navigate back to the calendar
+            calendarInstance.Show();
+            this.Close();
         }
 
         private void Back_Click(object sender, EventArgs e)
