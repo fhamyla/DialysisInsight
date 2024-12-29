@@ -61,6 +61,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            onehour = new CheckBox();
+            oneday = new CheckBox();
+            AppointmentReminders = new Label();
+            MedicationReminders = new CheckBox();
             edit2 = new Guna.UI2.WinForms.Guna2Button();
             edit = new Guna.UI2.WinForms.Guna2Button();
             back = new Guna.UI2.WinForms.Guna2Button();
@@ -78,10 +82,6 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            MedicationReminders = new CheckBox();
-            AppointmentReminders = new Label();
-            oneday = new CheckBox();
-            onehour = new CheckBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -137,6 +137,53 @@
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
             // 
+            // onehour
+            // 
+            onehour.AutoSize = true;
+            onehour.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            onehour.Location = new Point(52, 490);
+            onehour.Name = "onehour";
+            onehour.Size = new Size(110, 27);
+            onehour.TabIndex = 25;
+            onehour.Text = "1 Hour Before";
+            onehour.UseVisualStyleBackColor = true;
+            onehour.CheckedChanged += onehour_CheckedChanged;
+            // 
+            // oneday
+            // 
+            oneday.AutoSize = true;
+            oneday.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            oneday.Location = new Point(52, 447);
+            oneday.Name = "oneday";
+            oneday.Size = new Size(105, 27);
+            oneday.TabIndex = 24;
+            oneday.Text = "1 Day Before";
+            oneday.UseVisualStyleBackColor = true;
+            oneday.CheckedChanged += oneday_CheckedChanged;
+            // 
+            // AppointmentReminders
+            // 
+            AppointmentReminders.AutoSize = true;
+            AppointmentReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AppointmentReminders.Location = new Point(17, 404);
+            AppointmentReminders.Name = "AppointmentReminders";
+            AppointmentReminders.Size = new Size(194, 26);
+            AppointmentReminders.TabIndex = 23;
+            AppointmentReminders.Text = "Appointment Reminders";
+            AppointmentReminders.Click += AppointmentReminders_Click;
+            // 
+            // MedicationReminders
+            // 
+            MedicationReminders.AutoSize = true;
+            MedicationReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MedicationReminders.Location = new Point(399, 403);
+            MedicationReminders.Name = "MedicationReminders";
+            MedicationReminders.Size = new Size(199, 30);
+            MedicationReminders.TabIndex = 22;
+            MedicationReminders.Text = "Medication Reminders";
+            MedicationReminders.UseVisualStyleBackColor = true;
+            MedicationReminders.CheckedChanged += MedicationReminders_CheckedChanged;
+            // 
             // edit2
             // 
             edit2.BorderColor = Color.White;
@@ -156,6 +203,7 @@
             edit2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             edit2.Size = new Size(36, 38);
             edit2.TabIndex = 17;
+            edit2.Click += edit2_Click;
             // 
             // edit
             // 
@@ -176,6 +224,7 @@
             edit.ShadowDecoration.CustomizableEdges = customizableEdges6;
             edit.Size = new Size(36, 38);
             edit.TabIndex = 16;
+            edit.Click += edit_Click;
             // 
             // back
             // 
@@ -199,6 +248,7 @@
             back.Size = new Size(83, 42);
             back.TabIndex = 15;
             back.Text = "Back";
+            back.Click += back_Click;
             // 
             // save
             // 
@@ -222,6 +272,7 @@
             save.Size = new Size(83, 42);
             save.TabIndex = 14;
             save.Text = "Save";
+            save.Click += save_Click;
             // 
             // firstname
             // 
@@ -245,6 +296,7 @@
             firstname.ShadowDecoration.CustomizableEdges = customizableEdges12;
             firstname.Size = new Size(200, 38);
             firstname.TabIndex = 13;
+            firstname.TextChanged += firstname_TextChanged;
             // 
             // region
             // 
@@ -268,6 +320,7 @@
             region.ShadowDecoration.CustomizableEdges = customizableEdges14;
             region.Size = new Size(200, 38);
             region.TabIndex = 12;
+            region.TextChanged += region_TextChanged;
             // 
             // password
             // 
@@ -291,6 +344,7 @@
             password.ShadowDecoration.CustomizableEdges = customizableEdges16;
             password.Size = new Size(200, 38);
             password.TabIndex = 11;
+            password.TextChanged += password_TextChanged;
             // 
             // province
             // 
@@ -314,6 +368,7 @@
             province.ShadowDecoration.CustomizableEdges = customizableEdges18;
             province.Size = new Size(200, 38);
             province.TabIndex = 10;
+            province.TextChanged += province_TextChanged;
             // 
             // municipality
             // 
@@ -337,6 +392,7 @@
             municipality.ShadowDecoration.CustomizableEdges = customizableEdges20;
             municipality.Size = new Size(200, 38);
             municipality.TabIndex = 9;
+            municipality.TextChanged += municipality_TextChanged;
             // 
             // email
             // 
@@ -360,6 +416,7 @@
             email.ShadowDecoration.CustomizableEdges = customizableEdges22;
             email.Size = new Size(200, 38);
             email.TabIndex = 8;
+            email.TextChanged += email_TextChanged;
             // 
             // datebirth
             // 
@@ -384,6 +441,7 @@
             datebirth.ShadowDecoration.CustomizableEdges = customizableEdges24;
             datebirth.Size = new Size(200, 38);
             datebirth.TabIndex = 7;
+            datebirth.TextChanged += datebirth_TextChanged;
             // 
             // lastname
             // 
@@ -407,6 +465,7 @@
             lastname.ShadowDecoration.CustomizableEdges = customizableEdges26;
             lastname.Size = new Size(200, 38);
             lastname.TabIndex = 6;
+            lastname.TextChanged += lastname_TextChanged;
             // 
             // middlename
             // 
@@ -430,6 +489,7 @@
             middlename.ShadowDecoration.CustomizableEdges = customizableEdges28;
             middlename.Size = new Size(200, 38);
             middlename.TabIndex = 5;
+            middlename.TextChanged += middlename_TextChanged;
             // 
             // notifcontrol
             // 
@@ -441,6 +501,7 @@
             notifcontrol.Size = new Size(293, 23);
             notifcontrol.TabIndex = 3;
             notifcontrol.Text = "Control how you receive updates and alerts.";
+            notifcontrol.Click += notifcontrol_Click;
             // 
             // NotificationPreferences
             // 
@@ -451,6 +512,7 @@
             NotificationPreferences.Size = new Size(242, 34);
             NotificationPreferences.TabIndex = 2;
             NotificationPreferences.Text = "Notification Preferences";
+            NotificationPreferences.Click += NotificationPreferences_Click;
             // 
             // manage
             // 
@@ -462,6 +524,7 @@
             manage.Size = new Size(345, 23);
             manage.TabIndex = 1;
             manage.Text = "Manage your personal information and preferences.";
+            manage.Click += manage_Click;
             // 
             // ProfileManagement
             // 
@@ -472,49 +535,7 @@
             ProfileManagement.Size = new Size(208, 34);
             ProfileManagement.TabIndex = 0;
             ProfileManagement.Text = "Profile Management";
-            // 
-            // MedicationReminders
-            // 
-            MedicationReminders.AutoSize = true;
-            MedicationReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MedicationReminders.Location = new Point(399, 403);
-            MedicationReminders.Name = "MedicationReminders";
-            MedicationReminders.Size = new Size(199, 30);
-            MedicationReminders.TabIndex = 22;
-            MedicationReminders.Text = "Medication Reminders";
-            MedicationReminders.UseVisualStyleBackColor = true;
-            // 
-            // AppointmentReminders
-            // 
-            AppointmentReminders.AutoSize = true;
-            AppointmentReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AppointmentReminders.Location = new Point(17, 404);
-            AppointmentReminders.Name = "AppointmentReminders";
-            AppointmentReminders.Size = new Size(194, 26);
-            AppointmentReminders.TabIndex = 23;
-            AppointmentReminders.Text = "Appointment Reminders";
-            // 
-            // oneday
-            // 
-            oneday.AutoSize = true;
-            oneday.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            oneday.Location = new Point(52, 447);
-            oneday.Name = "oneday";
-            oneday.Size = new Size(105, 27);
-            oneday.TabIndex = 24;
-            oneday.Text = "1 Day Before";
-            oneday.UseVisualStyleBackColor = true;
-            // 
-            // onehour
-            // 
-            onehour.AutoSize = true;
-            onehour.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            onehour.Location = new Point(52, 490);
-            onehour.Name = "onehour";
-            onehour.Size = new Size(110, 27);
-            onehour.TabIndex = 25;
-            onehour.Text = "1 Hour Before";
-            onehour.UseVisualStyleBackColor = true;
+            ProfileManagement.Click += ProfileManagement_Click;
             // 
             // Settings
             // 
