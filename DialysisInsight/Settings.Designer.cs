@@ -33,6 +33,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -55,12 +59,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            edit2 = new Guna.UI2.WinForms.Guna2Button();
+            edit = new Guna.UI2.WinForms.Guna2Button();
             back = new Guna.UI2.WinForms.Guna2Button();
             save = new Guna.UI2.WinForms.Guna2Button();
             firstname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -76,8 +78,10 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            edit = new Guna.UI2.WinForms.Guna2Button();
-            edit2 = new Guna.UI2.WinForms.Guna2Button();
+            MedicationReminders = new CheckBox();
+            AppointmentReminders = new Label();
+            oneday = new CheckBox();
+            onehour = new CheckBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,6 +109,10 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(onehour);
+            guna2Panel1.Controls.Add(oneday);
+            guna2Panel1.Controls.Add(AppointmentReminders);
+            guna2Panel1.Controls.Add(MedicationReminders);
             guna2Panel1.Controls.Add(edit2);
             guna2Panel1.Controls.Add(edit);
             guna2Panel1.Controls.Add(back);
@@ -128,6 +136,46 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
+            // 
+            // edit2
+            // 
+            edit2.BorderColor = Color.White;
+            edit2.CustomizableEdges = customizableEdges3;
+            edit2.DisabledState.BorderColor = Color.DarkGray;
+            edit2.DisabledState.CustomBorderColor = Color.DarkGray;
+            edit2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            edit2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            edit2.FillColor = Color.White;
+            edit2.Font = new Font("Segoe UI", 9F);
+            edit2.ForeColor = Color.White;
+            edit2.HoverState.FillColor = Color.FromArgb(224, 224, 224);
+            edit2.Image = (Image)resources.GetObject("edit2.Image");
+            edit2.Location = new Point(829, 191);
+            edit2.Name = "edit2";
+            edit2.PressedColor = Color.Maroon;
+            edit2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            edit2.Size = new Size(36, 38);
+            edit2.TabIndex = 17;
+            // 
+            // edit
+            // 
+            edit.BorderColor = Color.White;
+            edit.CustomizableEdges = customizableEdges5;
+            edit.DisabledState.BorderColor = Color.DarkGray;
+            edit.DisabledState.CustomBorderColor = Color.DarkGray;
+            edit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            edit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            edit.FillColor = Color.White;
+            edit.Font = new Font("Segoe UI", 9F);
+            edit.ForeColor = Color.White;
+            edit.HoverState.FillColor = Color.FromArgb(224, 224, 224);
+            edit.Image = (Image)resources.GetObject("edit.Image");
+            edit.Location = new Point(522, 191);
+            edit.Name = "edit";
+            edit.PressedColor = Color.Maroon;
+            edit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            edit.Size = new Size(36, 38);
+            edit.TabIndex = 16;
             // 
             // back
             // 
@@ -188,7 +236,7 @@
             firstname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             firstname.Font = new Font("Poppins", 9F);
             firstname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            firstname.Location = new Point(17, 88);
+            firstname.Location = new Point(17, 107);
             firstname.Margin = new Padding(3, 4, 3, 4);
             firstname.Name = "firstname";
             firstname.PasswordChar = '\0';
@@ -211,7 +259,7 @@
             region.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             region.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             region.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            region.Location = new Point(623, 228);
+            region.Location = new Point(623, 265);
             region.Margin = new Padding(3, 4, 3, 4);
             region.Name = "region";
             region.PasswordChar = '\0';
@@ -234,7 +282,7 @@
             password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             password.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            password.Location = new Point(623, 160);
+            password.Location = new Point(623, 191);
             password.Margin = new Padding(3, 4, 3, 4);
             password.Name = "password";
             password.PasswordChar = '\0';
@@ -257,7 +305,7 @@
             province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             province.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            province.Location = new Point(316, 228);
+            province.Location = new Point(316, 265);
             province.Margin = new Padding(3, 4, 3, 4);
             province.Name = "province";
             province.PasswordChar = '\0';
@@ -280,7 +328,7 @@
             municipality.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             municipality.Font = new Font("Poppins", 9F);
             municipality.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            municipality.Location = new Point(17, 228);
+            municipality.Location = new Point(17, 265);
             municipality.Margin = new Padding(3, 4, 3, 4);
             municipality.Name = "municipality";
             municipality.PasswordChar = '\0';
@@ -303,7 +351,7 @@
             email.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             email.Font = new Font("Poppins", 9F);
             email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            email.Location = new Point(316, 160);
+            email.Location = new Point(316, 191);
             email.Margin = new Padding(3, 4, 3, 4);
             email.Name = "email";
             email.PasswordChar = '\0';
@@ -327,7 +375,7 @@
             datebirth.Font = new Font("Poppins", 9F);
             datebirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             datebirth.IconRight = (Image)resources.GetObject("datebirth.IconRight");
-            datebirth.Location = new Point(17, 160);
+            datebirth.Location = new Point(17, 191);
             datebirth.Margin = new Padding(3, 4, 3, 4);
             datebirth.Name = "datebirth";
             datebirth.PasswordChar = '\0';
@@ -350,7 +398,7 @@
             lastname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             lastname.Font = new Font("Poppins", 9F);
             lastname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            lastname.Location = new Point(623, 88);
+            lastname.Location = new Point(623, 107);
             lastname.Margin = new Padding(3, 4, 3, 4);
             lastname.Name = "lastname";
             lastname.PasswordChar = '\0';
@@ -373,7 +421,7 @@
             middlename.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             middlename.Font = new Font("Poppins", 9F);
             middlename.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            middlename.Location = new Point(316, 88);
+            middlename.Location = new Point(316, 107);
             middlename.Margin = new Padding(3, 4, 3, 4);
             middlename.Name = "middlename";
             middlename.PasswordChar = '\0';
@@ -388,7 +436,7 @@
             notifcontrol.AutoSize = true;
             notifcontrol.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             notifcontrol.ForeColor = Color.FromArgb(64, 64, 64);
-            notifcontrol.Location = new Point(17, 308);
+            notifcontrol.Location = new Point(17, 358);
             notifcontrol.Name = "notifcontrol";
             notifcontrol.Size = new Size(293, 23);
             notifcontrol.TabIndex = 3;
@@ -398,7 +446,7 @@
             // 
             NotificationPreferences.AutoSize = true;
             NotificationPreferences.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            NotificationPreferences.Location = new Point(17, 274);
+            NotificationPreferences.Location = new Point(17, 324);
             NotificationPreferences.Name = "NotificationPreferences";
             NotificationPreferences.Size = new Size(242, 34);
             NotificationPreferences.TabIndex = 2;
@@ -425,45 +473,48 @@
             ProfileManagement.TabIndex = 0;
             ProfileManagement.Text = "Profile Management";
             // 
-            // edit
+            // MedicationReminders
             // 
-            edit.BorderColor = Color.White;
-            edit.CustomizableEdges = customizableEdges5;
-            edit.DisabledState.BorderColor = Color.DarkGray;
-            edit.DisabledState.CustomBorderColor = Color.DarkGray;
-            edit.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            edit.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            edit.FillColor = Color.White;
-            edit.Font = new Font("Segoe UI", 9F);
-            edit.ForeColor = Color.White;
-            edit.HoverState.FillColor = Color.FromArgb(224, 224, 224);
-            edit.Image = (Image)resources.GetObject("edit.Image");
-            edit.Location = new Point(522, 160);
-            edit.Name = "edit";
-            edit.PressedColor = Color.Maroon;
-            edit.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            edit.Size = new Size(36, 38);
-            edit.TabIndex = 16;
+            MedicationReminders.AutoSize = true;
+            MedicationReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MedicationReminders.Location = new Point(399, 403);
+            MedicationReminders.Name = "MedicationReminders";
+            MedicationReminders.Size = new Size(199, 30);
+            MedicationReminders.TabIndex = 22;
+            MedicationReminders.Text = "Medication Reminders";
+            MedicationReminders.UseVisualStyleBackColor = true;
             // 
-            // edit2
+            // AppointmentReminders
             // 
-            edit2.BorderColor = Color.White;
-            edit2.CustomizableEdges = customizableEdges3;
-            edit2.DisabledState.BorderColor = Color.DarkGray;
-            edit2.DisabledState.CustomBorderColor = Color.DarkGray;
-            edit2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            edit2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            edit2.FillColor = Color.White;
-            edit2.Font = new Font("Segoe UI", 9F);
-            edit2.ForeColor = Color.White;
-            edit2.HoverState.FillColor = Color.FromArgb(224, 224, 224);
-            edit2.Image = (Image)resources.GetObject("edit2.Image");
-            edit2.Location = new Point(829, 160);
-            edit2.Name = "edit2";
-            edit2.PressedColor = Color.Maroon;
-            edit2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            edit2.Size = new Size(36, 38);
-            edit2.TabIndex = 17;
+            AppointmentReminders.AutoSize = true;
+            AppointmentReminders.Font = new Font("Poppins", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AppointmentReminders.Location = new Point(17, 404);
+            AppointmentReminders.Name = "AppointmentReminders";
+            AppointmentReminders.Size = new Size(194, 26);
+            AppointmentReminders.TabIndex = 23;
+            AppointmentReminders.Text = "Appointment Reminders";
+            // 
+            // oneday
+            // 
+            oneday.AutoSize = true;
+            oneday.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            oneday.Location = new Point(52, 447);
+            oneday.Name = "oneday";
+            oneday.Size = new Size(105, 27);
+            oneday.TabIndex = 24;
+            oneday.Text = "1 Day Before";
+            oneday.UseVisualStyleBackColor = true;
+            // 
+            // onehour
+            // 
+            onehour.AutoSize = true;
+            onehour.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            onehour.Location = new Point(52, 490);
+            onehour.Name = "onehour";
+            onehour.Size = new Size(110, 27);
+            onehour.TabIndex = 25;
+            onehour.Text = "1 Hour Before";
+            onehour.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -503,5 +554,9 @@
         private Guna.UI2.WinForms.Guna2Button back;
         private Guna.UI2.WinForms.Guna2Button edit2;
         private Guna.UI2.WinForms.Guna2Button edit;
+        private Label AppointmentReminders;
+        private CheckBox MedicationReminders;
+        private CheckBox onehour;
+        private CheckBox oneday;
     }
 }
