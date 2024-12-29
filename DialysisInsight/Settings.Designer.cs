@@ -31,8 +31,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,23 +51,24 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2TextBox9 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox8 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            save = new Guna.UI2.WinForms.Guna2Button();
+            firstname = new Guna.UI2.WinForms.Guna2TextBox();
+            region = new Guna.UI2.WinForms.Guna2TextBox();
+            password = new Guna.UI2.WinForms.Guna2TextBox();
+            province = new Guna.UI2.WinForms.Guna2TextBox();
+            municipality = new Guna.UI2.WinForms.Guna2TextBox();
+            email = new Guna.UI2.WinForms.Guna2TextBox();
+            datebirth = new Guna.UI2.WinForms.Guna2TextBox();
+            lastname = new Guna.UI2.WinForms.Guna2TextBox();
+            middlename = new Guna.UI2.WinForms.Guna2TextBox();
             notifcontrol = new Label();
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,210 +96,257 @@
             // 
             // guna2Panel1
             // 
-            guna2Panel1.Controls.Add(guna2TextBox1);
-            guna2Panel1.Controls.Add(guna2TextBox9);
-            guna2Panel1.Controls.Add(guna2TextBox8);
-            guna2Panel1.Controls.Add(guna2TextBox7);
-            guna2Panel1.Controls.Add(guna2TextBox6);
-            guna2Panel1.Controls.Add(guna2TextBox5);
-            guna2Panel1.Controls.Add(guna2TextBox4);
-            guna2Panel1.Controls.Add(guna2TextBox3);
-            guna2Panel1.Controls.Add(guna2TextBox2);
+            guna2Panel1.Controls.Add(save);
+            guna2Panel1.Controls.Add(firstname);
+            guna2Panel1.Controls.Add(region);
+            guna2Panel1.Controls.Add(password);
+            guna2Panel1.Controls.Add(province);
+            guna2Panel1.Controls.Add(municipality);
+            guna2Panel1.Controls.Add(email);
+            guna2Panel1.Controls.Add(datebirth);
+            guna2Panel1.Controls.Add(lastname);
+            guna2Panel1.Controls.Add(middlename);
             guna2Panel1.Controls.Add(notifcontrol);
             guna2Panel1.Controls.Add(NotificationPreferences);
             guna2Panel1.Controls.Add(manage);
             guna2Panel1.Controls.Add(ProfileManagement);
-            guna2Panel1.CustomizableEdges = customizableEdges21;
+            guna2Panel1.CustomizableEdges = customizableEdges23;
             guna2Panel1.Location = new Point(-5, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
             // 
-            // guna2TextBox9
+            // save
             // 
-            guna2TextBox9.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox9.BorderRadius = 10;
-            guna2TextBox9.CustomizableEdges = customizableEdges5;
-            guna2TextBox9.DefaultText = "";
-            guna2TextBox9.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox9.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox9.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox9.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox9.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBox9.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Location = new Point(677, 228);
-            guna2TextBox9.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox9.Name = "guna2TextBox9";
-            guna2TextBox9.PasswordChar = '\0';
-            guna2TextBox9.PlaceholderText = "Region";
-            guna2TextBox9.SelectedText = "";
-            guna2TextBox9.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2TextBox9.Size = new Size(200, 38);
-            guna2TextBox9.TabIndex = 12;
+            save.BorderColor = Color.FromArgb(64, 64, 64);
+            save.BorderRadius = 5;
+            save.CustomizableEdges = customizableEdges3;
+            save.DisabledState.BorderColor = Color.DarkGray;
+            save.DisabledState.CustomBorderColor = Color.DarkGray;
+            save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            save.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            save.FillColor = Color.FromArgb(64, 64, 64);
+            save.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            save.ForeColor = Color.White;
+            save.HoverState.BorderColor = Color.Gray;
+            save.HoverState.FillColor = Color.Gray;
+            save.ImageSize = new Size(40, 40);
+            save.Location = new Point(785, 490);
+            save.Name = "save";
+            save.PressedColor = Color.Maroon;
+            save.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            save.Size = new Size(83, 42);
+            save.TabIndex = 14;
+            save.Text = "Save";
             // 
-            // guna2TextBox8
+            // firstname
             // 
-            guna2TextBox8.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox8.BorderRadius = 10;
-            guna2TextBox8.CustomizableEdges = customizableEdges7;
-            guna2TextBox8.DefaultText = "";
-            guna2TextBox8.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox8.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox8.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox8.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBox8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox8.Location = new Point(677, 160);
-            guna2TextBox8.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox8.Name = "guna2TextBox8";
-            guna2TextBox8.PasswordChar = '\0';
-            guna2TextBox8.PlaceholderText = "";
-            guna2TextBox8.SelectedText = "";
-            guna2TextBox8.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2TextBox8.Size = new Size(200, 38);
-            guna2TextBox8.TabIndex = 11;
+            firstname.BorderColor = Color.FromArgb(64, 64, 64);
+            firstname.BorderRadius = 10;
+            firstname.CustomizableEdges = customizableEdges5;
+            firstname.DefaultText = "";
+            firstname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            firstname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            firstname.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            firstname.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            firstname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            firstname.Font = new Font("Poppins", 9F);
+            firstname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            firstname.Location = new Point(17, 88);
+            firstname.Margin = new Padding(3, 4, 3, 4);
+            firstname.Name = "firstname";
+            firstname.PasswordChar = '\0';
+            firstname.PlaceholderText = "First Name";
+            firstname.SelectedText = "";
+            firstname.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            firstname.Size = new Size(200, 38);
+            firstname.TabIndex = 13;
             // 
-            // guna2TextBox7
+            // region
             // 
-            guna2TextBox7.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox7.BorderRadius = 10;
-            guna2TextBox7.CustomizableEdges = customizableEdges9;
-            guna2TextBox7.DefaultText = "";
-            guna2TextBox7.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox7.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox7.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox7.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox7.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox7.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2TextBox7.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox7.Location = new Point(347, 228);
-            guna2TextBox7.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox7.Name = "guna2TextBox7";
-            guna2TextBox7.PasswordChar = '\0';
-            guna2TextBox7.PlaceholderText = "Province";
-            guna2TextBox7.SelectedText = "";
-            guna2TextBox7.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2TextBox7.Size = new Size(200, 38);
-            guna2TextBox7.TabIndex = 10;
+            region.BorderColor = Color.FromArgb(64, 64, 64);
+            region.BorderRadius = 10;
+            region.CustomizableEdges = customizableEdges7;
+            region.DefaultText = "";
+            region.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            region.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            region.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            region.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            region.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            region.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            region.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            region.Location = new Point(677, 228);
+            region.Margin = new Padding(3, 4, 3, 4);
+            region.Name = "region";
+            region.PasswordChar = '\0';
+            region.PlaceholderText = "Region";
+            region.SelectedText = "";
+            region.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            region.Size = new Size(200, 38);
+            region.TabIndex = 12;
             // 
-            // guna2TextBox6
+            // password
             // 
-            guna2TextBox6.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox6.BorderRadius = 10;
-            guna2TextBox6.CustomizableEdges = customizableEdges11;
-            guna2TextBox6.DefaultText = "";
-            guna2TextBox6.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox6.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox6.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox6.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox6.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox6.Font = new Font("Poppins", 9F);
-            guna2TextBox6.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox6.Location = new Point(17, 228);
-            guna2TextBox6.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox6.Name = "guna2TextBox6";
-            guna2TextBox6.PasswordChar = '\0';
-            guna2TextBox6.PlaceholderText = "Municipality";
-            guna2TextBox6.SelectedText = "";
-            guna2TextBox6.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2TextBox6.Size = new Size(200, 38);
-            guna2TextBox6.TabIndex = 9;
+            password.BorderColor = Color.FromArgb(64, 64, 64);
+            password.BorderRadius = 10;
+            password.CustomizableEdges = customizableEdges9;
+            password.DefaultText = "";
+            password.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            password.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            password.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            password.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            password.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            password.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            password.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            password.Location = new Point(677, 160);
+            password.Margin = new Padding(3, 4, 3, 4);
+            password.Name = "password";
+            password.PasswordChar = '\0';
+            password.PlaceholderText = "";
+            password.SelectedText = "";
+            password.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            password.Size = new Size(200, 38);
+            password.TabIndex = 11;
             // 
-            // guna2TextBox5
+            // province
             // 
-            guna2TextBox5.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox5.BorderRadius = 10;
-            guna2TextBox5.CustomizableEdges = customizableEdges13;
-            guna2TextBox5.DefaultText = "";
-            guna2TextBox5.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox5.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox5.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox5.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox5.Font = new Font("Poppins", 9F);
-            guna2TextBox5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox5.Location = new Point(347, 160);
-            guna2TextBox5.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox5.Name = "guna2TextBox5";
-            guna2TextBox5.PasswordChar = '\0';
-            guna2TextBox5.PlaceholderText = "Email";
-            guna2TextBox5.SelectedText = "";
-            guna2TextBox5.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2TextBox5.Size = new Size(200, 38);
-            guna2TextBox5.TabIndex = 8;
+            province.BorderColor = Color.FromArgb(64, 64, 64);
+            province.BorderRadius = 10;
+            province.CustomizableEdges = customizableEdges11;
+            province.DefaultText = "";
+            province.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            province.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            province.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            province.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            province.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            province.Location = new Point(347, 228);
+            province.Margin = new Padding(3, 4, 3, 4);
+            province.Name = "province";
+            province.PasswordChar = '\0';
+            province.PlaceholderText = "Province";
+            province.SelectedText = "";
+            province.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            province.Size = new Size(200, 38);
+            province.TabIndex = 10;
             // 
-            // guna2TextBox4
+            // municipality
             // 
-            guna2TextBox4.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox4.BorderRadius = 10;
-            guna2TextBox4.CustomizableEdges = customizableEdges15;
-            guna2TextBox4.DefaultText = "";
-            guna2TextBox4.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox4.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox4.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox4.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox4.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox4.Font = new Font("Poppins", 9F);
-            guna2TextBox4.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox4.IconRight = (Image)resources.GetObject("guna2TextBox4.IconRight");
-            guna2TextBox4.Location = new Point(17, 160);
-            guna2TextBox4.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox4.Name = "guna2TextBox4";
-            guna2TextBox4.PasswordChar = '\0';
-            guna2TextBox4.PlaceholderText = "Date of Birth";
-            guna2TextBox4.SelectedText = "";
-            guna2TextBox4.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2TextBox4.Size = new Size(200, 38);
-            guna2TextBox4.TabIndex = 7;
+            municipality.BorderColor = Color.FromArgb(64, 64, 64);
+            municipality.BorderRadius = 10;
+            municipality.CustomizableEdges = customizableEdges13;
+            municipality.DefaultText = "";
+            municipality.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            municipality.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            municipality.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            municipality.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            municipality.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            municipality.Font = new Font("Poppins", 9F);
+            municipality.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            municipality.Location = new Point(17, 228);
+            municipality.Margin = new Padding(3, 4, 3, 4);
+            municipality.Name = "municipality";
+            municipality.PasswordChar = '\0';
+            municipality.PlaceholderText = "Municipality";
+            municipality.SelectedText = "";
+            municipality.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            municipality.Size = new Size(200, 38);
+            municipality.TabIndex = 9;
             // 
-            // guna2TextBox3
+            // email
             // 
-            guna2TextBox3.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox3.BorderRadius = 10;
-            guna2TextBox3.CustomizableEdges = customizableEdges17;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Poppins", 9F);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(677, 88);
-            guna2TextBox3.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PasswordChar = '\0';
-            guna2TextBox3.PlaceholderText = "Last Name";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2TextBox3.Size = new Size(200, 38);
-            guna2TextBox3.TabIndex = 6;
+            email.BorderColor = Color.FromArgb(64, 64, 64);
+            email.BorderRadius = 10;
+            email.CustomizableEdges = customizableEdges15;
+            email.DefaultText = "";
+            email.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            email.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            email.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            email.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            email.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            email.Font = new Font("Poppins", 9F);
+            email.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            email.Location = new Point(347, 160);
+            email.Margin = new Padding(3, 4, 3, 4);
+            email.Name = "email";
+            email.PasswordChar = '\0';
+            email.PlaceholderText = "";
+            email.SelectedText = "";
+            email.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            email.Size = new Size(200, 38);
+            email.TabIndex = 8;
             // 
-            // guna2TextBox2
+            // datebirth
             // 
-            guna2TextBox2.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox2.BorderRadius = 10;
-            guna2TextBox2.CustomizableEdges = customizableEdges19;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Poppins", 9F);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(347, 88);
-            guna2TextBox2.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PasswordChar = '\0';
-            guna2TextBox2.PlaceholderText = "Middle Name (Optional)";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2TextBox2.Size = new Size(200, 38);
-            guna2TextBox2.TabIndex = 5;
+            datebirth.BorderColor = Color.FromArgb(64, 64, 64);
+            datebirth.BorderRadius = 10;
+            datebirth.CustomizableEdges = customizableEdges17;
+            datebirth.DefaultText = "";
+            datebirth.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            datebirth.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            datebirth.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            datebirth.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            datebirth.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            datebirth.Font = new Font("Poppins", 9F);
+            datebirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            datebirth.IconRight = (Image)resources.GetObject("datebirth.IconRight");
+            datebirth.Location = new Point(17, 160);
+            datebirth.Margin = new Padding(3, 4, 3, 4);
+            datebirth.Name = "datebirth";
+            datebirth.PasswordChar = '\0';
+            datebirth.PlaceholderText = "Date of Birth";
+            datebirth.SelectedText = "";
+            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            datebirth.Size = new Size(200, 38);
+            datebirth.TabIndex = 7;
+            // 
+            // lastname
+            // 
+            lastname.BorderColor = Color.FromArgb(64, 64, 64);
+            lastname.BorderRadius = 10;
+            lastname.CustomizableEdges = customizableEdges19;
+            lastname.DefaultText = "";
+            lastname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lastname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lastname.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lastname.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lastname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lastname.Font = new Font("Poppins", 9F);
+            lastname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            lastname.Location = new Point(677, 88);
+            lastname.Margin = new Padding(3, 4, 3, 4);
+            lastname.Name = "lastname";
+            lastname.PasswordChar = '\0';
+            lastname.PlaceholderText = "Last Name";
+            lastname.SelectedText = "";
+            lastname.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            lastname.Size = new Size(200, 38);
+            lastname.TabIndex = 6;
+            // 
+            // middlename
+            // 
+            middlename.BorderColor = Color.FromArgb(64, 64, 64);
+            middlename.BorderRadius = 10;
+            middlename.CustomizableEdges = customizableEdges21;
+            middlename.DefaultText = "";
+            middlename.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            middlename.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            middlename.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            middlename.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            middlename.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            middlename.Font = new Font("Poppins", 9F);
+            middlename.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            middlename.Location = new Point(347, 88);
+            middlename.Margin = new Padding(3, 4, 3, 4);
+            middlename.Name = "middlename";
+            middlename.PasswordChar = '\0';
+            middlename.PlaceholderText = "Middle Name (Optional)";
+            middlename.SelectedText = "";
+            middlename.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            middlename.Size = new Size(200, 38);
+            middlename.TabIndex = 5;
             // 
             // notifcontrol
             // 
@@ -340,29 +390,6 @@
             ProfileManagement.TabIndex = 0;
             ProfileManagement.Text = "Profile Management";
             // 
-            // guna2TextBox1
-            // 
-            guna2TextBox1.BorderColor = Color.FromArgb(64, 64, 64);
-            guna2TextBox1.BorderRadius = 10;
-            guna2TextBox1.CustomizableEdges = customizableEdges3;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Poppins", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(17, 88);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "First Name";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2TextBox1.Size = new Size(200, 38);
-            guna2TextBox1.TabIndex = 13;
-            // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -388,14 +415,15 @@
         private Label notifcontrol;
         private Label NotificationPreferences;
         private Label manage;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox9;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox region;
+        private Guna.UI2.WinForms.Guna2TextBox password;
+        private Guna.UI2.WinForms.Guna2TextBox province;
+        private Guna.UI2.WinForms.Guna2TextBox municipality;
+        private Guna.UI2.WinForms.Guna2TextBox email;
+        private Guna.UI2.WinForms.Guna2TextBox datebirth;
+        private Guna.UI2.WinForms.Guna2TextBox lastname;
+        private Guna.UI2.WinForms.Guna2TextBox middlename;
+        private Guna.UI2.WinForms.Guna2TextBox firstname;
+        private Guna.UI2.WinForms.Guna2Button save;
     }
 }
