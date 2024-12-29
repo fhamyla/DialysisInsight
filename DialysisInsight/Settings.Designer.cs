@@ -187,6 +187,7 @@
             // edit2
             // 
             edit2.BorderColor = Color.White;
+            edit2.BorderRadius = 15;
             edit2.CustomizableEdges = customizableEdges3;
             edit2.DisabledState.BorderColor = Color.DarkGray;
             edit2.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -208,6 +209,7 @@
             // edit
             // 
             edit.BorderColor = Color.White;
+            edit.BorderRadius = 15;
             edit.CustomizableEdges = customizableEdges5;
             edit.DisabledState.BorderColor = Color.DarkGray;
             edit.DisabledState.CustomBorderColor = Color.DarkGray;
