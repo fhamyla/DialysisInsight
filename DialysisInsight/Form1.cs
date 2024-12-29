@@ -67,8 +67,8 @@ namespace DialysisInsight
                 OleDbDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Dashboard dashboard = new Dashboard();
-                    dashboard.Show();
+                    Settings settings = new Settings();
+                    settings.Show();
                     this.Hide();
                 }
                 else

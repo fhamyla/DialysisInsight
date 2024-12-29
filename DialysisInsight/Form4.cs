@@ -242,8 +242,8 @@ namespace DialysisInsight
             if (enteredOtp == generatedOtp)
             {
                 MessageBox.Show("OTP verified successfully!");
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
+                Settings settings = new Settings();
+                settings.Show();
                 this.Hide();
 
                 if (otpContext == "AccountCreation" && createAccountForm != null)
