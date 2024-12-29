@@ -35,6 +35,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            ProfileManagement = new Label();
+            manage = new Label();
+            NotificationPreferences = new Label();
+            notifcontrol = new Label();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // minmax
@@ -61,12 +66,58 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(notifcontrol);
+            guna2Panel1.Controls.Add(NotificationPreferences);
+            guna2Panel1.Controls.Add(manage);
+            guna2Panel1.Controls.Add(ProfileManagement);
             guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Location = new Point(-5, -7);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
+            // 
+            // ProfileManagement
+            // 
+            ProfileManagement.AutoSize = true;
+            ProfileManagement.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ProfileManagement.Location = new Point(17, 16);
+            ProfileManagement.Name = "ProfileManagement";
+            ProfileManagement.Size = new Size(208, 34);
+            ProfileManagement.TabIndex = 0;
+            ProfileManagement.Text = "Profile Management";
+            // 
+            // manage
+            // 
+            manage.AutoSize = true;
+            manage.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            manage.ForeColor = Color.FromArgb(64, 64, 64);
+            manage.Location = new Point(17, 50);
+            manage.Name = "manage";
+            manage.Size = new Size(345, 23);
+            manage.TabIndex = 1;
+            manage.Text = "Manage your personal information and preferences.";
+            // 
+            // NotificationPreferences
+            // 
+            NotificationPreferences.AutoSize = true;
+            NotificationPreferences.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NotificationPreferences.Location = new Point(17, 274);
+            NotificationPreferences.Name = "NotificationPreferences";
+            NotificationPreferences.Size = new Size(242, 34);
+            NotificationPreferences.TabIndex = 2;
+            NotificationPreferences.Text = "Notification Preferences";
+            // 
+            // notifcontrol
+            // 
+            notifcontrol.AutoSize = true;
+            notifcontrol.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            notifcontrol.ForeColor = Color.FromArgb(64, 64, 64);
+            notifcontrol.Location = new Point(17, 308);
+            notifcontrol.Name = "notifcontrol";
+            notifcontrol.Size = new Size(293, 23);
+            notifcontrol.TabIndex = 3;
+            notifcontrol.Text = "Control how you receive updates and alerts.";
             // 
             // Settings
             // 
@@ -80,6 +131,8 @@
             Name = "Settings";
             ShowIcon = false;
             ShowInTaskbar = false;
+            guna2Panel1.ResumeLayout(false);
+            guna2Panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -87,5 +140,9 @@
 
         private Guna.UI2.WinForms.Guna2Button minmax;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Label ProfileManagement;
+        private Label notifcontrol;
+        private Label NotificationPreferences;
+        private Label manage;
     }
 }
