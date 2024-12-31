@@ -60,14 +60,19 @@
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             dialysisinsight = new Guna.UI2.WinForms.Guna2Panel();
+            dailysissessionlabel = new Label();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             healthpressure = new Guna.UI2.WinForms.Guna2Panel();
+            bloodpressurelabel = new Label();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             sugarlevel = new Guna.UI2.WinForms.Guna2Panel();
+            bloodsugarlevellabel = new Label();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             heartrate = new Guna.UI2.WinForms.Guna2Panel();
+            heartratelabel = new Label();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             weight = new Guna.UI2.WinForms.Guna2Panel();
+            weightlabel = new Label();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             user = new Guna.UI2.WinForms.Guna2HtmlLabel();
             DateTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -138,6 +143,7 @@
             dialysisinsight.BorderColor = Color.Gray;
             dialysisinsight.BorderRadius = 10;
             dialysisinsight.BorderThickness = 1;
+            dialysisinsight.Controls.Add(dailysissessionlabel);
             dialysisinsight.Controls.Add(guna2HtmlLabel5);
             dialysisinsight.CustomizableEdges = customizableEdges3;
             dialysisinsight.FillColor = Color.White;
@@ -147,6 +153,18 @@
             dialysisinsight.Size = new Size(420, 272);
             dialysisinsight.TabIndex = 14;
             dialysisinsight.Paint += dialysisinsight_Paint;
+            // 
+            // dailysissessionlabel
+            // 
+            dailysissessionlabel.AutoSize = true;
+            dailysissessionlabel.BackColor = Color.Gainsboro;
+            dailysissessionlabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dailysissessionlabel.Location = new Point(124, 111);
+            dailysissessionlabel.MinimumSize = new Size(180, 80);
+            dailysissessionlabel.Name = "dailysissessionlabel";
+            dailysissessionlabel.Size = new Size(180, 80);
+            dailysissessionlabel.TabIndex = 3;
+            dailysissessionlabel.Click += dailysissessionlabel_Click;
             // 
             // guna2HtmlLabel5
             // 
@@ -165,6 +183,7 @@
             healthpressure.BorderColor = Color.Gray;
             healthpressure.BorderRadius = 10;
             healthpressure.BorderThickness = 1;
+            healthpressure.Controls.Add(bloodpressurelabel);
             healthpressure.Controls.Add(guna2HtmlLabel4);
             healthpressure.CustomizableEdges = customizableEdges5;
             healthpressure.FillColor = Color.White;
@@ -174,6 +193,18 @@
             healthpressure.Size = new Size(420, 272);
             healthpressure.TabIndex = 13;
             healthpressure.Paint += healthpressure_Paint;
+            // 
+            // bloodpressurelabel
+            // 
+            bloodpressurelabel.AutoSize = true;
+            bloodpressurelabel.BackColor = Color.Gainsboro;
+            bloodpressurelabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bloodpressurelabel.Location = new Point(110, 111);
+            bloodpressurelabel.MinimumSize = new Size(180, 80);
+            bloodpressurelabel.Name = "bloodpressurelabel";
+            bloodpressurelabel.Size = new Size(180, 80);
+            bloodpressurelabel.TabIndex = 3;
+            bloodpressurelabel.Click += bloodpressurelabel_Click;
             // 
             // guna2HtmlLabel4
             // 
@@ -190,6 +221,7 @@
             // 
             sugarlevel.BackColor = Color.Transparent;
             sugarlevel.BorderRadius = 10;
+            sugarlevel.Controls.Add(bloodsugarlevellabel);
             sugarlevel.Controls.Add(guna2HtmlLabel3);
             sugarlevel.CustomizableEdges = customizableEdges7;
             sugarlevel.FillColor = Color.FromArgb(207, 226, 243);
@@ -199,6 +231,18 @@
             sugarlevel.Size = new Size(221, 180);
             sugarlevel.TabIndex = 12;
             sugarlevel.Paint += sugarlevel_Paint;
+            // 
+            // bloodsugarlevellabel
+            // 
+            bloodsugarlevellabel.AutoSize = true;
+            bloodsugarlevellabel.BackColor = Color.Gainsboro;
+            bloodsugarlevellabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bloodsugarlevellabel.Location = new Point(64, 72);
+            bloodsugarlevellabel.MinimumSize = new Size(100, 50);
+            bloodsugarlevellabel.Name = "bloodsugarlevellabel";
+            bloodsugarlevellabel.Size = new Size(100, 50);
+            bloodsugarlevellabel.TabIndex = 3;
+            bloodsugarlevellabel.Click += bloodsugarlevellabel_Click;
             // 
             // guna2HtmlLabel3
             // 
@@ -217,6 +261,7 @@
             heartrate.BorderColor = Color.Gray;
             heartrate.BorderRadius = 10;
             heartrate.BorderThickness = 1;
+            heartrate.Controls.Add(heartratelabel);
             heartrate.Controls.Add(guna2HtmlLabel2);
             heartrate.CustomizableEdges = customizableEdges9;
             heartrate.FillColor = Color.White;
@@ -226,6 +271,18 @@
             heartrate.Size = new Size(200, 151);
             heartrate.TabIndex = 11;
             heartrate.Paint += heartrate_Paint;
+            // 
+            // heartratelabel
+            // 
+            heartratelabel.AutoSize = true;
+            heartratelabel.BackColor = Color.Gainsboro;
+            heartratelabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            heartratelabel.Location = new Point(57, 63);
+            heartratelabel.MinimumSize = new Size(100, 50);
+            heartratelabel.Name = "heartratelabel";
+            heartratelabel.Size = new Size(100, 50);
+            heartratelabel.TabIndex = 2;
+            heartratelabel.Click += heartratelabel_Click;
             // 
             // guna2HtmlLabel2
             // 
@@ -244,6 +301,7 @@
             weight.BorderColor = Color.Gray;
             weight.BorderRadius = 10;
             weight.BorderThickness = 1;
+            weight.Controls.Add(weightlabel);
             weight.Controls.Add(guna2HtmlLabel1);
             weight.CustomizableEdges = customizableEdges11;
             weight.FillColor = Color.White;
@@ -253,6 +311,18 @@
             weight.Size = new Size(200, 151);
             weight.TabIndex = 10;
             weight.Paint += weight_Paint;
+            // 
+            // weightlabel
+            // 
+            weightlabel.AutoSize = true;
+            weightlabel.BackColor = Color.Gainsboro;
+            weightlabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            weightlabel.Location = new Point(50, 63);
+            weightlabel.MinimumSize = new Size(100, 50);
+            weightlabel.Name = "weightlabel";
+            weightlabel.Size = new Size(100, 50);
+            weightlabel.TabIndex = 1;
+            weightlabel.Click += weightlabel_Click;
             // 
             // guna2HtmlLabel1
             // 
@@ -453,6 +523,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.White;
             ClientSize = new Size(891, 553);
             ControlBox = false;
@@ -500,5 +571,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Button minmax;
+        private Label weightlabel;
+        private Label dailysissessionlabel;
+        private Label bloodpressurelabel;
+        private Label bloodsugarlevellabel;
+        private Label heartratelabel;
     }
 }

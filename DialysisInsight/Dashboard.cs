@@ -27,6 +27,11 @@ namespace DialysisInsight
         private Rectangle rechealth;
         private Rectangle recdialysis;
         private Rectangle recpanel2;
+        private Rectangle reclabel1;
+        private Rectangle reclabel2;
+        private Rectangle reclabel3;
+        private Rectangle reclabel4;
+        private Rectangle reclabel5;
         public Dashboard()
         {
             InitializeComponent();
@@ -46,6 +51,11 @@ namespace DialysisInsight
             rechealth = new Rectangle(healthpressure.Location, healthpressure.Size);
             recdialysis = new Rectangle(dialysisinsight.Location, dialysisinsight.Size);
             recpanel2 = new Rectangle(guna2Panel2.Location, guna2Panel2.Size);
+            reclabel1 = new Rectangle(weightlabel.Location, weightlabel.Size);
+            reclabel2 = new Rectangle(heartratelabel.Location, heartratelabel.Size);
+            reclabel3 = new Rectangle(bloodsugarlevellabel.Location, bloodsugarlevellabel.Size);
+            reclabel4 = new Rectangle(bloodpressurelabel.Location, bloodpressurelabel.Size);
+            reclabel5 = new Rectangle(dailysissessionlabel.Location, dailysissessionlabel.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -62,6 +72,11 @@ namespace DialysisInsight
             resize_Control(healthpressure, rechealth);
             resize_Control(dialysisinsight, recdialysis);
             resize_Control(guna2Panel2, recpanel2);
+            resize_Control(weightlabel, reclabel1);
+            resize_Control(heartratelabel, reclabel2);
+            resize_Control(bloodsugarlevellabel, reclabel3);
+            resize_Control(bloodpressurelabel, reclabel4);
+            resize_Control(dailysissessionlabel, reclabel5);
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -185,7 +200,7 @@ namespace DialysisInsight
 
         private void guna2Panel1_Paint(object sender, EventArgs e)
         {
-            
+
         }
 
         private void DateTime_ValueChanged(object sender, EventArgs e)
@@ -229,6 +244,31 @@ namespace DialysisInsight
         }
 
         private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void weightlabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void heartratelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bloodsugarlevellabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bloodpressurelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dailysissessionlabel_Click(object sender, EventArgs e)
         {
 
         }
