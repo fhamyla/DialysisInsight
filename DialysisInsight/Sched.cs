@@ -26,7 +26,6 @@ namespace DialysisInsight
 
         private Calendar calendarInstance;
         private DateTime selectedDate;
-        private TextBox? noteTextBox;
 
         public Sched(Calendar calendar, DateTime date)
         {
