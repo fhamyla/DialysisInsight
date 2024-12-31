@@ -60,5 +60,70 @@ namespace DialysisInsight
         {
 
         }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Weight_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HeartRate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BloodSugarLevel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SYS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DIA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SessionComplete_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompleteSession_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
