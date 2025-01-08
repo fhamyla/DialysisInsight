@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,10 +37,14 @@ namespace DialysisInsight
         private Rectangle recsave;
         private Rectangle recnotif;
         private Rectangle recnotifpre;
+        private string? originalEmail;
+        private string? originalPassword;
         public Settings()
         {
             InitializeComponent();
             this.Resize += Dashboard_Resiz;
+            LoadUserData();
+            InitializeUserFields();
             formOriginalSize = this.Size;
             recminmax = new Rectangle(minmax.Location, minmax.Size);
             recpanel1 = new Rectangle(guna2Panel1.Location, guna2Panel1.Size);
@@ -119,6 +124,42 @@ namespace DialysisInsight
             }
         }
 
+        private void LoadUserData()
+        {
+            string connectionString = DialysisInsight.ConnectionString;
+            string userEmail = email.Text.Trim();
+            string userPassword = password.Text.Trim();
+
+            string query = "SELECT email, password FROM [user] WHERE email = ? AND password = ?";
+
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("?", userEmail);
+                        command.Parameters.AddWithValue("?", userPassword);
+
+                        OleDbDataReader reader = command.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            // Retrieve data and update textboxes
+                            email.Text = reader["email"]?.ToString() ?? string.Empty;
+                            password.Text = reader["password"]?.ToString() ?? string.Empty;
+
+                            MessageBox.Show("User data loaded successfully.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
         private void firstname_TextChanged(object sender, EventArgs e)
         {
 
@@ -139,6 +180,57 @@ namespace DialysisInsight
 
         }
 
+        private void InitializeUserFields()
+        {
+            email.ReadOnly = true;
+            password.ReadOnly = true;
+
+            // Optionally mask the password
+            password.PasswordChar = '*'; // Uncomment if using a standard TextBox
+        }
+
+        private void SaveEmailToDatabase(string newEmail)
+        {
+            string query = "UPDATE [user] SET email = @newEmail WHERE ID = 1";
+            using (OleDbConnection connection = new OleDbConnection(DialysisInsight.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@newEmail", newEmail);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating email: " + ex.Message);
+                }
+            }
+        }
+
+        private void SavePasswordToDatabase(string newPassword)
+        {
+            string query = "UPDATE [user] SET password = @newPassword WHERE ID = 1";
+            using (OleDbConnection connection = new OleDbConnection(DialysisInsight.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@newPassword", newPassword);
+                        command.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating password: " + ex.Message);
+                }
+            }
+        }
+
         private void email_TextChanged(object sender, EventArgs e)
         {
 
@@ -146,7 +238,16 @@ namespace DialysisInsight
 
         private void edit_Click(object sender, EventArgs e)
         {
+            string currentEmail = email.Text;
+            Otp otpForm = new Otp(currentEmail, "EmailEdit");
+            otpForm.ShowDialog();
 
+            // Step 2: Enable email text box for editing after OTP verification
+            if (otpForm.IsOtpVerified)
+            {
+                email.ReadOnly = false; // Make the email text box editable
+                MessageBox.Show("OTP verified. You can now edit your email.");
+            }
         }
 
         private void password_TextChanged(object sender, EventArgs e)
@@ -156,7 +257,16 @@ namespace DialysisInsight
 
         private void edit2_Click(object sender, EventArgs e)
         {
+            string currentEmail = email.Text;
+            Otp otpForm = new Otp(currentEmail, "PasswordEdit");
+            otpForm.ShowDialog();
 
+            // Step 2: Enable password text box for editing after OTP verification
+            if (otpForm.IsOtpVerified)
+            {
+                password.ReadOnly = false; // Make the password text box editable
+                MessageBox.Show("OTP verified. You can now edit your password.");
+            }
         }
 
         private void municipality_TextChanged(object sender, EventArgs e)
@@ -211,7 +321,35 @@ namespace DialysisInsight
 
         private void save_Click(object sender, EventArgs e)
         {
+            if (!email.ReadOnly && email.Text != originalEmail)
+            {
+                string newEmail = email.Text;
 
+                // Step 2: Send OTP to the new email
+                Otp otpForm = new Otp(newEmail, "NewEmailVerification");
+                otpForm.ShowDialog();
+
+                if (!otpForm.IsOtpVerified)
+                {
+                    MessageBox.Show("OTP verification failed. Email not updated.");
+                    return;
+                }
+
+                // Step 3: Save the new email to the database
+                SaveEmailToDatabase(newEmail);
+                originalEmail = newEmail;
+            }
+
+            // Step 4: Save the new password to the database if it was edited
+            if (!password.ReadOnly && password.Text != originalPassword)
+            {
+                SavePasswordToDatabase(password.Text);
+                originalPassword = password.Text;
+            }
+
+            MessageBox.Show("Changes saved successfully.");
+            email.ReadOnly = true;
+            password.ReadOnly = true;
         }
 
         private void notifcontrol_Click(object sender, EventArgs e)
