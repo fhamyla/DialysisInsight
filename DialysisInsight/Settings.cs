@@ -331,5 +331,10 @@ namespace DialysisInsight
         {
 
         }
+
+        private void datebirth_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

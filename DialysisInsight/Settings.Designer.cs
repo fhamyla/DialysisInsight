@@ -51,6 +51,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            province = new Guna.UI2.WinForms.Guna2ComboBox();
             conditions = new Guna.UI2.WinForms.Guna2ComboBox();
             onehour = new CheckBox();
             oneday = new CheckBox();
@@ -59,14 +60,13 @@
             back = new Guna.UI2.WinForms.Guna2Button();
             save = new Guna.UI2.WinForms.Guna2Button();
             firstname = new Guna.UI2.WinForms.Guna2TextBox();
-            datebirth = new Guna.UI2.WinForms.Guna2TextBox();
             lastname = new Guna.UI2.WinForms.Guna2TextBox();
             middlename = new Guna.UI2.WinForms.Guna2TextBox();
             notifcontrol = new Label();
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            province = new Guna.UI2.WinForms.Guna2ComboBox();
+            datebirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(datebirth);
             guna2Panel1.Controls.Add(province);
             guna2Panel1.Controls.Add(conditions);
             guna2Panel1.Controls.Add(onehour);
@@ -103,7 +104,6 @@
             guna2Panel1.Controls.Add(back);
             guna2Panel1.Controls.Add(save);
             guna2Panel1.Controls.Add(firstname);
-            guna2Panel1.Controls.Add(datebirth);
             guna2Panel1.Controls.Add(lastname);
             guna2Panel1.Controls.Add(middlename);
             guna2Panel1.Controls.Add(notifcontrol);
@@ -117,12 +117,32 @@
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
             // 
+            // province
+            // 
+            province.BackColor = Color.Transparent;
+            province.BorderColor = Color.FromArgb(64, 64, 64);
+            province.BorderRadius = 10;
+            province.CustomizableEdges = customizableEdges5;
+            province.DrawMode = DrawMode.OwnerDrawFixed;
+            province.DropDownStyle = ComboBoxStyle.DropDownList;
+            province.FocusedColor = Color.FromArgb(94, 148, 255);
+            province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            province.ForeColor = Color.FromArgb(125, 137, 149);
+            province.ItemHeight = 30;
+            province.Location = new Point(623, 193);
+            province.Name = "province";
+            province.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            province.Size = new Size(200, 36);
+            province.TabIndex = 27;
+            province.SelectedIndexChanged += province_SelectedIndexChanged;
+            // 
             // conditions
             // 
             conditions.BackColor = Color.Transparent;
             conditions.BorderColor = Color.FromArgb(64, 64, 64);
             conditions.BorderRadius = 10;
-            conditions.CustomizableEdges = customizableEdges5;
+            conditions.CustomizableEdges = customizableEdges7;
             conditions.DrawMode = DrawMode.OwnerDrawFixed;
             conditions.DropDownStyle = ComboBoxStyle.DropDownList;
             conditions.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -132,7 +152,7 @@
             conditions.ItemHeight = 30;
             conditions.Location = new Point(316, 193);
             conditions.Name = "conditions";
-            conditions.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            conditions.ShadowDecoration.CustomizableEdges = customizableEdges8;
             conditions.Size = new Size(200, 36);
             conditions.TabIndex = 26;
             conditions.SelectedIndexChanged += conditions_SelectedIndexChanged;
@@ -188,7 +208,7 @@
             // 
             back.BorderColor = Color.FromArgb(64, 64, 64);
             back.BorderRadius = 5;
-            back.CustomizableEdges = customizableEdges7;
+            back.CustomizableEdges = customizableEdges9;
             back.DisabledState.BorderColor = Color.DarkGray;
             back.DisabledState.CustomBorderColor = Color.DarkGray;
             back.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -202,7 +222,7 @@
             back.Location = new Point(696, 490);
             back.Name = "back";
             back.PressedColor = Color.Maroon;
-            back.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            back.ShadowDecoration.CustomizableEdges = customizableEdges10;
             back.Size = new Size(83, 42);
             back.TabIndex = 15;
             back.Text = "Back";
@@ -212,7 +232,7 @@
             // 
             save.BorderColor = Color.FromArgb(64, 64, 64);
             save.BorderRadius = 5;
-            save.CustomizableEdges = customizableEdges9;
+            save.CustomizableEdges = customizableEdges11;
             save.DisabledState.BorderColor = Color.DarkGray;
             save.DisabledState.CustomBorderColor = Color.DarkGray;
             save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -226,7 +246,7 @@
             save.Location = new Point(785, 490);
             save.Name = "save";
             save.PressedColor = Color.Maroon;
-            save.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            save.ShadowDecoration.CustomizableEdges = customizableEdges12;
             save.Size = new Size(83, 42);
             save.TabIndex = 14;
             save.Text = "Save";
@@ -236,7 +256,7 @@
             // 
             firstname.BorderColor = Color.FromArgb(64, 64, 64);
             firstname.BorderRadius = 10;
-            firstname.CustomizableEdges = customizableEdges11;
+            firstname.CustomizableEdges = customizableEdges13;
             firstname.DefaultText = "";
             firstname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             firstname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -251,35 +271,10 @@
             firstname.PasswordChar = '\0';
             firstname.PlaceholderText = "First Name";
             firstname.SelectedText = "";
-            firstname.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            firstname.ShadowDecoration.CustomizableEdges = customizableEdges14;
             firstname.Size = new Size(200, 38);
             firstname.TabIndex = 13;
             firstname.TextChanged += firstname_TextChanged;
-            // 
-            // datebirth
-            // 
-            datebirth.BorderColor = Color.FromArgb(64, 64, 64);
-            datebirth.BorderRadius = 10;
-            datebirth.CustomizableEdges = customizableEdges13;
-            datebirth.DefaultText = "";
-            datebirth.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            datebirth.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            datebirth.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            datebirth.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            datebirth.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            datebirth.Font = new Font("Poppins", 9F);
-            datebirth.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            datebirth.IconRight = (Image)resources.GetObject("datebirth.IconRight");
-            datebirth.Location = new Point(17, 191);
-            datebirth.Margin = new Padding(3, 4, 3, 4);
-            datebirth.Name = "datebirth";
-            datebirth.PasswordChar = '\0';
-            datebirth.PlaceholderText = "Date of Birth";
-            datebirth.SelectedText = "";
-            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            datebirth.Size = new Size(200, 38);
-            datebirth.TabIndex = 7;
-            datebirth.TextChanged += datebirth_TextChanged;
             // 
             // lastname
             // 
@@ -375,25 +370,25 @@
             ProfileManagement.Text = "Profile Management";
             ProfileManagement.Click += ProfileManagement_Click;
             // 
-            // province
+            // datebirth
             // 
-            province.BackColor = Color.Transparent;
-            province.BorderColor = Color.FromArgb(64, 64, 64);
-            province.BorderRadius = 10;
-            province.CustomizableEdges = customizableEdges3;
-            province.DrawMode = DrawMode.OwnerDrawFixed;
-            province.DropDownStyle = ComboBoxStyle.DropDownList;
-            province.FocusedColor = Color.FromArgb(94, 148, 255);
-            province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            province.ForeColor = Color.FromArgb(125, 137, 149);
-            province.ItemHeight = 30;
-            province.Location = new Point(623, 193);
-            province.Name = "province";
-            province.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            province.Size = new Size(200, 36);
-            province.TabIndex = 27;
-            province.SelectedIndexChanged += province_SelectedIndexChanged;
+            datebirth.BorderColor = Color.FromArgb(64, 64, 64);
+            datebirth.BorderRadius = 10;
+            datebirth.Checked = true;
+            datebirth.CustomizableEdges = customizableEdges3;
+            datebirth.FillColor = Color.White;
+            datebirth.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            datebirth.ForeColor = Color.FromArgb(64, 64, 64);
+            datebirth.Format = DateTimePickerFormat.Long;
+            datebirth.Location = new Point(17, 193);
+            datebirth.MaxDate = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            datebirth.MinDate = new DateTime(1912, 1, 1, 0, 0, 0, 0);
+            datebirth.Name = "datebirth";
+            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            datebirth.Size = new Size(200, 36);
+            datebirth.TabIndex = 28;
+            datebirth.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            datebirth.ValueChanged += datebirth_ValueChanged;
             // 
             // Settings
             // 
@@ -420,7 +415,6 @@
         private Label notifcontrol;
         private Label NotificationPreferences;
         private Label manage;
-        private Guna.UI2.WinForms.Guna2TextBox datebirth;
         private Guna.UI2.WinForms.Guna2TextBox lastname;
         private Guna.UI2.WinForms.Guna2TextBox middlename;
         private Guna.UI2.WinForms.Guna2TextBox firstname;
@@ -432,5 +426,6 @@
         private CheckBox oneday;
         private Guna.UI2.WinForms.Guna2ComboBox conditions;
         private Guna.UI2.WinForms.Guna2ComboBox province;
+        private Guna.UI2.WinForms.Guna2DateTimePicker datebirth;
     }
 }
