@@ -58,6 +58,22 @@ namespace DialysisInsight
 
             PopulateConditionsComboBox();
             PopulateProvinceComboBox();
+
+            if (Properties.Settings.Default.isDataSaved)
+            {
+                // Load saved data
+                firstname.Text = Properties.Settings.Default.firstname;
+                lastname.Text = Properties.Settings.Default.lastname;
+                datebirth.Value = DateTime.Parse(Properties.Settings.Default.datebirth);
+                conditions.SelectedItem = Properties.Settings.Default.conditions;
+                province.SelectedItem = Properties.Settings.Default.province;
+                MedicationReminders.Checked = Properties.Settings.Default.MedicationReminders;
+                oneday.Checked = Properties.Settings.Default.oneday;
+                onehour.Checked = Properties.Settings.Default.onehour;
+
+                // Disable inputs to prevent editing
+                DisableInputs();
+            }
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -110,7 +126,7 @@ namespace DialysisInsight
 
         private void firstname_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void middlename_TextChanged(object sender, EventArgs e)
@@ -120,7 +136,7 @@ namespace DialysisInsight
 
         private void lastname_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void datebirth_TextChanged(object sender, EventArgs e)
@@ -170,17 +186,17 @@ namespace DialysisInsight
 
         private void MedicationReminders_CheckedChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void oneday_CheckedChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void onehour_CheckedChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void ProfileManagement_Click(object sender, EventArgs e)
@@ -200,9 +216,71 @@ namespace DialysisInsight
             this.Hide();
         }
 
+        private bool isDataSaved = false;
+
         private void save_Click(object sender, EventArgs e)
         {
+            if (isDataSaved)
+            {
+                MessageBox.Show("Data has already been saved and cannot be modified.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(firstname.Text) ||
+                string.IsNullOrWhiteSpace(lastname.Text) ||
+                conditions.SelectedIndex == -1 ||
+                province.SelectedIndex == -1 ||
+                (datebirth.Value == default(DateTime)) ||
+                !MedicationReminders.Checked ||
+                (!oneday.Checked && !onehour.Checked))
+            {
+                MessageBox.Show("Please fill in all required fields before saving.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Save data to application settings
+            Properties.Settings.Default.firstname = firstname.Text;
+            Properties.Settings.Default.lastname = lastname.Text;
+            Properties.Settings.Default.datebirth = datebirth.Value.ToString("yyyy-MM-dd");
+            Properties.Settings.Default.conditions = conditions.SelectedItem?.ToString() ?? string.Empty;
+            Properties.Settings.Default.province = province.SelectedItem?.ToString() ?? string.Empty;
+            Properties.Settings.Default.MedicationReminders = MedicationReminders.Checked;
+            Properties.Settings.Default.oneday = oneday.Checked;
+            Properties.Settings.Default.onehour = onehour.Checked;
+            Properties.Settings.Default.isDataSaved = true; // Mark data as saved
+            Properties.Settings.Default.Save(); // Save settings permanently
+
+            // Disable inputs after saving
+            DisableInputs();
+
+            MessageBox.Show("Data saved successfully and is now locked!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            HealthData healthDataForm = new HealthData();
+            healthDataForm.Show();
+            this.Close(); // Closes the current form
+        }
+
+        private void DisableInputs()
+        {
+            firstname.Enabled = false;
+            lastname.Enabled = false;
+            datebirth.Enabled = false;
+            conditions.Enabled = false;
+            province.Enabled = false;
+            MedicationReminders.Enabled = false;
+            oneday.Enabled = false;
+            onehour.Enabled = false;
+        }
+
+        private void ValidateForm()
+        {
+            save.Enabled = !string.IsNullOrWhiteSpace(firstname.Text) &&
+                   !string.IsNullOrWhiteSpace(lastname.Text) &&
+                   conditions.SelectedIndex != -1 &&
+                   province.SelectedIndex != -1 &&
+                   MedicationReminders.Checked && // Ensure checkbox is checked
+                   (oneday.Checked || onehour.Checked);
         }
 
         private void notifcontrol_Click(object sender, EventArgs e)
@@ -234,7 +312,7 @@ namespace DialysisInsight
 
         private void conditions_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void PopulateProvinceComboBox()
@@ -331,7 +409,7 @@ namespace DialysisInsight
 
         private void province_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void datebirth_ValueChanged(object sender, EventArgs e)
@@ -339,6 +417,12 @@ namespace DialysisInsight
             datebirth.MaxDate = DateTime.Now; // Maximum date is today
             datebirth.MinDate = new DateTime(1908, 6, 8);
             DateTime selectedDate = datebirth.Value;
+            ValidateForm();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

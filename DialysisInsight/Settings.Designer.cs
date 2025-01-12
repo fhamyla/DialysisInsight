@@ -116,6 +116,7 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
+            guna2Panel1.Paint += guna2Panel1_Paint;
             // 
             // datebirth
             // 

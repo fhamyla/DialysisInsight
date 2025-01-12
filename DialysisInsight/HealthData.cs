@@ -160,7 +160,9 @@ namespace DialysisInsight
 
         private void back_Click(object sender, EventArgs e)
         {
-
+            Settings settings = new Settings();
+            settings.Show();
+            this.Close();
         }
 
         private void save_Click(object sender, EventArgs e)
