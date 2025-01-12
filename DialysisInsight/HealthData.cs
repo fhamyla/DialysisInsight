@@ -30,6 +30,11 @@ namespace DialysisInsight
         private Rectangle recsave;
         private Rectangle recback;
         private Rectangle recResetDataButton;
+        private Rectangle recedit;
+        private Rectangle receditt;
+        private Rectangle recedittt;
+        private Rectangle receditttt;
+        private Rectangle recedittttt;
         public HealthData()
         {
             InitializeComponent();
@@ -52,6 +57,11 @@ namespace DialysisInsight
             recsave = new Rectangle(save.Location, save.Size);
             recback = new Rectangle(back.Location, back.Size);
             recResetDataButton = new Rectangle(ResetDataButton.Location, ResetDataButton.Size);
+            recedit = new Rectangle(editkilo.Location, editkilo.Size);
+            receditt = new Rectangle(editbpm.Location, editbpm.Size);
+            recedittt = new Rectangle(editmg.Location, editmg.Size);
+            receditttt = new Rectangle(editmmhg.Location, editmmhg.Size);
+            recedittttt = new Rectangle(editsessions.Location, editsessions.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -73,6 +83,11 @@ namespace DialysisInsight
             resize_Control(save, recsave);
             resize_Control(back, recback);
             resize_Control(ResetDataButton, recResetDataButton);
+            resize_Control(editkilo, recedit);
+            resize_Control(editbpm, receditt);
+            resize_Control(editmg, recedittt);
+            resize_Control(editmmhg, receditttt);
+            resize_Control(editsessions, recedittttt);
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -212,6 +227,31 @@ namespace DialysisInsight
             DIA.Clear();
             SessionComplete.Clear();
             CompleteSession.Clear();
+        }
+
+        private void editkilo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editbpm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editmg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editmmhg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editsessions_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
