@@ -33,6 +33,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,10 +51,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            ResetDataButton = new Guna.UI2.WinForms.Guna2Button();
             datebirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             province = new Guna.UI2.WinForms.Guna2ComboBox();
             conditions = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -69,7 +70,6 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            ResetDataButton = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,6 +121,24 @@
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
             guna2Panel1.Paint += guna2Panel1_Paint;
+            // 
+            // ResetDataButton
+            // 
+            ResetDataButton.BorderColor = Color.White;
+            ResetDataButton.CustomizableEdges = customizableEdges3;
+            ResetDataButton.DisabledState.BorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ResetDataButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ResetDataButton.FillColor = Color.White;
+            ResetDataButton.Font = new Font("Segoe UI", 9F);
+            ResetDataButton.ForeColor = Color.White;
+            ResetDataButton.Location = new Point(601, 507);
+            ResetDataButton.Name = "ResetDataButton";
+            ResetDataButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            ResetDataButton.Size = new Size(89, 25);
+            ResetDataButton.TabIndex = 29;
+            ResetDataButton.Click += ResetDataButton_Click;
             // 
             // datebirth
             // 
@@ -394,23 +412,6 @@
             ProfileManagement.TabIndex = 0;
             ProfileManagement.Text = "Profile Management";
             ProfileManagement.Click += ProfileManagement_Click;
-            // 
-            // ResetDataButton
-            // 
-            ResetDataButton.CustomizableEdges = customizableEdges3;
-            ResetDataButton.DisabledState.BorderColor = Color.DarkGray;
-            ResetDataButton.DisabledState.CustomBorderColor = Color.DarkGray;
-            ResetDataButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ResetDataButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ResetDataButton.Font = new Font("Segoe UI", 9F);
-            ResetDataButton.ForeColor = Color.White;
-            ResetDataButton.Location = new Point(558, 285);
-            ResetDataButton.Name = "ResetDataButton";
-            ResetDataButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            ResetDataButton.Size = new Size(89, 25);
-            ResetDataButton.TabIndex = 29;
-            ResetDataButton.Text = "guna2Button1";
-            ResetDataButton.Click += ResetDataButton_Click;
             // 
             // Settings
             // 

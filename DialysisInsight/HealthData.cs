@@ -29,6 +29,7 @@ namespace DialysisInsight
         private Rectangle recsessions2;
         private Rectangle recsave;
         private Rectangle recback;
+        private Rectangle recResetDataButton;
         public HealthData()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace DialysisInsight
             recsessions2 = new Rectangle(CompleteSession.Location, CompleteSession.Size);
             recsave = new Rectangle(save.Location, save.Size);
             recback = new Rectangle(back.Location, back.Size);
+            recResetDataButton = new Rectangle(ResetDataButton.Location, ResetDataButton.Size);
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -70,6 +72,7 @@ namespace DialysisInsight
             resize_Control(CompleteSession, recsessions2);
             resize_Control(save, recsave);
             resize_Control(back, recback);
+            resize_Control(ResetDataButton, recResetDataButton);
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -168,6 +171,47 @@ namespace DialysisInsight
         private void save_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ResetDataButton_Click(object sender, EventArgs e)
+        {
+            // Confirm with the user before resetting the data
+            DialogResult result = MessageBox.Show("Are you sure you want to reset the data?",
+                                                  "Reset Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Reset application settings to default values
+                Properties.Settings.Default.Weight = string.Empty;       // Reset to empty string
+                Properties.Settings.Default.HeartRate = string.Empty;        // Reset to empty string
+                Properties.Settings.Default.BloodSugarLevel = string.Empty;       // Reset to empty string (or default date)
+                Properties.Settings.Default.SYS = string.Empty;     // Reset to empty string
+                Properties.Settings.Default.DIA = string.Empty;
+                Properties.Settings.Default.SessionComplete = string.Empty;     // Reset to empty string
+                Properties.Settings.Default.CompleteSession = string.Empty;   // Reset to false
+                Properties.Settings.Default.isDataSaved = false;           // Mark data as not saved anymore
+
+                // Save the changes to settings
+                Properties.Settings.Default.Save(); // Save the reset settings
+
+                // Optionally, clear the form fields
+                ClearFormFields();
+
+                // Notify the user that the data has been reset
+                MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ClearFormFields()
+        {
+            // Optionally clear form fields to reset the UI
+            Weight.Clear();
+            HeartRate.Clear();
+            BloodSugarLevel.Clear();
+            SYS.Clear();
+            DIA.Clear();
+            SessionComplete.Clear();
+            CompleteSession.Clear();
         }
     }
 }

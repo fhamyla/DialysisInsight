@@ -31,8 +31,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HealthData));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -51,8 +51,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            ResetDataButton = new Guna.UI2.WinForms.Guna2Button();
             CompleteSession = new Guna.UI2.WinForms.Guna2TextBox();
             back = new Guna.UI2.WinForms.Guna2Button();
             save = new Guna.UI2.WinForms.Guna2Button();
@@ -94,6 +97,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(ResetDataButton);
             guna2Panel1.Controls.Add(CompleteSession);
             guna2Panel1.Controls.Add(back);
             guna2Panel1.Controls.Add(save);
@@ -108,18 +112,36 @@
             guna2Panel1.Controls.Add(BloodSugarLevel);
             guna2Panel1.Controls.Add(HeartRate);
             guna2Panel1.Controls.Add(Weight);
-            guna2Panel1.CustomizableEdges = customizableEdges21;
+            guna2Panel1.CustomizableEdges = customizableEdges23;
             guna2Panel1.Location = new Point(-6, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2Panel1.Size = new Size(894, 567);
             guna2Panel1.TabIndex = 5;
+            // 
+            // ResetDataButton
+            // 
+            ResetDataButton.BorderColor = Color.White;
+            ResetDataButton.CustomizableEdges = customizableEdges3;
+            ResetDataButton.DisabledState.BorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ResetDataButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ResetDataButton.FillColor = Color.White;
+            ResetDataButton.Font = new Font("Segoe UI", 9F);
+            ResetDataButton.ForeColor = Color.White;
+            ResetDataButton.Location = new Point(531, 511);
+            ResetDataButton.Name = "ResetDataButton";
+            ResetDataButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            ResetDataButton.Size = new Size(89, 25);
+            ResetDataButton.TabIndex = 30;
+            ResetDataButton.Click += ResetDataButton_Click;
             // 
             // CompleteSession
             // 
             CompleteSession.BorderColor = Color.FromArgb(64, 64, 64);
             CompleteSession.BorderRadius = 10;
-            CompleteSession.CustomizableEdges = customizableEdges3;
+            CompleteSession.CustomizableEdges = customizableEdges5;
             CompleteSession.DefaultText = "";
             CompleteSession.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             CompleteSession.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -135,7 +157,7 @@
             CompleteSession.PasswordChar = '\0';
             CompleteSession.PlaceholderText = "Enter Complete Sessions";
             CompleteSession.SelectedText = "";
-            CompleteSession.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            CompleteSession.ShadowDecoration.CustomizableEdges = customizableEdges6;
             CompleteSession.Size = new Size(229, 72);
             CompleteSession.TabIndex = 13;
             CompleteSession.TextChanged += CompleteSession_TextChanged;
@@ -144,7 +166,7 @@
             // 
             back.BorderColor = Color.White;
             back.BorderRadius = 5;
-            back.CustomizableEdges = customizableEdges5;
+            back.CustomizableEdges = customizableEdges7;
             back.DisabledState.BorderColor = Color.DarkGray;
             back.DisabledState.CustomBorderColor = Color.DarkGray;
             back.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -156,7 +178,7 @@
             back.Location = new Point(626, 491);
             back.Name = "back";
             back.PressedColor = Color.FromArgb(64, 0, 0);
-            back.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            back.ShadowDecoration.CustomizableEdges = customizableEdges8;
             back.Size = new Size(108, 45);
             back.TabIndex = 12;
             back.Text = "Back";
@@ -166,7 +188,7 @@
             // 
             save.BorderColor = Color.White;
             save.BorderRadius = 5;
-            save.CustomizableEdges = customizableEdges7;
+            save.CustomizableEdges = customizableEdges9;
             save.DisabledState.BorderColor = Color.DarkGray;
             save.DisabledState.CustomBorderColor = Color.DarkGray;
             save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -178,7 +200,7 @@
             save.Location = new Point(758, 491);
             save.Name = "save";
             save.PressedColor = Color.FromArgb(64, 0, 0);
-            save.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            save.ShadowDecoration.CustomizableEdges = customizableEdges10;
             save.Size = new Size(108, 45);
             save.TabIndex = 11;
             save.Text = "Save";
@@ -188,7 +210,7 @@
             // 
             DIA.BorderColor = Color.FromArgb(64, 64, 64);
             DIA.BorderRadius = 10;
-            DIA.CustomizableEdges = customizableEdges9;
+            DIA.CustomizableEdges = customizableEdges11;
             DIA.DefaultText = "";
             DIA.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             DIA.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -204,7 +226,7 @@
             DIA.PasswordChar = '\0';
             DIA.PlaceholderText = "DIA";
             DIA.SelectedText = "";
-            DIA.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            DIA.ShadowDecoration.CustomizableEdges = customizableEdges12;
             DIA.Size = new Size(111, 72);
             DIA.TabIndex = 10;
             DIA.TextChanged += DIA_TextChanged;
@@ -268,7 +290,7 @@
             // 
             SessionComplete.BorderColor = Color.FromArgb(64, 64, 64);
             SessionComplete.BorderRadius = 10;
-            SessionComplete.CustomizableEdges = customizableEdges11;
+            SessionComplete.CustomizableEdges = customizableEdges13;
             SessionComplete.DefaultText = "";
             SessionComplete.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             SessionComplete.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -284,7 +306,7 @@
             SessionComplete.PasswordChar = '\0';
             SessionComplete.PlaceholderText = "Enter Session Completed";
             SessionComplete.SelectedText = "";
-            SessionComplete.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            SessionComplete.ShadowDecoration.CustomizableEdges = customizableEdges14;
             SessionComplete.Size = new Size(229, 72);
             SessionComplete.TabIndex = 4;
             SessionComplete.TextChanged += SessionComplete_TextChanged;
@@ -293,7 +315,7 @@
             // 
             SYS.BorderColor = Color.FromArgb(64, 64, 64);
             SYS.BorderRadius = 10;
-            SYS.CustomizableEdges = customizableEdges13;
+            SYS.CustomizableEdges = customizableEdges15;
             SYS.DefaultText = "";
             SYS.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             SYS.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -309,7 +331,7 @@
             SYS.PasswordChar = '\0';
             SYS.PlaceholderText = "SYS";
             SYS.SelectedText = "";
-            SYS.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            SYS.ShadowDecoration.CustomizableEdges = customizableEdges16;
             SYS.Size = new Size(111, 72);
             SYS.TabIndex = 3;
             SYS.TextChanged += SYS_TextChanged;
@@ -318,7 +340,7 @@
             // 
             BloodSugarLevel.BorderColor = Color.FromArgb(64, 64, 64);
             BloodSugarLevel.BorderRadius = 10;
-            BloodSugarLevel.CustomizableEdges = customizableEdges15;
+            BloodSugarLevel.CustomizableEdges = customizableEdges17;
             BloodSugarLevel.DefaultText = "";
             BloodSugarLevel.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             BloodSugarLevel.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -334,7 +356,7 @@
             BloodSugarLevel.PasswordChar = '\0';
             BloodSugarLevel.PlaceholderText = "Enter Sugar Level";
             BloodSugarLevel.SelectedText = "";
-            BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            BloodSugarLevel.ShadowDecoration.CustomizableEdges = customizableEdges18;
             BloodSugarLevel.Size = new Size(229, 72);
             BloodSugarLevel.TabIndex = 2;
             BloodSugarLevel.TextChanged += BloodSugarLevel_TextChanged;
@@ -343,7 +365,7 @@
             // 
             HeartRate.BorderColor = Color.FromArgb(64, 64, 64);
             HeartRate.BorderRadius = 10;
-            HeartRate.CustomizableEdges = customizableEdges17;
+            HeartRate.CustomizableEdges = customizableEdges19;
             HeartRate.DefaultText = "";
             HeartRate.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             HeartRate.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -359,7 +381,7 @@
             HeartRate.PasswordChar = '\0';
             HeartRate.PlaceholderText = "Enter Heart Rate";
             HeartRate.SelectedText = "";
-            HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            HeartRate.ShadowDecoration.CustomizableEdges = customizableEdges20;
             HeartRate.Size = new Size(229, 72);
             HeartRate.TabIndex = 1;
             HeartRate.TextChanged += HeartRate_TextChanged;
@@ -368,7 +390,7 @@
             // 
             Weight.BorderColor = Color.FromArgb(64, 64, 64);
             Weight.BorderRadius = 10;
-            Weight.CustomizableEdges = customizableEdges19;
+            Weight.CustomizableEdges = customizableEdges21;
             Weight.DefaultText = "";
             Weight.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             Weight.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -384,7 +406,7 @@
             Weight.PasswordChar = '\0';
             Weight.PlaceholderText = "Enter Weight in Kg";
             Weight.SelectedText = "";
-            Weight.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            Weight.ShadowDecoration.CustomizableEdges = customizableEdges22;
             Weight.Size = new Size(229, 72);
             Weight.TabIndex = 0;
             Weight.TextChanged += Weight_TextChanged;
@@ -424,5 +446,6 @@
         private Guna.UI2.WinForms.Guna2Button save;
         private Guna.UI2.WinForms.Guna2Button back;
         private Guna.UI2.WinForms.Guna2TextBox CompleteSession;
+        private Guna.UI2.WinForms.Guna2Button ResetDataButton;
     }
 }

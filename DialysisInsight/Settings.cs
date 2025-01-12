@@ -32,6 +32,7 @@ namespace DialysisInsight
         private Rectangle recsave;
         private Rectangle recnotif;
         private Rectangle recnotifpre;
+        private Rectangle recResetDataButton;
         public Settings()
         {
             InitializeComponent();
@@ -55,6 +56,7 @@ namespace DialysisInsight
             recsave = new Rectangle(save.Location, save.Size);
             recnotif = new Rectangle(notifcontrol.Location, notifcontrol.Size);
             recnotifpre = new Rectangle(NotificationPreferences.Location, NotificationPreferences.Size);
+            recResetDataButton = new Rectangle(ResetDataButton.Location, ResetDataButton.Size);
 
             PopulateConditionsComboBox();
             PopulateProvinceComboBox();
@@ -96,6 +98,7 @@ namespace DialysisInsight
             resize_Control(save, recsave);
             resize_Control(notifcontrol, recnotif);
             resize_Control(NotificationPreferences, recnotifpre);
+            resize_Control(ResetDataButton, recResetDataButton);
         }
 
         private void resize_Control(Control c, Rectangle r)

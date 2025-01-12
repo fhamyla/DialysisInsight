@@ -130,5 +130,89 @@ namespace DialysisInsight.Properties {
                 this["isDataSaved"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Weight {
+            get {
+                return ((string)(this["Weight"]));
+            }
+            set {
+                this["Weight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HeartRate {
+            get {
+                return ((string)(this["HeartRate"]));
+            }
+            set {
+                this["HeartRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BloodSugarLevel {
+            get {
+                return ((string)(this["BloodSugarLevel"]));
+            }
+            set {
+                this["BloodSugarLevel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SYS {
+            get {
+                return ((string)(this["SYS"]));
+            }
+            set {
+                this["SYS"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DIA {
+            get {
+                return ((string)(this["DIA"]));
+            }
+            set {
+                this["DIA"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SessionComplete {
+            get {
+                return ((string)(this["SessionComplete"]));
+            }
+            set {
+                this["SessionComplete"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompleteSession {
+            get {
+                return ((string)(this["CompleteSession"]));
+            }
+            set {
+                this["CompleteSession"] = value;
+            }
+        }
     }
 }
