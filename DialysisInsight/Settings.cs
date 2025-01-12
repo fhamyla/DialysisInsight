@@ -76,6 +76,10 @@ namespace DialysisInsight
                 // Disable inputs to prevent editing
                 DisableInputs();
             }
+
+            datebirth.MaxDate = DateTime.Today;
+            datebirth.MinDate = new DateTime(1908, 6, 8);
+            datebirth.Value = DateTime.Today;
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -417,9 +421,13 @@ namespace DialysisInsight
 
         private void datebirth_ValueChanged(object sender, EventArgs e)
         {
-            datebirth.MaxDate = DateTime.Now; // Maximum date is today
+            datebirth.MaxDate = DateTime.Now;
             datebirth.MinDate = new DateTime(1908, 6, 8);
             DateTime selectedDate = datebirth.Value;
+            if (datebirth.Value > datebirth.MaxDate)
+            {
+                datebirth.Value = datebirth.MaxDate;
+            }
             ValidateForm();
         }
 
