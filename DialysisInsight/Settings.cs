@@ -334,7 +334,9 @@ namespace DialysisInsight
 
         private void datebirth_ValueChanged(object sender, EventArgs e)
         {
-
+            datebirth.MaxDate = DateTime.Now; // Maximum date is today
+            datebirth.MinDate = new DateTime(1908, 6, 8);
+            DateTime selectedDate = datebirth.Value;
         }
     }
 }
