@@ -33,6 +33,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -47,10 +49,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            datebirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             province = new Guna.UI2.WinForms.Guna2ComboBox();
             conditions = new Guna.UI2.WinForms.Guna2ComboBox();
             onehour = new CheckBox();
@@ -66,7 +67,6 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            datebirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -116,6 +116,26 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
+            // 
+            // datebirth
+            // 
+            datebirth.BorderColor = Color.FromArgb(64, 64, 64);
+            datebirth.BorderRadius = 10;
+            datebirth.Checked = true;
+            datebirth.CustomizableEdges = customizableEdges3;
+            datebirth.FillColor = Color.White;
+            datebirth.Font = new Font("Poppins", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            datebirth.ForeColor = Color.FromArgb(64, 64, 64);
+            datebirth.Format = DateTimePickerFormat.Long;
+            datebirth.Location = new Point(17, 193);
+            datebirth.MaxDate = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            datebirth.MinDate = new DateTime(1912, 1, 1, 0, 0, 0, 0);
+            datebirth.Name = "datebirth";
+            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            datebirth.Size = new Size(200, 36);
+            datebirth.TabIndex = 28;
+            datebirth.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
+            datebirth.ValueChanged += datebirth_ValueChanged;
             // 
             // province
             // 
@@ -369,26 +389,6 @@
             ProfileManagement.TabIndex = 0;
             ProfileManagement.Text = "Profile Management";
             ProfileManagement.Click += ProfileManagement_Click;
-            // 
-            // datebirth
-            // 
-            datebirth.BorderColor = Color.FromArgb(64, 64, 64);
-            datebirth.BorderRadius = 10;
-            datebirth.Checked = true;
-            datebirth.CustomizableEdges = customizableEdges3;
-            datebirth.FillColor = Color.White;
-            datebirth.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datebirth.ForeColor = Color.FromArgb(64, 64, 64);
-            datebirth.Format = DateTimePickerFormat.Long;
-            datebirth.Location = new Point(17, 193);
-            datebirth.MaxDate = new DateTime(2025, 1, 12, 0, 0, 0, 0);
-            datebirth.MinDate = new DateTime(1912, 1, 1, 0, 0, 0, 0);
-            datebirth.Name = "datebirth";
-            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            datebirth.Size = new Size(200, 36);
-            datebirth.TabIndex = 28;
-            datebirth.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
-            datebirth.ValueChanged += datebirth_ValueChanged;
             // 
             // Settings
             // 
