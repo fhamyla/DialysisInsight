@@ -151,7 +151,7 @@
             datebirth.ForeColor = Color.FromArgb(64, 64, 64);
             datebirth.Format = DateTimePickerFormat.Long;
             datebirth.Location = new Point(17, 193);
-            datebirth.MaxDate = new DateTime(2025, 1, 6, 0, 0, 0, 0);
+            datebirth.MaxDate = new DateTime(2025, 1, 13, 0, 0, 0, 0);
             datebirth.MinDate = new DateTime(1912, 1, 1, 0, 0, 0, 0);
             datebirth.Name = "datebirth";
             datebirth.ShadowDecoration.CustomizableEdges = customizableEdges6;

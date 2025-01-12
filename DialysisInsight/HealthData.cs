@@ -62,6 +62,21 @@ namespace DialysisInsight
             recedittt = new Rectangle(editmg.Location, editmg.Size);
             receditttt = new Rectangle(editmmhg.Location, editmmhg.Size);
             recedittttt = new Rectangle(editsessions.Location, editsessions.Size);
+
+            if (Properties.Settings.Default.isDataSaved)
+            {
+                // Load saved data
+                Weight.Text = Properties.Settings.Default.Weight;
+                HeartRate.Text = Properties.Settings.Default.HeartRate;
+                BloodSugarLevel.Text = Properties.Settings.Default.BloodSugarLevel;
+                SYS.Text = Properties.Settings.Default.SYS;
+                DIA.Text = Properties.Settings.Default.DIA;
+                SessionComplete.Text = Properties.Settings.Default.SessionComplete;
+                CompleteSession.Text = Properties.Settings.Default.CompleteSession;
+
+                // Disable inputs to prevent editing
+                DisableInputs();
+            }
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -133,17 +148,17 @@ namespace DialysisInsight
 
         private void Weight_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void HeartRate_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void BloodSugarLevel_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void guna2HtmlLabel4_Click(object sender, EventArgs e)
@@ -158,22 +173,22 @@ namespace DialysisInsight
 
         private void SYS_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void DIA_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void SessionComplete_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void CompleteSession_TextChanged(object sender, EventArgs e)
         {
-
+            ValidateForm();
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -183,9 +198,70 @@ namespace DialysisInsight
             this.Close();
         }
 
+        private bool isDataSaved = false;
+
         private void save_Click(object sender, EventArgs e)
         {
+            if (isDataSaved)
+            {
+                MessageBox.Show("Data has already been saved and cannot be modified.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (string.IsNullOrWhiteSpace(Weight.Text) ||
+                string.IsNullOrWhiteSpace(HeartRate.Text) ||
+                string.IsNullOrWhiteSpace(BloodSugarLevel.Text) ||
+                string.IsNullOrWhiteSpace(SYS.Text) ||
+                string.IsNullOrWhiteSpace(DIA.Text) ||
+                string.IsNullOrWhiteSpace(SessionComplete.Text) ||
+                string.IsNullOrWhiteSpace(CompleteSession.Text))
+            {
+                MessageBox.Show("Please fill in all required fields before saving.",
+                                "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Save data to application settings
+            Properties.Settings.Default.Weight = Weight.Text;
+            Properties.Settings.Default.HeartRate = HeartRate.Text;
+            Properties.Settings.Default.BloodSugarLevel = BloodSugarLevel.Text;
+            Properties.Settings.Default.SYS = SYS.Text;
+            Properties.Settings.Default.DIA = DIA.Text;
+            Properties.Settings.Default.SessionComplete = SessionComplete.Text;
+            Properties.Settings.Default.CompleteSession = CompleteSession.Text;
+            Properties.Settings.Default.isDataSaved = true; // Mark data as saved
+            Properties.Settings.Default.Save(); // Save settings permanently
+
+            // Disable inputs after saving
+            DisableInputs();
+
+            MessageBox.Show("Data saved successfully and is now locked!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void DisableInputs()
+        {
+            Weight.Enabled = false;
+            HeartRate.Enabled = false;
+            BloodSugarLevel.Enabled = false;
+            SYS.Enabled = false;
+            DIA.Enabled = false;
+            SessionComplete.Enabled = false;
+            CompleteSession.Enabled = false;
+        }
+
+        private void ValidateForm()
+        {
+            save.Enabled = !string.IsNullOrWhiteSpace(Weight.Text) &&
+                   !string.IsNullOrWhiteSpace(HeartRate.Text) && 
+                   !string.IsNullOrWhiteSpace(BloodSugarLevel.Text) &&
+                   !string.IsNullOrWhiteSpace(SYS.Text) &&
+                   !string.IsNullOrWhiteSpace(DIA.Text) &&
+                   !string.IsNullOrWhiteSpace(SessionComplete.Text) &&
+                   !string.IsNullOrWhiteSpace(CompleteSession.Text);
         }
 
         private void ResetDataButton_Click(object sender, EventArgs e)
