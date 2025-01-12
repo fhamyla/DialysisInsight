@@ -31,10 +31,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -49,6 +47,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             datebirth = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -67,6 +69,7 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
+            ResetDataButton = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,6 +97,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(ResetDataButton);
             guna2Panel1.Controls.Add(datebirth);
             guna2Panel1.Controls.Add(province);
             guna2Panel1.Controls.Add(conditions);
@@ -110,10 +114,10 @@
             guna2Panel1.Controls.Add(NotificationPreferences);
             guna2Panel1.Controls.Add(manage);
             guna2Panel1.Controls.Add(ProfileManagement);
-            guna2Panel1.CustomizableEdges = customizableEdges19;
+            guna2Panel1.CustomizableEdges = customizableEdges21;
             guna2Panel1.Location = new Point(-5, -7);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
             guna2Panel1.Paint += guna2Panel1_Paint;
@@ -123,7 +127,7 @@
             datebirth.BorderColor = Color.FromArgb(64, 64, 64);
             datebirth.BorderRadius = 10;
             datebirth.Checked = true;
-            datebirth.CustomizableEdges = customizableEdges3;
+            datebirth.CustomizableEdges = customizableEdges5;
             datebirth.FillColor = Color.White;
             datebirth.Font = new Font("Poppins", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             datebirth.ForeColor = Color.FromArgb(64, 64, 64);
@@ -132,7 +136,7 @@
             datebirth.MaxDate = new DateTime(2025, 1, 12, 0, 0, 0, 0);
             datebirth.MinDate = new DateTime(1912, 1, 1, 0, 0, 0, 0);
             datebirth.Name = "datebirth";
-            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            datebirth.ShadowDecoration.CustomizableEdges = customizableEdges6;
             datebirth.Size = new Size(200, 36);
             datebirth.TabIndex = 28;
             datebirth.Value = new DateTime(2025, 1, 12, 0, 0, 0, 0);
@@ -143,7 +147,7 @@
             province.BackColor = Color.Transparent;
             province.BorderColor = Color.FromArgb(64, 64, 64);
             province.BorderRadius = 10;
-            province.CustomizableEdges = customizableEdges5;
+            province.CustomizableEdges = customizableEdges7;
             province.DrawMode = DrawMode.OwnerDrawFixed;
             province.DropDownStyle = ComboBoxStyle.DropDownList;
             province.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -153,7 +157,7 @@
             province.ItemHeight = 30;
             province.Location = new Point(623, 193);
             province.Name = "province";
-            province.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            province.ShadowDecoration.CustomizableEdges = customizableEdges8;
             province.Size = new Size(200, 36);
             province.TabIndex = 27;
             province.SelectedIndexChanged += province_SelectedIndexChanged;
@@ -163,7 +167,7 @@
             conditions.BackColor = Color.Transparent;
             conditions.BorderColor = Color.FromArgb(64, 64, 64);
             conditions.BorderRadius = 10;
-            conditions.CustomizableEdges = customizableEdges7;
+            conditions.CustomizableEdges = customizableEdges9;
             conditions.DrawMode = DrawMode.OwnerDrawFixed;
             conditions.DropDownStyle = ComboBoxStyle.DropDownList;
             conditions.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -173,7 +177,7 @@
             conditions.ItemHeight = 30;
             conditions.Location = new Point(316, 193);
             conditions.Name = "conditions";
-            conditions.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            conditions.ShadowDecoration.CustomizableEdges = customizableEdges10;
             conditions.Size = new Size(200, 36);
             conditions.TabIndex = 26;
             conditions.SelectedIndexChanged += conditions_SelectedIndexChanged;
@@ -229,7 +233,7 @@
             // 
             back.BorderColor = Color.FromArgb(64, 64, 64);
             back.BorderRadius = 5;
-            back.CustomizableEdges = customizableEdges9;
+            back.CustomizableEdges = customizableEdges11;
             back.DisabledState.BorderColor = Color.DarkGray;
             back.DisabledState.CustomBorderColor = Color.DarkGray;
             back.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -243,7 +247,7 @@
             back.Location = new Point(696, 490);
             back.Name = "back";
             back.PressedColor = Color.Maroon;
-            back.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            back.ShadowDecoration.CustomizableEdges = customizableEdges12;
             back.Size = new Size(83, 42);
             back.TabIndex = 15;
             back.Text = "Back";
@@ -253,7 +257,7 @@
             // 
             save.BorderColor = Color.FromArgb(64, 64, 64);
             save.BorderRadius = 5;
-            save.CustomizableEdges = customizableEdges11;
+            save.CustomizableEdges = customizableEdges13;
             save.DisabledState.BorderColor = Color.DarkGray;
             save.DisabledState.CustomBorderColor = Color.DarkGray;
             save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -267,7 +271,7 @@
             save.Location = new Point(785, 490);
             save.Name = "save";
             save.PressedColor = Color.Maroon;
-            save.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            save.ShadowDecoration.CustomizableEdges = customizableEdges14;
             save.Size = new Size(83, 42);
             save.TabIndex = 14;
             save.Text = "Save";
@@ -277,7 +281,7 @@
             // 
             firstname.BorderColor = Color.FromArgb(64, 64, 64);
             firstname.BorderRadius = 10;
-            firstname.CustomizableEdges = customizableEdges13;
+            firstname.CustomizableEdges = customizableEdges15;
             firstname.DefaultText = "";
             firstname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             firstname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -292,7 +296,7 @@
             firstname.PasswordChar = '\0';
             firstname.PlaceholderText = "First Name";
             firstname.SelectedText = "";
-            firstname.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            firstname.ShadowDecoration.CustomizableEdges = customizableEdges16;
             firstname.Size = new Size(200, 38);
             firstname.TabIndex = 13;
             firstname.TextChanged += firstname_TextChanged;
@@ -301,7 +305,7 @@
             // 
             lastname.BorderColor = Color.FromArgb(64, 64, 64);
             lastname.BorderRadius = 10;
-            lastname.CustomizableEdges = customizableEdges15;
+            lastname.CustomizableEdges = customizableEdges17;
             lastname.DefaultText = "";
             lastname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             lastname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -316,7 +320,7 @@
             lastname.PasswordChar = '\0';
             lastname.PlaceholderText = "Last Name";
             lastname.SelectedText = "";
-            lastname.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            lastname.ShadowDecoration.CustomizableEdges = customizableEdges18;
             lastname.Size = new Size(200, 38);
             lastname.TabIndex = 6;
             lastname.TextChanged += lastname_TextChanged;
@@ -325,7 +329,7 @@
             // 
             middlename.BorderColor = Color.FromArgb(64, 64, 64);
             middlename.BorderRadius = 10;
-            middlename.CustomizableEdges = customizableEdges17;
+            middlename.CustomizableEdges = customizableEdges19;
             middlename.DefaultText = "";
             middlename.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             middlename.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -340,7 +344,7 @@
             middlename.PasswordChar = '\0';
             middlename.PlaceholderText = "Middle Name (Optional)";
             middlename.SelectedText = "";
-            middlename.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            middlename.ShadowDecoration.CustomizableEdges = customizableEdges20;
             middlename.Size = new Size(200, 38);
             middlename.TabIndex = 5;
             middlename.TextChanged += middlename_TextChanged;
@@ -391,6 +395,23 @@
             ProfileManagement.Text = "Profile Management";
             ProfileManagement.Click += ProfileManagement_Click;
             // 
+            // ResetDataButton
+            // 
+            ResetDataButton.CustomizableEdges = customizableEdges3;
+            ResetDataButton.DisabledState.BorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            ResetDataButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ResetDataButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ResetDataButton.Font = new Font("Segoe UI", 9F);
+            ResetDataButton.ForeColor = Color.White;
+            ResetDataButton.Location = new Point(558, 285);
+            ResetDataButton.Name = "ResetDataButton";
+            ResetDataButton.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            ResetDataButton.Size = new Size(89, 25);
+            ResetDataButton.TabIndex = 29;
+            ResetDataButton.Text = "guna2Button1";
+            ResetDataButton.Click += ResetDataButton_Click;
+            // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -428,5 +449,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox conditions;
         private Guna.UI2.WinForms.Guna2ComboBox province;
         private Guna.UI2.WinForms.Guna2DateTimePicker datebirth;
+        private Guna.UI2.WinForms.Guna2Button ResetDataButton;
     }
 }

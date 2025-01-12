@@ -424,5 +424,48 @@ namespace DialysisInsight
         {
 
         }
+
+        private void ResetDataButton_Click(object sender, EventArgs e)
+        {
+            // Confirm with the user before resetting the data
+            DialogResult result = MessageBox.Show("Are you sure you want to reset the data?",
+                                                  "Reset Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Reset application settings to default values
+                Properties.Settings.Default.firstname = string.Empty;       // Reset to empty string
+                Properties.Settings.Default.lastname = string.Empty;        // Reset to empty string
+                Properties.Settings.Default.datebirth = string.Empty;       // Reset to empty string (or default date)
+                Properties.Settings.Default.conditions = string.Empty;     // Reset to empty string
+                Properties.Settings.Default.province = string.Empty;       // Reset to empty string
+                Properties.Settings.Default.MedicationReminders = false;   // Reset to false
+                Properties.Settings.Default.oneday = false;                // Reset to false
+                Properties.Settings.Default.onehour = false;               // Reset to false
+                Properties.Settings.Default.isDataSaved = false;           // Mark data as not saved anymore
+
+                // Save the changes to settings
+                Properties.Settings.Default.Save(); // Save the reset settings
+
+                // Optionally, clear the form fields
+                ClearFormFields();
+
+                // Notify the user that the data has been reset
+                MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ClearFormFields()
+        {
+            // Optionally clear form fields to reset the UI
+            firstname.Clear();
+            lastname.Clear();
+            Properties.Settings.Default.datebirth = DateTime.MinValue.ToString("yyyy-MM-dd");  // or use DateTime.Now
+            conditions.SelectedIndex = -1;
+            province.SelectedIndex = -1;
+            MedicationReminders.Checked = false;
+            oneday.Checked = false;
+            onehour.Checked = false;
+        }
     }
 }
