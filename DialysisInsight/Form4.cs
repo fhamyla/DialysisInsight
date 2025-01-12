@@ -235,8 +235,6 @@ namespace DialysisInsight
             }
         }
 
-        public bool IsOtpVerified { get; private set; } = false;
-
         private void verify_Click(object sender, EventArgs e)
         {
             string enteredOtp = TextBox1.Text + TextBox2.Text + TextBox3.Text + TextBox4.Text;
@@ -244,7 +242,6 @@ namespace DialysisInsight
             if (enteredOtp == generatedOtp)
             {
                 MessageBox.Show("OTP verified successfully!");
-                IsOtpVerified = true;
                 Settings settings = new Settings();
                 settings.Show();
                 this.Hide();
