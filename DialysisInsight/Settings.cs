@@ -43,7 +43,7 @@ namespace DialysisInsight
             recmiddlename = new Rectangle(middlename.Location, middlename.Size);
             reclastname = new Rectangle(lastname.Location, lastname.Size);
             recdate = new Rectangle(datebirth.Location, datebirth.Size);
-            recmuni = new Rectangle(municipality.Location, municipality.Size);
+            recmuni = new Rectangle(conditions.Location, conditions.Size);
             recpro = new Rectangle(province.Location, province.Size);
             recappo = new Rectangle(AppointmentReminders.Location, AppointmentReminders.Size);
             recmed = new Rectangle(MedicationReminders.Location, MedicationReminders.Size);
@@ -55,6 +55,8 @@ namespace DialysisInsight
             recsave = new Rectangle(save.Location, save.Size);
             recnotif = new Rectangle(notifcontrol.Location, notifcontrol.Size);
             recnotifpre = new Rectangle(NotificationPreferences.Location, NotificationPreferences.Size);
+
+            PopulateConditionsComboBox();
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace DialysisInsight
             resize_Control(middlename, recmiddlename);
             resize_Control(lastname, reclastname);
             resize_Control(datebirth, recdate);
-            resize_Control(municipality, recmuni);
+            resize_Control(conditions, recmuni);
             resize_Control(province, recpro);
             resize_Control(AppointmentReminders, recappo);
             resize_Control(MedicationReminders, recmed);
@@ -206,6 +208,28 @@ namespace DialysisInsight
         }
 
         private void NotificationPreferences_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PopulateConditionsComboBox()
+        {
+            var conditionsList = new List<string>
+            {
+                "End-Stage Renal Disease (ESRD)",
+                "Acute Kidney Injury (AKI)",
+                "Severe Fluid Overload",
+                "Severe Hyperkalemia",
+                "Uremia",
+                "Poisoning or Drug Overdose",
+                "Severe Hypertension",
+                "Severe Metabolic Acidosis"
+            };
+
+            conditions.Items.AddRange(conditionsList.ToArray());
+        }
+
+        private void conditions_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
