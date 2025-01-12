@@ -51,6 +51,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            conditions = new Guna.UI2.WinForms.Guna2ComboBox();
             onehour = new CheckBox();
             oneday = new CheckBox();
             AppointmentReminders = new Label();
@@ -58,7 +59,6 @@
             back = new Guna.UI2.WinForms.Guna2Button();
             save = new Guna.UI2.WinForms.Guna2Button();
             firstname = new Guna.UI2.WinForms.Guna2TextBox();
-            province = new Guna.UI2.WinForms.Guna2TextBox();
             datebirth = new Guna.UI2.WinForms.Guna2TextBox();
             lastname = new Guna.UI2.WinForms.Guna2TextBox();
             middlename = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,7 +66,7 @@
             NotificationPreferences = new Label();
             manage = new Label();
             ProfileManagement = new Label();
-            conditions = new Guna.UI2.WinForms.Guna2ComboBox();
+            province = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Controls.Add(province);
             guna2Panel1.Controls.Add(conditions);
             guna2Panel1.Controls.Add(onehour);
             guna2Panel1.Controls.Add(oneday);
@@ -102,7 +103,6 @@
             guna2Panel1.Controls.Add(back);
             guna2Panel1.Controls.Add(save);
             guna2Panel1.Controls.Add(firstname);
-            guna2Panel1.Controls.Add(province);
             guna2Panel1.Controls.Add(datebirth);
             guna2Panel1.Controls.Add(lastname);
             guna2Panel1.Controls.Add(middlename);
@@ -116,6 +116,26 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Panel1.Size = new Size(892, 564);
             guna2Panel1.TabIndex = 5;
+            // 
+            // conditions
+            // 
+            conditions.BackColor = Color.Transparent;
+            conditions.BorderColor = Color.FromArgb(64, 64, 64);
+            conditions.BorderRadius = 10;
+            conditions.CustomizableEdges = customizableEdges5;
+            conditions.DrawMode = DrawMode.OwnerDrawFixed;
+            conditions.DropDownStyle = ComboBoxStyle.DropDownList;
+            conditions.FocusedColor = Color.FromArgb(94, 148, 255);
+            conditions.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            conditions.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            conditions.ForeColor = Color.FromArgb(125, 137, 149);
+            conditions.ItemHeight = 30;
+            conditions.Location = new Point(316, 193);
+            conditions.Name = "conditions";
+            conditions.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            conditions.Size = new Size(200, 36);
+            conditions.TabIndex = 26;
+            conditions.SelectedIndexChanged += conditions_SelectedIndexChanged;
             // 
             // onehour
             // 
@@ -168,7 +188,7 @@
             // 
             back.BorderColor = Color.FromArgb(64, 64, 64);
             back.BorderRadius = 5;
-            back.CustomizableEdges = customizableEdges5;
+            back.CustomizableEdges = customizableEdges7;
             back.DisabledState.BorderColor = Color.DarkGray;
             back.DisabledState.CustomBorderColor = Color.DarkGray;
             back.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -182,7 +202,7 @@
             back.Location = new Point(696, 490);
             back.Name = "back";
             back.PressedColor = Color.Maroon;
-            back.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            back.ShadowDecoration.CustomizableEdges = customizableEdges8;
             back.Size = new Size(83, 42);
             back.TabIndex = 15;
             back.Text = "Back";
@@ -192,7 +212,7 @@
             // 
             save.BorderColor = Color.FromArgb(64, 64, 64);
             save.BorderRadius = 5;
-            save.CustomizableEdges = customizableEdges7;
+            save.CustomizableEdges = customizableEdges9;
             save.DisabledState.BorderColor = Color.DarkGray;
             save.DisabledState.CustomBorderColor = Color.DarkGray;
             save.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -206,7 +226,7 @@
             save.Location = new Point(785, 490);
             save.Name = "save";
             save.PressedColor = Color.Maroon;
-            save.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            save.ShadowDecoration.CustomizableEdges = customizableEdges10;
             save.Size = new Size(83, 42);
             save.TabIndex = 14;
             save.Text = "Save";
@@ -216,7 +236,7 @@
             // 
             firstname.BorderColor = Color.FromArgb(64, 64, 64);
             firstname.BorderRadius = 10;
-            firstname.CustomizableEdges = customizableEdges9;
+            firstname.CustomizableEdges = customizableEdges11;
             firstname.DefaultText = "";
             firstname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             firstname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -231,34 +251,10 @@
             firstname.PasswordChar = '\0';
             firstname.PlaceholderText = "First Name";
             firstname.SelectedText = "";
-            firstname.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            firstname.ShadowDecoration.CustomizableEdges = customizableEdges12;
             firstname.Size = new Size(200, 38);
             firstname.TabIndex = 13;
             firstname.TextChanged += firstname_TextChanged;
-            // 
-            // province
-            // 
-            province.BorderColor = Color.FromArgb(64, 64, 64);
-            province.BorderRadius = 10;
-            province.CustomizableEdges = customizableEdges11;
-            province.DefaultText = "";
-            province.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            province.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            province.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            province.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            province.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            province.Location = new Point(623, 191);
-            province.Margin = new Padding(3, 4, 3, 4);
-            province.Name = "province";
-            province.PasswordChar = '\0';
-            province.PlaceholderText = "Province";
-            province.SelectedText = "";
-            province.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            province.Size = new Size(200, 38);
-            province.TabIndex = 10;
-            province.TextChanged += province_TextChanged;
             // 
             // datebirth
             // 
@@ -379,25 +375,25 @@
             ProfileManagement.Text = "Profile Management";
             ProfileManagement.Click += ProfileManagement_Click;
             // 
-            // conditions
+            // province
             // 
-            conditions.BackColor = Color.Transparent;
-            conditions.BorderColor = Color.FromArgb(64, 64, 64);
-            conditions.BorderRadius = 10;
-            conditions.CustomizableEdges = customizableEdges3;
-            conditions.DrawMode = DrawMode.OwnerDrawFixed;
-            conditions.DropDownStyle = ComboBoxStyle.DropDownList;
-            conditions.FocusedColor = Color.FromArgb(94, 148, 255);
-            conditions.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            conditions.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            conditions.ForeColor = Color.FromArgb(125, 137, 149);
-            conditions.ItemHeight = 30;
-            conditions.Location = new Point(316, 193);
-            conditions.Name = "conditions";
-            conditions.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            conditions.Size = new Size(200, 36);
-            conditions.TabIndex = 26;
-            conditions.SelectedIndexChanged += conditions_SelectedIndexChanged;
+            province.BackColor = Color.Transparent;
+            province.BorderColor = Color.FromArgb(64, 64, 64);
+            province.BorderRadius = 10;
+            province.CustomizableEdges = customizableEdges3;
+            province.DrawMode = DrawMode.OwnerDrawFixed;
+            province.DropDownStyle = ComboBoxStyle.DropDownList;
+            province.FocusedColor = Color.FromArgb(94, 148, 255);
+            province.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            province.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            province.ForeColor = Color.FromArgb(125, 137, 149);
+            province.ItemHeight = 30;
+            province.Location = new Point(623, 193);
+            province.Name = "province";
+            province.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            province.Size = new Size(200, 36);
+            province.TabIndex = 27;
+            province.SelectedIndexChanged += province_SelectedIndexChanged;
             // 
             // Settings
             // 
@@ -424,7 +420,6 @@
         private Label notifcontrol;
         private Label NotificationPreferences;
         private Label manage;
-        private Guna.UI2.WinForms.Guna2TextBox province;
         private Guna.UI2.WinForms.Guna2TextBox datebirth;
         private Guna.UI2.WinForms.Guna2TextBox lastname;
         private Guna.UI2.WinForms.Guna2TextBox middlename;
@@ -436,5 +431,6 @@
         private CheckBox onehour;
         private CheckBox oneday;
         private Guna.UI2.WinForms.Guna2ComboBox conditions;
+        private Guna.UI2.WinForms.Guna2ComboBox province;
     }
 }
