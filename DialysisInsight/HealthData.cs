@@ -288,6 +288,8 @@ namespace DialysisInsight
                 // Optionally, clear the form fields
                 ClearFormFields();
 
+                EnableControls();
+
                 // Notify the user that the data has been reset
                 MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -303,6 +305,17 @@ namespace DialysisInsight
             DIA.Clear();
             SessionComplete.Clear();
             CompleteSession.Clear();
+        }
+
+        private void EnableControls()
+        {
+            Weight.Enabled = true;
+            HeartRate.Enabled = true;
+            BloodSugarLevel.Enabled = true;
+            SYS.Enabled = true;
+            DIA.Enabled = true;
+            SessionComplete.Enabled = true;
+            CompleteSession.Enabled = true;
         }
 
         private void editkilo_Click(object sender, EventArgs e)
