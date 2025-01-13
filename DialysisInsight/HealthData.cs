@@ -203,11 +203,35 @@ namespace DialysisInsight
 
         private void SessionComplete_TextChanged(object sender, EventArgs e)
         {
+            if (int.TryParse(SessionComplete.Text, out int sessionCompleteValue) &&
+                int.TryParse(CompleteSession.Text, out int completeSessionValue))
+            {
+                if (sessionCompleteValue > completeSessionValue)
+                {
+                    MessageBox.Show("The number entered must be less than or equal to the value in 'CompleteSession'.",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    SessionComplete.Text = "";
+                }
+            }
             ValidateForm();
         }
 
         private void CompleteSession_TextChanged(object sender, EventArgs e)
         {
+            if (int.TryParse(SessionComplete.Text, out int sessionCompleteValue) &&
+                int.TryParse(CompleteSession.Text, out int completeSessionValue))
+            {
+                if (sessionCompleteValue > completeSessionValue)
+                {
+                    MessageBox.Show("The value in 'SessionComplete' must be less than or equal to the value entered here.",
+                                    "Validation Error",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    SessionComplete.Text = "";
+                }
+            }
             ValidateForm();
         }
 
@@ -336,6 +360,8 @@ namespace DialysisInsight
                    !string.IsNullOrWhiteSpace(BloodSugarLevel.Text) &&
                    !string.IsNullOrWhiteSpace(SYS.Text) &&
                    !string.IsNullOrWhiteSpace(DIA.Text) &&
+                   !string.IsNullOrWhiteSpace(SessionComplete.Text) &&
+                   !string.IsNullOrWhiteSpace(CompleteSession.Text) &&
                    !string.IsNullOrWhiteSpace(SessionComplete.Text) &&
                    !string.IsNullOrWhiteSpace(CompleteSession.Text);
         }
