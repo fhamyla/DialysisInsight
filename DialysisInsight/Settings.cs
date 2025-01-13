@@ -65,6 +65,7 @@ namespace DialysisInsight
             {
                 // Load saved data
                 firstname.Text = Properties.Settings.Default.firstname;
+                middlename.Text = Properties.Settings.Default.middlename;
                 lastname.Text = Properties.Settings.Default.lastname;
                 datebirth.Value = DateTime.Parse(Properties.Settings.Default.datebirth);
                 conditions.SelectedItem = Properties.Settings.Default.conditions;
@@ -133,16 +134,51 @@ namespace DialysisInsight
 
         private void firstname_TextChanged(object sender, EventArgs e)
         {
+            if (firstname.Text.Length <= 0) return;
+            string s = firstname.Text.Substring(0, 1);
+            if (s != s.ToUpper())
+            {
+                int curSelStart = firstname.SelectionStart;
+                int curSelLength = firstname.SelectionLength;
+                firstname.SelectionStart = 0;
+                firstname.SelectionLength = 1;
+                firstname.SelectedText = s.ToUpper();
+                firstname.SelectionStart = curSelStart;
+                firstname.SelectionLength = curSelLength;
+            }
             ValidateForm();
         }
 
         private void middlename_TextChanged(object sender, EventArgs e)
         {
-
+            if (middlename.Text.Length <= 0) return;
+            string s = middlename.Text.Substring(0, 1);
+            if (s != s.ToUpper())
+            {
+                int curSelStart = middlename.SelectionStart;
+                int curSelLength = middlename.SelectionLength;
+                middlename.SelectionStart = 0;
+                middlename.SelectionLength = 1;
+                middlename.SelectedText = s.ToUpper();
+                middlename.SelectionStart = curSelStart;
+                middlename.SelectionLength = curSelLength;
+            }
         }
 
         private void lastname_TextChanged(object sender, EventArgs e)
         {
+            if (lastname.Text.Length <= 0) return;
+            string s = lastname.Text.Substring(0, 1);
+            if (s != s.ToUpper())
+            {
+                int curSelStart = lastname.SelectionStart;
+                int curSelLength = lastname.SelectionLength;
+                lastname.SelectionStart = 0;
+                lastname.SelectionLength = 1;
+                lastname.SelectedText = s.ToUpper();
+                lastname.SelectionStart = curSelStart;
+                lastname.SelectionLength = curSelLength;
+            }
             ValidateForm();
         }
 
@@ -248,6 +284,7 @@ namespace DialysisInsight
 
             // Save data to application settings
             Properties.Settings.Default.firstname = firstname.Text;
+            Properties.Settings.Default.middlename = middlename.Text;
             Properties.Settings.Default.lastname = lastname.Text;
             Properties.Settings.Default.datebirth = datebirth.Value.ToString("yyyy-MM-dd");
             Properties.Settings.Default.conditions = conditions.SelectedItem?.ToString() ?? string.Empty;
@@ -271,6 +308,7 @@ namespace DialysisInsight
         private void DisableInputs()
         {
             firstname.Enabled = false;
+            middlename.Enabled = false;
             lastname.Enabled = false;
             datebirth.Enabled = false;
             conditions.Enabled = false;
@@ -446,7 +484,8 @@ namespace DialysisInsight
             {
                 // Reset application settings to default values
                 Properties.Settings.Default.firstname = string.Empty;       // Reset to empty string
-                Properties.Settings.Default.lastname = string.Empty;        // Reset to empty string
+                Properties.Settings.Default.lastname = string.Empty;
+                Properties.Settings.Default.middlename = string.Empty;// Reset to empty string
                 Properties.Settings.Default.datebirth = string.Empty;       // Reset to empty string (or default date)
                 Properties.Settings.Default.conditions = string.Empty;     // Reset to empty string
                 Properties.Settings.Default.province = string.Empty;       // Reset to empty string
@@ -471,6 +510,7 @@ namespace DialysisInsight
             // Optionally clear form fields to reset the UI
             firstname.Clear();
             lastname.Clear();
+            middlename.Clear();
             Properties.Settings.Default.datebirth = DateTime.MinValue.ToString("yyyy-MM-dd");  // or use DateTime.Now
             conditions.SelectedIndex = -1;
             province.SelectedIndex = -1;

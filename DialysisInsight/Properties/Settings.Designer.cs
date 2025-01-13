@@ -214,5 +214,17 @@ namespace DialysisInsight.Properties {
                 this["CompleteSession"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string middlename {
+            get {
+                return ((string)(this["middlename"]));
+            }
+            set {
+                this["middlename"] = value;
+            }
+        }
     }
 }
