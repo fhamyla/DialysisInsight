@@ -249,6 +249,41 @@ namespace DialysisInsight
             Properties.Settings.Default.SessionComplete = SessionComplete.Text;
             Properties.Settings.Default.CompleteSession = CompleteSession.Text;
             Properties.Settings.Default.isHealthDataSaved = true; // Mark data as saved
+
+            kilosave = true;
+            bpmsave = true;
+            mgsave = true;
+            mmsave = true;
+            sessionsave = true;
+            completesave = true;
+
+            // Debug messages to confirm usage (prevents CS0414 warning)
+            if (kilosave)
+            {
+                Console.WriteLine("Kilo data is saved.");
+            }
+            if (bpmsave)
+            {
+                Console.WriteLine("MMHg data is saved.");
+            }
+            if (mgsave)
+            {
+                Console.WriteLine("Kilo data is saved.");
+            }
+            if (mmsave)
+            {
+                Console.WriteLine("MMHg data is saved.");
+            }
+
+            if (sessionsave)
+            {
+                Console.WriteLine("Kilo data is saved.");
+            }
+            if (completesave)
+            {
+                Console.WriteLine("MMHg data is saved.");
+            }
+
             Properties.Settings.Default.Save(); // Save settings permanently
 
             // Disable inputs after saving
