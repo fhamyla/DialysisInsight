@@ -263,7 +263,7 @@ namespace DialysisInsight
             double result;
             if (double.TryParse(input, out result))
             {
-                MessageBox.Show("Weight saved successfully!");
+
             }
             else
             {

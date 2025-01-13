@@ -158,12 +158,13 @@
             // 
             dailysissessionlabel.AutoSize = true;
             dailysissessionlabel.BackColor = Color.Gainsboro;
-            dailysissessionlabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dailysissessionlabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dailysissessionlabel.Location = new Point(124, 111);
             dailysissessionlabel.MinimumSize = new Size(180, 80);
             dailysissessionlabel.Name = "dailysissessionlabel";
             dailysissessionlabel.Size = new Size(180, 80);
             dailysissessionlabel.TabIndex = 3;
+            dailysissessionlabel.TextAlign = ContentAlignment.MiddleCenter;
             dailysissessionlabel.Click += dailysissessionlabel_Click;
             // 
             // guna2HtmlLabel5
@@ -198,12 +199,13 @@
             // 
             bloodpressurelabel.AutoSize = true;
             bloodpressurelabel.BackColor = Color.Gainsboro;
-            bloodpressurelabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bloodpressurelabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bloodpressurelabel.Location = new Point(110, 111);
             bloodpressurelabel.MinimumSize = new Size(180, 80);
             bloodpressurelabel.Name = "bloodpressurelabel";
             bloodpressurelabel.Size = new Size(180, 80);
             bloodpressurelabel.TabIndex = 3;
+            bloodpressurelabel.TextAlign = ContentAlignment.MiddleCenter;
             bloodpressurelabel.Click += bloodpressurelabel_Click;
             // 
             // guna2HtmlLabel4
@@ -236,12 +238,13 @@
             // 
             bloodsugarlevellabel.AutoSize = true;
             bloodsugarlevellabel.BackColor = Color.Gainsboro;
-            bloodsugarlevellabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bloodsugarlevellabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bloodsugarlevellabel.Location = new Point(64, 72);
             bloodsugarlevellabel.MinimumSize = new Size(100, 50);
             bloodsugarlevellabel.Name = "bloodsugarlevellabel";
             bloodsugarlevellabel.Size = new Size(100, 50);
             bloodsugarlevellabel.TabIndex = 3;
+            bloodsugarlevellabel.TextAlign = ContentAlignment.MiddleCenter;
             bloodsugarlevellabel.Click += bloodsugarlevellabel_Click;
             // 
             // guna2HtmlLabel3
@@ -276,12 +279,13 @@
             // 
             heartratelabel.AutoSize = true;
             heartratelabel.BackColor = Color.Gainsboro;
-            heartratelabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            heartratelabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             heartratelabel.Location = new Point(57, 63);
             heartratelabel.MinimumSize = new Size(100, 50);
             heartratelabel.Name = "heartratelabel";
             heartratelabel.Size = new Size(100, 50);
             heartratelabel.TabIndex = 2;
+            heartratelabel.TextAlign = ContentAlignment.MiddleCenter;
             heartratelabel.Click += heartratelabel_Click;
             // 
             // guna2HtmlLabel2
@@ -316,12 +320,13 @@
             // 
             weightlabel.AutoSize = true;
             weightlabel.BackColor = Color.Gainsboro;
-            weightlabel.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            weightlabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             weightlabel.Location = new Point(50, 63);
             weightlabel.MinimumSize = new Size(100, 50);
             weightlabel.Name = "weightlabel";
             weightlabel.Size = new Size(100, 50);
             weightlabel.TabIndex = 1;
+            weightlabel.TextAlign = ContentAlignment.MiddleCenter;
             weightlabel.Click += weightlabel_Click;
             // 
             // guna2HtmlLabel1
@@ -331,9 +336,9 @@
             guna2HtmlLabel1.ForeColor = Color.FromArgb(64, 64, 64);
             guna2HtmlLabel1.Location = new Point(3, 3);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(64, 22);
+            guna2HtmlLabel1.Size = new Size(34, 22);
             guna2HtmlLabel1.TabIndex = 0;
-            guna2HtmlLabel1.Text = "Weight";
+            guna2HtmlLabel1.Text = "BMI";
             // 
             // user
             // 

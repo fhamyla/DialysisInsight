@@ -439,9 +439,9 @@
             guna2HtmlLabel1.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.Location = new Point(34, 83);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(78, 30);
+            guna2HtmlLabel1.Size = new Size(34, 30);
             guna2HtmlLabel1.TabIndex = 5;
-            guna2HtmlLabel1.Text = "Kilogram:";
+            guna2HtmlLabel1.Text = "BMI:";
             guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
             // 
             // SessionComplete
@@ -566,7 +566,7 @@
             Weight.Margin = new Padding(4, 5, 4, 5);
             Weight.Name = "Weight";
             Weight.PasswordChar = '\0';
-            Weight.PlaceholderText = "Enter Weight in Kg";
+            Weight.PlaceholderText = "Enter BMI";
             Weight.SelectedText = "";
             Weight.ShadowDecoration.CustomizableEdges = customizableEdges34;
             Weight.Size = new Size(229, 72);
