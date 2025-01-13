@@ -74,7 +74,6 @@ namespace DialysisInsight
                 SessionComplete.Text = Properties.Settings.Default.SessionComplete;
                 CompleteSession.Text = Properties.Settings.Default.CompleteSession;
 
-                // Disable inputs to prevent editing
                 DisableInputs();
             }
         }
@@ -148,6 +147,17 @@ namespace DialysisInsight
 
         private void Weight_TextChanged(object sender, EventArgs e)
         {
+            string input = Weight.Text;
+            double result;
+
+            if (double.TryParse(input, out result))
+            {
+                Weight.BackColor = Color.White;
+            }
+            else
+            {
+                Weight.Text = "";
+            }
             ValidateForm();
         }
 
@@ -256,7 +266,7 @@ namespace DialysisInsight
         private void ValidateForm()
         {
             save.Enabled = !string.IsNullOrWhiteSpace(Weight.Text) &&
-                   !string.IsNullOrWhiteSpace(HeartRate.Text) && 
+                   !string.IsNullOrWhiteSpace(HeartRate.Text) &&
                    !string.IsNullOrWhiteSpace(BloodSugarLevel.Text) &&
                    !string.IsNullOrWhiteSpace(SYS.Text) &&
                    !string.IsNullOrWhiteSpace(DIA.Text) &&
@@ -266,38 +276,32 @@ namespace DialysisInsight
 
         private void ResetDataButton_Click(object sender, EventArgs e)
         {
-            // Confirm with the user before resetting the data
             DialogResult result = MessageBox.Show("Are you sure you want to reset the data?",
                                                   "Reset Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                // Reset application settings to default values
-                Properties.Settings.Default.Weight = string.Empty;       // Reset to empty string
-                Properties.Settings.Default.HeartRate = string.Empty;        // Reset to empty string
-                Properties.Settings.Default.BloodSugarLevel = string.Empty;       // Reset to empty string (or default date)
-                Properties.Settings.Default.SYS = string.Empty;     // Reset to empty string
+                Properties.Settings.Default.Weight = string.Empty;
+                Properties.Settings.Default.HeartRate = string.Empty;
+                Properties.Settings.Default.BloodSugarLevel = string.Empty;
+                Properties.Settings.Default.SYS = string.Empty;
                 Properties.Settings.Default.DIA = string.Empty;
-                Properties.Settings.Default.SessionComplete = string.Empty;     // Reset to empty string
-                Properties.Settings.Default.CompleteSession = string.Empty;   // Reset to false
-                Properties.Settings.Default.isHealthDataSaved = false;           // Mark data as not saved anymore
+                Properties.Settings.Default.SessionComplete = string.Empty;
+                Properties.Settings.Default.CompleteSession = string.Empty;
+                Properties.Settings.Default.isHealthDataSaved = false;
 
-                // Save the changes to settings
-                Properties.Settings.Default.Save(); // Save the reset settings
+                Properties.Settings.Default.Save();
 
-                // Optionally, clear the form fields
                 ClearFormFields();
 
                 EnableControls();
 
-                // Notify the user that the data has been reset
                 MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void ClearFormFields()
         {
-            // Optionally clear form fields to reset the UI
             Weight.Clear();
             HeartRate.Clear();
             BloodSugarLevel.Clear();
@@ -341,6 +345,59 @@ namespace DialysisInsight
         private void editsessions_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Weight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void HeartRate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void BloodSugarLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SYS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DIA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SessionComplete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CompleteSession_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

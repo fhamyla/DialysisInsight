@@ -33,6 +33,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -53,18 +63,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             minmax = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            editsessions = new Guna.UI2.WinForms.Guna2Button();
+            editmmhg = new Guna.UI2.WinForms.Guna2Button();
+            editmg = new Guna.UI2.WinForms.Guna2Button();
+            editbpm = new Guna.UI2.WinForms.Guna2Button();
+            editkilo = new Guna.UI2.WinForms.Guna2Button();
             ResetDataButton = new Guna.UI2.WinForms.Guna2Button();
             CompleteSession = new Guna.UI2.WinForms.Guna2TextBox();
             back = new Guna.UI2.WinForms.Guna2Button();
@@ -80,11 +85,6 @@
             BloodSugarLevel = new Guna.UI2.WinForms.Guna2TextBox();
             HeartRate = new Guna.UI2.WinForms.Guna2TextBox();
             Weight = new Guna.UI2.WinForms.Guna2TextBox();
-            editkilo = new Guna.UI2.WinForms.Guna2Button();
-            editbpm = new Guna.UI2.WinForms.Guna2Button();
-            editmg = new Guna.UI2.WinForms.Guna2Button();
-            editmmhg = new Guna.UI2.WinForms.Guna2Button();
-            editsessions = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,6 +139,116 @@
             guna2Panel1.Size = new Size(894, 567);
             guna2Panel1.TabIndex = 5;
             // 
+            // editsessions
+            // 
+            editsessions.BorderColor = Color.White;
+            editsessions.BorderRadius = 5;
+            editsessions.CustomizableEdges = customizableEdges3;
+            editsessions.DisabledState.BorderColor = Color.DarkGray;
+            editsessions.DisabledState.CustomBorderColor = Color.DarkGray;
+            editsessions.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editsessions.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editsessions.FillColor = Color.White;
+            editsessions.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editsessions.ForeColor = Color.Black;
+            editsessions.HoverState.FillColor = Color.FromArgb(64, 64, 64);
+            editsessions.Image = (Image)resources.GetObject("editsessions.Image");
+            editsessions.Location = new Point(710, 430);
+            editsessions.Name = "editsessions";
+            editsessions.PressedColor = Color.FromArgb(224, 224, 224);
+            editsessions.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            editsessions.Size = new Size(48, 38);
+            editsessions.TabIndex = 35;
+            editsessions.Click += editsessions_Click;
+            // 
+            // editmmhg
+            // 
+            editmmhg.BorderColor = Color.White;
+            editmmhg.BorderRadius = 5;
+            editmmhg.CustomizableEdges = customizableEdges5;
+            editmmhg.DisabledState.BorderColor = Color.DarkGray;
+            editmmhg.DisabledState.CustomBorderColor = Color.DarkGray;
+            editmmhg.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editmmhg.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editmmhg.FillColor = Color.White;
+            editmmhg.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editmmhg.ForeColor = Color.Black;
+            editmmhg.HoverState.FillColor = Color.FromArgb(64, 64, 64);
+            editmmhg.Image = (Image)resources.GetObject("editmmhg.Image");
+            editmmhg.Location = new Point(281, 430);
+            editmmhg.Name = "editmmhg";
+            editmmhg.PressedColor = Color.FromArgb(224, 224, 224);
+            editmmhg.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            editmmhg.Size = new Size(48, 38);
+            editmmhg.TabIndex = 34;
+            editmmhg.Click += editmmhg_Click;
+            // 
+            // editmg
+            // 
+            editmg.BorderColor = Color.White;
+            editmg.BorderRadius = 5;
+            editmg.CustomizableEdges = customizableEdges7;
+            editmg.DisabledState.BorderColor = Color.DarkGray;
+            editmg.DisabledState.CustomBorderColor = Color.DarkGray;
+            editmg.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editmg.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editmg.FillColor = Color.White;
+            editmg.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editmg.ForeColor = Color.Black;
+            editmg.HoverState.FillColor = Color.FromArgb(64, 64, 64);
+            editmg.Image = (Image)resources.GetObject("editmg.Image");
+            editmg.Location = new Point(790, 201);
+            editmg.Name = "editmg";
+            editmg.PressedColor = Color.FromArgb(224, 224, 224);
+            editmg.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            editmg.Size = new Size(48, 38);
+            editmg.TabIndex = 33;
+            editmg.Click += editmg_Click;
+            // 
+            // editbpm
+            // 
+            editbpm.BorderColor = Color.White;
+            editbpm.BorderRadius = 5;
+            editbpm.CustomizableEdges = customizableEdges9;
+            editbpm.DisabledState.BorderColor = Color.DarkGray;
+            editbpm.DisabledState.CustomBorderColor = Color.DarkGray;
+            editbpm.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editbpm.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editbpm.FillColor = Color.White;
+            editbpm.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editbpm.ForeColor = Color.Black;
+            editbpm.HoverState.FillColor = Color.FromArgb(64, 64, 64);
+            editbpm.Image = (Image)resources.GetObject("editbpm.Image");
+            editbpm.Location = new Point(504, 201);
+            editbpm.Name = "editbpm";
+            editbpm.PressedColor = Color.FromArgb(224, 224, 224);
+            editbpm.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            editbpm.Size = new Size(48, 38);
+            editbpm.TabIndex = 32;
+            editbpm.Click += editbpm_Click;
+            // 
+            // editkilo
+            // 
+            editkilo.BorderColor = Color.White;
+            editkilo.BorderRadius = 5;
+            editkilo.CustomizableEdges = customizableEdges11;
+            editkilo.DisabledState.BorderColor = Color.DarkGray;
+            editkilo.DisabledState.CustomBorderColor = Color.DarkGray;
+            editkilo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editkilo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editkilo.FillColor = Color.White;
+            editkilo.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            editkilo.ForeColor = Color.Black;
+            editkilo.HoverState.FillColor = Color.FromArgb(64, 64, 64);
+            editkilo.Image = (Image)resources.GetObject("editkilo.Image");
+            editkilo.Location = new Point(215, 201);
+            editkilo.Name = "editkilo";
+            editkilo.PressedColor = Color.FromArgb(224, 224, 224);
+            editkilo.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            editkilo.Size = new Size(48, 38);
+            editkilo.TabIndex = 31;
+            editkilo.Click += editkilo_Click;
+            // 
             // ResetDataButton
             // 
             ResetDataButton.BorderColor = Color.White;
@@ -181,6 +291,7 @@
             CompleteSession.Size = new Size(229, 72);
             CompleteSession.TabIndex = 13;
             CompleteSession.TextChanged += CompleteSession_TextChanged;
+            CompleteSession.KeyPress += CompleteSession_KeyPress;
             // 
             // back
             // 
@@ -250,6 +361,7 @@
             DIA.Size = new Size(111, 72);
             DIA.TabIndex = 10;
             DIA.TextChanged += DIA_TextChanged;
+            DIA.KeyPress += DIA_KeyPress;
             // 
             // guna2HtmlLabel5
             // 
@@ -330,6 +442,7 @@
             SessionComplete.Size = new Size(229, 72);
             SessionComplete.TabIndex = 4;
             SessionComplete.TextChanged += SessionComplete_TextChanged;
+            SessionComplete.KeyPress += SessionComplete_KeyPress;
             // 
             // SYS
             // 
@@ -355,6 +468,7 @@
             SYS.Size = new Size(111, 72);
             SYS.TabIndex = 3;
             SYS.TextChanged += SYS_TextChanged;
+            SYS.KeyPress += SYS_KeyPress;
             // 
             // BloodSugarLevel
             // 
@@ -380,6 +494,7 @@
             BloodSugarLevel.Size = new Size(229, 72);
             BloodSugarLevel.TabIndex = 2;
             BloodSugarLevel.TextChanged += BloodSugarLevel_TextChanged;
+            BloodSugarLevel.KeyPress += BloodSugarLevel_KeyPress;
             // 
             // HeartRate
             // 
@@ -405,6 +520,7 @@
             HeartRate.Size = new Size(229, 72);
             HeartRate.TabIndex = 1;
             HeartRate.TextChanged += HeartRate_TextChanged;
+            HeartRate.KeyPress += HeartRate_KeyPress;
             // 
             // Weight
             // 
@@ -430,116 +546,7 @@
             Weight.Size = new Size(229, 72);
             Weight.TabIndex = 0;
             Weight.TextChanged += Weight_TextChanged;
-            // 
-            // editkilo
-            // 
-            editkilo.BorderColor = Color.White;
-            editkilo.BorderRadius = 5;
-            editkilo.CustomizableEdges = customizableEdges11;
-            editkilo.DisabledState.BorderColor = Color.DarkGray;
-            editkilo.DisabledState.CustomBorderColor = Color.DarkGray;
-            editkilo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            editkilo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            editkilo.FillColor = Color.White;
-            editkilo.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editkilo.ForeColor = Color.Black;
-            editkilo.HoverState.FillColor = Color.FromArgb(64, 64, 64);
-            editkilo.Image = (Image)resources.GetObject("editkilo.Image");
-            editkilo.Location = new Point(215, 201);
-            editkilo.Name = "editkilo";
-            editkilo.PressedColor = Color.FromArgb(224, 224, 224);
-            editkilo.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            editkilo.Size = new Size(48, 38);
-            editkilo.TabIndex = 31;
-            editkilo.Click += editkilo_Click;
-            // 
-            // editbpm
-            // 
-            editbpm.BorderColor = Color.White;
-            editbpm.BorderRadius = 5;
-            editbpm.CustomizableEdges = customizableEdges9;
-            editbpm.DisabledState.BorderColor = Color.DarkGray;
-            editbpm.DisabledState.CustomBorderColor = Color.DarkGray;
-            editbpm.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            editbpm.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            editbpm.FillColor = Color.White;
-            editbpm.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editbpm.ForeColor = Color.Black;
-            editbpm.HoverState.FillColor = Color.FromArgb(64, 64, 64);
-            editbpm.Image = (Image)resources.GetObject("editbpm.Image");
-            editbpm.Location = new Point(504, 201);
-            editbpm.Name = "editbpm";
-            editbpm.PressedColor = Color.FromArgb(224, 224, 224);
-            editbpm.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            editbpm.Size = new Size(48, 38);
-            editbpm.TabIndex = 32;
-            editbpm.Click += editbpm_Click;
-            // 
-            // editmg
-            // 
-            editmg.BorderColor = Color.White;
-            editmg.BorderRadius = 5;
-            editmg.CustomizableEdges = customizableEdges7;
-            editmg.DisabledState.BorderColor = Color.DarkGray;
-            editmg.DisabledState.CustomBorderColor = Color.DarkGray;
-            editmg.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            editmg.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            editmg.FillColor = Color.White;
-            editmg.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editmg.ForeColor = Color.Black;
-            editmg.HoverState.FillColor = Color.FromArgb(64, 64, 64);
-            editmg.Image = (Image)resources.GetObject("editmg.Image");
-            editmg.Location = new Point(790, 201);
-            editmg.Name = "editmg";
-            editmg.PressedColor = Color.FromArgb(224, 224, 224);
-            editmg.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            editmg.Size = new Size(48, 38);
-            editmg.TabIndex = 33;
-            editmg.Click += editmg_Click;
-            // 
-            // editmmhg
-            // 
-            editmmhg.BorderColor = Color.White;
-            editmmhg.BorderRadius = 5;
-            editmmhg.CustomizableEdges = customizableEdges5;
-            editmmhg.DisabledState.BorderColor = Color.DarkGray;
-            editmmhg.DisabledState.CustomBorderColor = Color.DarkGray;
-            editmmhg.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            editmmhg.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            editmmhg.FillColor = Color.White;
-            editmmhg.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editmmhg.ForeColor = Color.Black;
-            editmmhg.HoverState.FillColor = Color.FromArgb(64, 64, 64);
-            editmmhg.Image = (Image)resources.GetObject("editmmhg.Image");
-            editmmhg.Location = new Point(281, 430);
-            editmmhg.Name = "editmmhg";
-            editmmhg.PressedColor = Color.FromArgb(224, 224, 224);
-            editmmhg.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            editmmhg.Size = new Size(48, 38);
-            editmmhg.TabIndex = 34;
-            editmmhg.Click += editmmhg_Click;
-            // 
-            // editsessions
-            // 
-            editsessions.BorderColor = Color.White;
-            editsessions.BorderRadius = 5;
-            editsessions.CustomizableEdges = customizableEdges3;
-            editsessions.DisabledState.BorderColor = Color.DarkGray;
-            editsessions.DisabledState.CustomBorderColor = Color.DarkGray;
-            editsessions.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            editsessions.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            editsessions.FillColor = Color.White;
-            editsessions.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            editsessions.ForeColor = Color.Black;
-            editsessions.HoverState.FillColor = Color.FromArgb(64, 64, 64);
-            editsessions.Image = (Image)resources.GetObject("editsessions.Image");
-            editsessions.Location = new Point(710, 430);
-            editsessions.Name = "editsessions";
-            editsessions.PressedColor = Color.FromArgb(224, 224, 224);
-            editsessions.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            editsessions.Size = new Size(48, 38);
-            editsessions.TabIndex = 35;
-            editsessions.Click += editsessions_Click;
+            Weight.KeyPress += Weight_KeyPress;
             // 
             // HealthData
             // 
