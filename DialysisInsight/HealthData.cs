@@ -67,7 +67,6 @@ namespace DialysisInsight
 
             if (Properties.Settings.Default.isHealthDataSaved)
             {
-                // Load saved data
                 Weight.Text = Properties.Settings.Default.Weight;
                 HeartRate.Text = Properties.Settings.Default.HeartRate;
                 BloodSugarLevel.Text = Properties.Settings.Default.BloodSugarLevel;
@@ -240,7 +239,6 @@ namespace DialysisInsight
                 return;
             }
 
-            // Save data to application settings
             Properties.Settings.Default.Weight = Weight.Text;
             Properties.Settings.Default.HeartRate = HeartRate.Text;
             Properties.Settings.Default.BloodSugarLevel = BloodSugarLevel.Text;
@@ -248,7 +246,7 @@ namespace DialysisInsight
             Properties.Settings.Default.DIA = DIA.Text;
             Properties.Settings.Default.SessionComplete = SessionComplete.Text;
             Properties.Settings.Default.CompleteSession = CompleteSession.Text;
-            Properties.Settings.Default.isHealthDataSaved = true; // Mark data as saved
+            Properties.Settings.Default.isHealthDataSaved = true;
 
             kilosave = true;
             bpmsave = true;
@@ -257,7 +255,6 @@ namespace DialysisInsight
             sessionsave = true;
             completesave = true;
 
-            // Debug messages to confirm usage (prevents CS0414 warning)
             if (kilosave)
             {
                 Console.WriteLine("Kilo data is saved.");
@@ -284,9 +281,8 @@ namespace DialysisInsight
                 Console.WriteLine("MMHg data is saved.");
             }
 
-            Properties.Settings.Default.Save(); // Save settings permanently
+            Properties.Settings.Default.Save();
 
-            // Disable inputs after saving
             DisableInputs();
 
             MessageBox.Show("Data saved successfully and is now locked!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
