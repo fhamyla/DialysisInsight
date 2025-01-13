@@ -493,6 +493,8 @@ namespace DialysisInsight
 
                 ClearFormFields();
 
+                EnableControls();
+
                 MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -508,6 +510,19 @@ namespace DialysisInsight
             MedicationReminders.Checked = false;
             oneday.Checked = false;
             onehour.Checked = false;
+        }
+
+        private void EnableControls()
+        {
+            firstname.Enabled = true;
+            lastname.Enabled = true;
+            middlename.Enabled = true;
+            datebirth.Enabled = true;
+            conditions.Enabled = true;
+            province.Enabled = true;
+            MedicationReminders.Enabled = true;
+            oneday.Enabled = true;
+            onehour.Enabled = true;
         }
 
         private void firstname_KeyPress_1(object sender, KeyPressEventArgs e)
