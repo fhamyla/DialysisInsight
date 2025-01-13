@@ -238,5 +238,77 @@ namespace DialysisInsight.Properties {
                 this["isHealthDataSaved"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool kilosave {
+            get {
+                return ((bool)(this["kilosave"]));
+            }
+            set {
+                this["kilosave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool bpmsave {
+            get {
+                return ((bool)(this["bpmsave"]));
+            }
+            set {
+                this["bpmsave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mgsave {
+            get {
+                return ((bool)(this["mgsave"]));
+            }
+            set {
+                this["mgsave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mmsave {
+            get {
+                return ((bool)(this["mmsave"]));
+            }
+            set {
+                this["mmsave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool sessionssave {
+            get {
+                return ((bool)(this["sessionssave"]));
+            }
+            set {
+                this["sessionssave"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool completesave {
+            get {
+                return ((bool)(this["completesave"]));
+            }
+            set {
+                this["completesave"] = value;
+            }
+        }
     }
 }

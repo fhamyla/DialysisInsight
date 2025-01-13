@@ -35,6 +35,7 @@ namespace DialysisInsight
         private Rectangle recedittt;
         private Rectangle receditttt;
         private Rectangle recedittttt;
+        private Rectangle receditttttt;
         public HealthData()
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace DialysisInsight
             recedittt = new Rectangle(editmg.Location, editmg.Size);
             receditttt = new Rectangle(editmmhg.Location, editmmhg.Size);
             recedittttt = new Rectangle(editsessions.Location, editsessions.Size);
+            receditttttt = new Rectangle(editttttt.Location, editttttt.Size);
 
             if (Properties.Settings.Default.isHealthDataSaved)
             {
@@ -102,6 +104,7 @@ namespace DialysisInsight
             resize_Control(editmg, recedittt);
             resize_Control(editmmhg, receditttt);
             resize_Control(editsessions, recedittttt);
+            resize_Control(editttttt, receditttttt);
         }
 
         private void resize_Control(Control c, Rectangle r)
@@ -209,6 +212,12 @@ namespace DialysisInsight
         }
 
         private bool isHealthDataSaved = false;
+        private bool kilosave = false;
+        private bool bpmsave = false;
+        private bool mgsave = false;
+        private bool mmsave = false;
+        private bool sessionsave = false;
+        private bool completesave = false;
 
         private void save_Click(object sender, EventArgs e)
         {
@@ -322,29 +331,167 @@ namespace DialysisInsight
             CompleteSession.Enabled = true;
         }
 
+        private void KiloClearFormFields()
+        {
+            Weight.Clear();
+        }
+
+        private void KiloEnableControls()
+        {
+            Weight.Enabled = true;
+        }
+
+        private void BpmClearFormFields()
+        {
+            HeartRate.Clear();
+        }
+
+        private void BpmEnableControls()
+        {
+            HeartRate.Enabled = true;
+        }
+
+        private void MgClearFormFields()
+        {
+            BloodSugarLevel.Clear();
+        }
+
+        private void MgEnableControls()
+        {
+            BloodSugarLevel.Enabled = true;
+        }
+
+        private void MmClearFormFields()
+        {
+            SYS.Clear();
+            DIA.Clear();
+        }
+
+        private void MmEnableControls()
+        {
+            SYS.Enabled = true;
+            DIA.Enabled = true;
+        }
+
+        private void SeClearFormFields()
+        {
+            SessionComplete.Clear();
+        }
+
+        private void SeEnableControls()
+        {
+            SessionComplete.Enabled = true;
+        }
+
+        private void CoClearFormFields()
+        {
+            CompleteSession.Clear();
+        }
+
+        private void CoEnableControls()
+        {
+            CompleteSession.Enabled = true;
+        }
+
         private void editkilo_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.Weight = string.Empty;
+                Properties.Settings.Default.kilosave = false;
+
+                Properties.Settings.Default.Save();
+
+                KiloClearFormFields();
+
+                KiloEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void editbpm_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.HeartRate = string.Empty;
+                Properties.Settings.Default.bpmsave = false;
+
+                Properties.Settings.Default.Save();
+
+                BpmClearFormFields();
+
+                BpmEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void editmg_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.BloodSugarLevel = string.Empty;
+                Properties.Settings.Default.mgsave = false;
+
+                Properties.Settings.Default.Save();
+
+                MgClearFormFields();
+
+                MgEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void editmmhg_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.SYS = string.Empty;
+                Properties.Settings.Default.DIA = string.Empty;
+                Properties.Settings.Default.mmsave = false;
+
+                Properties.Settings.Default.Save();
+
+                MmClearFormFields();
+
+                MmEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void editsessions_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.SessionComplete = string.Empty;
+                Properties.Settings.Default.sessionssave = false;
+
+                Properties.Settings.Default.Save();
+
+                SeClearFormFields();
+
+                SeEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Weight_KeyPress(object sender, KeyPressEventArgs e)
@@ -397,6 +544,26 @@ namespace DialysisInsight
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void editttttt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to edit the data?",
+                                                  "Edit Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Properties.Settings.Default.CompleteSession = string.Empty;
+                Properties.Settings.Default.completesave = false;
+
+                Properties.Settings.Default.Save();
+
+                CoClearFormFields();
+
+                CoEnableControls();
+
+                MessageBox.Show("Data has been edit successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
