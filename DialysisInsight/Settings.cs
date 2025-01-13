@@ -64,7 +64,6 @@ namespace DialysisInsight
 
             if (Properties.Settings.Default.isDataSaved)
             {
-                // Load saved data
                 firstname.Text = Properties.Settings.Default.firstname;
                 middlename.Text = Properties.Settings.Default.middlename;
                 lastname.Text = Properties.Settings.Default.lastname;
@@ -75,7 +74,6 @@ namespace DialysisInsight
                 oneday.Checked = Properties.Settings.Default.oneday;
                 onehour.Checked = Properties.Settings.Default.onehour;
 
-                // Disable inputs to prevent editing
                 DisableInputs();
             }
 
@@ -283,7 +281,6 @@ namespace DialysisInsight
                 return;
             }
 
-            // Save data to application settings
             Properties.Settings.Default.firstname = firstname.Text;
             Properties.Settings.Default.middlename = middlename.Text;
             Properties.Settings.Default.lastname = lastname.Text;
@@ -293,17 +290,16 @@ namespace DialysisInsight
             Properties.Settings.Default.MedicationReminders = MedicationReminders.Checked;
             Properties.Settings.Default.oneday = oneday.Checked;
             Properties.Settings.Default.onehour = onehour.Checked;
-            Properties.Settings.Default.isDataSaved = true; // Mark data as saved
-            Properties.Settings.Default.Save(); // Save settings permanently
+            Properties.Settings.Default.isDataSaved = true;
+            Properties.Settings.Default.Save();
 
-            // Disable inputs after saving
             DisableInputs();
 
             MessageBox.Show("Data saved successfully and is now locked!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             HealthData healthDataForm = new HealthData();
             healthDataForm.Show();
-            this.Close(); // Closes the current form
+            this.Close();
         }
 
         private void DisableInputs()
@@ -325,7 +321,7 @@ namespace DialysisInsight
                    !string.IsNullOrWhiteSpace(lastname.Text) &&
                    conditions.SelectedIndex != -1 &&
                    province.SelectedIndex != -1 &&
-                   MedicationReminders.Checked && // Ensure checkbox is checked
+                   MedicationReminders.Checked &&
                    (oneday.Checked || onehour.Checked);
         }
 
@@ -477,42 +473,36 @@ namespace DialysisInsight
 
         private void ResetDataButton_Click(object sender, EventArgs e)
         {
-            // Confirm with the user before resetting the data
             DialogResult result = MessageBox.Show("Are you sure you want to reset the data?",
                                                   "Reset Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                // Reset application settings to default values
-                Properties.Settings.Default.firstname = string.Empty;       // Reset to empty string
+                Properties.Settings.Default.firstname = string.Empty;
+                Properties.Settings.Default.middlename = string.Empty;
                 Properties.Settings.Default.lastname = string.Empty;
-                Properties.Settings.Default.middlename = string.Empty;// Reset to empty string
-                Properties.Settings.Default.datebirth = string.Empty;       // Reset to empty string (or default date)
-                Properties.Settings.Default.conditions = string.Empty;     // Reset to empty string
-                Properties.Settings.Default.province = string.Empty;       // Reset to empty string
-                Properties.Settings.Default.MedicationReminders = false;   // Reset to false
-                Properties.Settings.Default.oneday = false;                // Reset to false
-                Properties.Settings.Default.onehour = false;               // Reset to false
-                Properties.Settings.Default.isDataSaved = false;           // Mark data as not saved anymore
+                Properties.Settings.Default.datebirth = string.Empty;
+                Properties.Settings.Default.conditions = string.Empty;
+                Properties.Settings.Default.province = string.Empty;
+                Properties.Settings.Default.MedicationReminders = false;
+                Properties.Settings.Default.oneday = false;
+                Properties.Settings.Default.onehour = false;
+                Properties.Settings.Default.isDataSaved = false;
 
-                // Save the changes to settings
-                Properties.Settings.Default.Save(); // Save the reset settings
+                Properties.Settings.Default.Save();
 
-                // Optionally, clear the form fields
                 ClearFormFields();
 
-                // Notify the user that the data has been reset
                 MessageBox.Show("Data has been reset successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void ClearFormFields()
         {
-            // Optionally clear form fields to reset the UI
             firstname.Clear();
             lastname.Clear();
             middlename.Clear();
-            Properties.Settings.Default.datebirth = DateTime.MinValue.ToString("yyyy-MM-dd");  // or use DateTime.Now
+            Properties.Settings.Default.datebirth = DateTime.MinValue.ToString("yyyy-MM-dd");
             conditions.SelectedIndex = -1;
             province.SelectedIndex = -1;
             MedicationReminders.Checked = false;
@@ -524,7 +514,7 @@ namespace DialysisInsight
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; // Ignore the key press
+                e.Handled = true;
             }
         }
 
@@ -532,7 +522,7 @@ namespace DialysisInsight
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; // Ignore the key press
+                e.Handled = true;
             }
         }
 
@@ -540,7 +530,7 @@ namespace DialysisInsight
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; // Ignore the key press
+                e.Handled = true;
             }
         }
     }
