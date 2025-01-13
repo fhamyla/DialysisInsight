@@ -63,7 +63,7 @@ namespace DialysisInsight
             receditttt = new Rectangle(editmmhg.Location, editmmhg.Size);
             recedittttt = new Rectangle(editsessions.Location, editsessions.Size);
 
-            if (Properties.Settings.Default.isDataSaved)
+            if (Properties.Settings.Default.isHealthDataSaved)
             {
                 // Load saved data
                 Weight.Text = Properties.Settings.Default.Weight;
@@ -198,11 +198,11 @@ namespace DialysisInsight
             this.Close();
         }
 
-        private bool isDataSaved = false;
+        private bool isHealthDataSaved = false;
 
         private void save_Click(object sender, EventArgs e)
         {
-            if (isDataSaved)
+            if (isHealthDataSaved)
             {
                 MessageBox.Show("Data has already been saved and cannot be modified.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -229,7 +229,7 @@ namespace DialysisInsight
             Properties.Settings.Default.DIA = DIA.Text;
             Properties.Settings.Default.SessionComplete = SessionComplete.Text;
             Properties.Settings.Default.CompleteSession = CompleteSession.Text;
-            Properties.Settings.Default.isDataSaved = true; // Mark data as saved
+            Properties.Settings.Default.isHealthDataSaved = true; // Mark data as saved
             Properties.Settings.Default.Save(); // Save settings permanently
 
             // Disable inputs after saving
@@ -280,7 +280,7 @@ namespace DialysisInsight
                 Properties.Settings.Default.DIA = string.Empty;
                 Properties.Settings.Default.SessionComplete = string.Empty;     // Reset to empty string
                 Properties.Settings.Default.CompleteSession = string.Empty;   // Reset to false
-                Properties.Settings.Default.isDataSaved = false;           // Mark data as not saved anymore
+                Properties.Settings.Default.isHealthDataSaved = false;           // Mark data as not saved anymore
 
                 // Save the changes to settings
                 Properties.Settings.Default.Save(); // Save the reset settings

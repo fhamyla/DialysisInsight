@@ -226,5 +226,17 @@ namespace DialysisInsight.Properties {
                 this["middlename"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isHealthDataSaved {
+            get {
+                return ((bool)(this["isHealthDataSaved"]));
+            }
+            set {
+                this["isHealthDataSaved"] = value;
+            }
+        }
     }
 }
