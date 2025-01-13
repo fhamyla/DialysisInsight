@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace DialysisInsight
 {
@@ -152,6 +153,12 @@ namespace DialysisInsight
             string input = Weight.Text;
             double result;
 
+            if (Regex.IsMatch(input, @"^\d+\.$") || Regex.IsMatch(input, @"^\d*\.\d*\.$") || Regex.IsMatch(input, @"^\.\d*\.\d*$"))
+            {
+                Weight.BackColor = Color.Red;
+                return;
+            }
+
             if (double.TryParse(input, out result))
             {
                 Weight.BackColor = Color.White;
@@ -159,6 +166,7 @@ namespace DialysisInsight
             else
             {
                 Weight.Text = "";
+                Weight.BackColor = Color.Red;
             }
             ValidateForm();
         }
@@ -220,6 +228,24 @@ namespace DialysisInsight
 
         private void save_Click(object sender, EventArgs e)
         {
+            string input = Weight.Text;
+
+            if (string.IsNullOrEmpty(input) || Regex.IsMatch(input, @"^\d+\.$") || Regex.IsMatch(input, @"^\d*\.\d*\.$") || Regex.IsMatch(input, @"^\.\d*\.\d*$"))
+            {
+                MessageBox.Show("Please enter a valid weight.");
+                return;
+            }
+
+            double result;
+            if (double.TryParse(input, out result))
+            {
+                MessageBox.Show("Weight saved successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Invalid input. Please enter a numeric value.");
+            }
+
             if (isHealthDataSaved)
             {
                 MessageBox.Show("Data has already been saved and cannot be modified.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
