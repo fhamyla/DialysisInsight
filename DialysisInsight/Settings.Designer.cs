@@ -318,6 +318,7 @@
             firstname.Size = new Size(200, 38);
             firstname.TabIndex = 13;
             firstname.TextChanged += firstname_TextChanged;
+            firstname.KeyPress += firstname_KeyPress_1;
             // 
             // lastname
             // 
@@ -342,6 +343,7 @@
             lastname.Size = new Size(200, 38);
             lastname.TabIndex = 6;
             lastname.TextChanged += lastname_TextChanged;
+            lastname.KeyPress += lastname_KeyPress;
             // 
             // middlename
             // 
@@ -366,6 +368,7 @@
             middlename.Size = new Size(200, 38);
             middlename.TabIndex = 5;
             middlename.TextChanged += middlename_TextChanged;
+            middlename.KeyPress += middlename_KeyPress;
             // 
             // notifcontrol
             // 
