@@ -35,6 +35,7 @@ namespace DialysisInsight
         public Dashboard()
         {
             InitializeComponent();
+            LoadDataFromSettings();
             AddIcons();
             AddHoverEffects();
             this.Resize += Dashboard_Resiz;
@@ -56,6 +57,26 @@ namespace DialysisInsight
             reclabel3 = new Rectangle(bloodsugarlevellabel.Location, bloodsugarlevellabel.Size);
             reclabel4 = new Rectangle(bloodpressurelabel.Location, bloodpressurelabel.Size);
             reclabel5 = new Rectangle(dailysissessionlabel.Location, dailysissessionlabel.Size);
+        }
+
+        private void LoadDataFromSettings()
+        {
+            if (Properties.Settings.Default.isHealthDataSaved)
+            {
+                weightlabel.Text = $" {Properties.Settings.Default.Weight} ";
+                heartratelabel.Text = $" {Properties.Settings.Default.HeartRate} ";
+                bloodsugarlevellabel.Text = $" {Properties.Settings.Default.BloodSugarLevel} ";
+                bloodpressurelabel.Text = $" {Properties.Settings.Default.SYS}/{Properties.Settings.Default.DIA} ";
+                dailysissessionlabel.Text = $" {Properties.Settings.Default.SessionComplete}/{Properties.Settings.Default.CompleteSession}";
+            }
+            else
+            {
+                weightlabel.Text = "Weight: Not Available";
+                heartratelabel.Text = "Heart Rate: Not Available";
+                bloodsugarlevellabel.Text = "Blood Sugar: Not Available";
+                bloodpressurelabel.Text = "Blood Pressure: Not Available";
+                dailysissessionlabel.Text = "Sessions: Not Available";
+            }
         }
 
         private void Dashboard_Resiz(object? sender, EventArgs e)

@@ -157,7 +157,7 @@
             // dailysissessionlabel
             // 
             dailysissessionlabel.AutoSize = true;
-            dailysissessionlabel.BackColor = Color.Gainsboro;
+            dailysissessionlabel.BackColor = Color.Transparent;
             dailysissessionlabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dailysissessionlabel.Location = new Point(124, 111);
             dailysissessionlabel.MinimumSize = new Size(180, 80);
@@ -198,7 +198,7 @@
             // bloodpressurelabel
             // 
             bloodpressurelabel.AutoSize = true;
-            bloodpressurelabel.BackColor = Color.Gainsboro;
+            bloodpressurelabel.BackColor = Color.Transparent;
             bloodpressurelabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bloodpressurelabel.Location = new Point(110, 111);
             bloodpressurelabel.MinimumSize = new Size(180, 80);
@@ -237,7 +237,7 @@
             // bloodsugarlevellabel
             // 
             bloodsugarlevellabel.AutoSize = true;
-            bloodsugarlevellabel.BackColor = Color.Gainsboro;
+            bloodsugarlevellabel.BackColor = Color.Transparent;
             bloodsugarlevellabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             bloodsugarlevellabel.Location = new Point(64, 72);
             bloodsugarlevellabel.MinimumSize = new Size(100, 50);
@@ -278,7 +278,7 @@
             // heartratelabel
             // 
             heartratelabel.AutoSize = true;
-            heartratelabel.BackColor = Color.Gainsboro;
+            heartratelabel.BackColor = Color.Transparent;
             heartratelabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             heartratelabel.Location = new Point(57, 63);
             heartratelabel.MinimumSize = new Size(100, 50);
@@ -319,7 +319,7 @@
             // weightlabel
             // 
             weightlabel.AutoSize = true;
-            weightlabel.BackColor = Color.Gainsboro;
+            weightlabel.BackColor = Color.Transparent;
             weightlabel.Font = new Font("Poppins", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             weightlabel.Location = new Point(50, 63);
             weightlabel.MinimumSize = new Size(100, 50);
