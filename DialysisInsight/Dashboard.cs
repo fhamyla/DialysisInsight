@@ -67,67 +67,68 @@ namespace DialysisInsight
                 {
                     weightlabel.Text = $" {weight}";
                     if (weight < 18.5)
-                        weightlabel.BackColor = Color.Yellow;
+                        weightlabel.ForeColor = Color.Yellow;
                     else if (weight >= 18.5 && weight <= 24.9)
-                        weightlabel.BackColor = Color.Green;
+                        weightlabel.ForeColor = Color.Green;
                     else
-                        weightlabel.BackColor = Color.Red;
+                        weightlabel.ForeColor = Color.Red;
                 }
                 else
                 {
                     weightlabel.Text = "Invalid";
-                    weightlabel.BackColor = Color.White;
+                    weightlabel.ForeColor = Color.Black;
                 }
 
                 if (int.TryParse(Properties.Settings.Default.HeartRate, out int heartRate))
                 {
                     heartratelabel.Text = $" {heartRate}";
                     if (heartRate < 60 || heartRate > 100)
-                        heartratelabel.BackColor = Color.Red;
+                        heartratelabel.ForeColor = Color.Red;
                     else
-                        heartratelabel.BackColor = Color.Green;
+                        heartratelabel.ForeColor = Color.Green;
                 }
                 else
                 {
                     heartratelabel.Text = "Invalid";
-                    heartratelabel.BackColor = Color.White;
+                    heartratelabel.ForeColor = Color.Black;
                 }
 
                 if (int.TryParse(Properties.Settings.Default.BloodSugarLevel, out int bloodSugar))
                 {
                     bloodsugarlevellabel.Text = $" {bloodSugar}";
                     if (bloodSugar < 100 || bloodSugar > 125)
-                        bloodsugarlevellabel.BackColor = Color.Red;
+                        bloodsugarlevellabel.ForeColor = Color.Red;
                     else
-                        bloodsugarlevellabel.BackColor = Color.Green;
+                        bloodsugarlevellabel.ForeColor = Color.Green;
                 }
                 else
                 {
                     bloodsugarlevellabel.Text = "Invalid";
-                    bloodsugarlevellabel.BackColor = Color.White;
+                    bloodsugarlevellabel.ForeColor = Color.Black;
                 }
 
                 if (int.TryParse(Properties.Settings.Default.SYS, out int sys) &&
                     int.TryParse(Properties.Settings.Default.DIA, out int dia))
                 {
-                    bloodpressurelabel.Text = $" {sys}/{dia}";
-                    if (sys < 120 && dia < 80)
+                    bloodpressurelabel.Text = $"Blood Pressure: {sys}/{dia} mmHg";
+
+                    if (sys <= 120 && dia <= 80)
                     {
-                        bloodpressurelabel.BackColor = Color.Green;
+                        bloodpressurelabel.ForeColor = Color.Green;
                     }
-                    else if (sys >= 120 && sys <= 129 && dia < 80)
+                    else if (sys >= 121 && sys <= 129)
                     {
-                        bloodpressurelabel.BackColor = Color.Yellow;
+                        bloodpressurelabel.ForeColor = Color.Yellow;
                     }
-                    else
+                    else if (sys >= 130 || dia > 80)
                     {
-                        bloodpressurelabel.BackColor = Color.Red;
+                        bloodpressurelabel.ForeColor = Color.Red;
                     }
                 }
                 else
                 {
-                    bloodpressurelabel.Text = "Invalid";
-                    bloodpressurelabel.BackColor = Color.White;
+                    bloodpressurelabel.Text = "Blood Pressure: Invalid";
+                    bloodpressurelabel.ForeColor = Color.Black;
                 }
 
                 if (int.TryParse(Properties.Settings.Default.SessionComplete, out int completed) &&
@@ -135,14 +136,14 @@ namespace DialysisInsight
                 {
                     dailysissessionlabel.Text = $" {completed}/{total}";
                     if (completed < total)
-                        dailysissessionlabel.BackColor = Color.Red;
+                        dailysissessionlabel.ForeColor = Color.Red;
                     else
-                        dailysissessionlabel.BackColor = Color.Green;
+                        dailysissessionlabel.ForeColor = Color.Green;
                 }
                 else
                 {
                     dailysissessionlabel.Text = "Invalid";
-                    dailysissessionlabel.BackColor = Color.White;
+                    dailysissessionlabel.ForeColor = Color.Black;
                 }
             }
             else
@@ -152,12 +153,6 @@ namespace DialysisInsight
                 bloodsugarlevellabel.Text = "Not Available";
                 bloodpressurelabel.Text = "Not Available";
                 dailysissessionlabel.Text = "Not Available";
-
-                weightlabel.BackColor = Color.White;
-                heartratelabel.BackColor = Color.White;
-                bloodsugarlevellabel.BackColor = Color.White;
-                bloodpressurelabel.BackColor = Color.White;
-                dailysissessionlabel.BackColor = Color.White;
             }
         }
 
