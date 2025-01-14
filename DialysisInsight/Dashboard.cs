@@ -156,6 +156,51 @@ namespace DialysisInsight
             }
         }
 
+        private void CheckAndNotify()
+        {
+            if (double.TryParse(Properties.Settings.Default.Weight, out double weight))
+            {
+                if (weight < 18.5)
+                    MessageBox.Show("Weight indicates underweight.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (weight >= 25.0)
+                    MessageBox.Show("Weight indicates overweight.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (int.TryParse(Properties.Settings.Default.HeartRate, out int heartRate))
+            {
+                if (heartRate < 60 || heartRate > 100)
+                    MessageBox.Show("Abnormal heart rate detected. Please check your heart health.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (int.TryParse(Properties.Settings.Default.BloodSugarLevel, out int bloodSugar))
+            {
+                if (bloodSugar < 100 || bloodSugar > 125)
+                    MessageBox.Show("Abnormal blood sugar level detected.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (int.TryParse(Properties.Settings.Default.SYS, out int sys) &&
+                int.TryParse(Properties.Settings.Default.DIA, out int dia))
+            {
+                if (sys > 130 || dia > 80)
+                {
+                    MessageBox.Show("High blood pressure detected. Please consult a doctor.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (sys >= 120 && sys <= 129 && dia < 80)
+                {
+                    MessageBox.Show("Elevated blood pressure detected.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            if (int.TryParse(Properties.Settings.Default.SessionComplete, out int completed) &&
+                int.TryParse(Properties.Settings.Default.CompleteSession, out int total))
+            {
+                if (completed < total)
+                {
+                    MessageBox.Show($"You have completed {completed}/{total} sessions.", "Health Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
         private void Dashboard_Resiz(object? sender, EventArgs e)
         {
             resize_Control(user, recuser);
@@ -313,7 +358,7 @@ namespace DialysisInsight
 
         private void notify_Click(object sender, EventArgs e)
         {
-
+            CheckAndNotify();
         }
 
         private void weight_Paint(object sender, PaintEventArgs e)
