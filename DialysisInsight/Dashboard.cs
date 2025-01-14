@@ -110,7 +110,7 @@ namespace DialysisInsight
                 if (int.TryParse(Properties.Settings.Default.SYS, out int sys) &&
                     int.TryParse(Properties.Settings.Default.DIA, out int dia))
                 {
-                    bloodpressurelabel.Text = $"Blood Pressure: {sys}/{dia} mmHg";
+                    bloodpressurelabel.Text = $" {sys}/{dia}";
 
                     if (sys <= 120 && dia <= 80)
                     {
@@ -127,7 +127,7 @@ namespace DialysisInsight
                 }
                 else
                 {
-                    bloodpressurelabel.Text = "Blood Pressure: Invalid";
+                    bloodpressurelabel.Text = "Invalid";
                     bloodpressurelabel.ForeColor = Color.Black;
                 }
 
