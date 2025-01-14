@@ -39,6 +39,7 @@ namespace DialysisInsight
             AddIcons();
             AddHoverEffects();
             this.Resize += Dashboard_Resiz;
+            Load += Dashboard_Load;
             formOriginalSize = this.Size;
             recuser = new Rectangle(user.Location, user.Size);
             recminmax = new Rectangle(minmax.Location, minmax.Size);
@@ -57,6 +58,11 @@ namespace DialysisInsight
             reclabel3 = new Rectangle(bloodsugarlevellabel.Location, bloodsugarlevellabel.Size);
             reclabel4 = new Rectangle(bloodpressurelabel.Location, bloodpressurelabel.Size);
             reclabel5 = new Rectangle(dailysissessionlabel.Location, dailysissessionlabel.Size);
+        }
+
+        private void Dashboard_Load(object? sender, EventArgs e)
+        {
+            CheckAndNotify();
         }
 
         private void LoadDataFromSettings()
