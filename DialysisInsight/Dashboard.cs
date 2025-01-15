@@ -43,7 +43,7 @@ namespace DialysisInsight
             recuser = new Rectangle(user.Location, user.Size);
             recminmax = new Rectangle(minmax.Location, minmax.Size);
             recpanel1 = new Rectangle(guna2Panel1.Location, guna2Panel1.Size);
-            recdatetime = new Rectangle(DateTime.Location, DateTime.Size);
+            recdatetime = new Rectangle(DateTimee.Location, DateTimee.Size);
             recnotify = new Rectangle(notify.Location, notify.Size);
             recweight = new Rectangle(weight.Location, weight.Size);
             recheart = new Rectangle(heartrate.Location, heartrate.Size);
@@ -215,7 +215,7 @@ namespace DialysisInsight
             resize_Control(user, recuser);
             resize_Control(minmax, recminmax);
             resize_Control(guna2Panel1, recpanel1);
-            resize_Control(DateTime, recdatetime);
+            resize_Control(DateTimee, recdatetime);
             resize_Control(notify, recnotify);
             resize_Control(weight, recweight);
             resize_Control(heartrate, recheart);
@@ -356,7 +356,7 @@ namespace DialysisInsight
 
         private void DateTime_ValueChanged(object sender, EventArgs e)
         {
-
+            DateTimee.Value = DateTime.Now;
         }
 
         private void search_TextChanged(object sender, EventArgs e)
