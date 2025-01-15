@@ -19,7 +19,6 @@ namespace DialysisInsight
         private Rectangle recminmax;
         private Rectangle recpanel1;
         private Rectangle recdatetime;
-        private Rectangle recsearch;
         private Rectangle recnotify;
         private Rectangle recweight;
         private Rectangle recheart;
@@ -45,7 +44,6 @@ namespace DialysisInsight
             recminmax = new Rectangle(minmax.Location, minmax.Size);
             recpanel1 = new Rectangle(guna2Panel1.Location, guna2Panel1.Size);
             recdatetime = new Rectangle(DateTime.Location, DateTime.Size);
-            recsearch = new Rectangle(search.Location, search.Size);
             recnotify = new Rectangle(notify.Location, notify.Size);
             recweight = new Rectangle(weight.Location, weight.Size);
             recheart = new Rectangle(heartrate.Location, heartrate.Size);
@@ -151,6 +149,10 @@ namespace DialysisInsight
                     dailysissessionlabel.Text = "Invalid";
                     dailysissessionlabel.ForeColor = Color.Black;
                 }
+                if (Properties.Settings.Default.isDataSaved)
+                {
+                    user.Text = $"Hello {Properties.Settings.Default.firstname}";
+                }
             }
             else
             {
@@ -159,6 +161,7 @@ namespace DialysisInsight
                 bloodsugarlevellabel.Text = "Not Available";
                 bloodpressurelabel.Text = "Not Available";
                 dailysissessionlabel.Text = "Not Available";
+                user.Text = "Not Available";
             }
         }
 
@@ -213,7 +216,6 @@ namespace DialysisInsight
             resize_Control(minmax, recminmax);
             resize_Control(guna2Panel1, recpanel1);
             resize_Control(DateTime, recdatetime);
-            resize_Control(search, recsearch);
             resize_Control(notify, recnotify);
             resize_Control(weight, recweight);
             resize_Control(heartrate, recheart);
